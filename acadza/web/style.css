@@ -188,3 +188,37 @@ textarea { resize: vertical; font-size: 13px; }
 
 .walkthrough { max-width: 1100px; padding: 32px 24px; }
 .walkthrough video { display: block; width: 100%; margin: 24px 0; background: #172a23; border-radius: 10px; }
+
+.gemini-check {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  min-height: 44px;
+  margin: .8rem 0;
+  padding: .45rem 1rem .45rem .55rem;
+  border: 1px solid #a4c4b9;
+  border-radius: .8rem;
+  background: linear-gradient(115deg, #e3f2e9, #f4f8ff);
+  color: #164b3e;
+  font-size: .88rem;
+  font-weight: 650;
+  box-shadow: 0 2px 4px #183d3012;
+}
+.gemini-icon {
+  display: grid;
+  place-items: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: .55rem;
+  background: #245d50;
+  color: white;
+}
+.gemini-check:hover:enabled { border-color: #528673; box-shadow: 0 3px 8px #183d3024; }
+.gemini-check:active:enabled { transform: translateY(1px); }
+.gemini-check:disabled { opacity: 1; box-shadow: none; }
+.gemini-check[aria-busy="true"] { cursor: progress; }
+@media (prefers-reduced-motion: no-preference) {
+  .gemini-check { transition: box-shadow .15s, border-color .15s; }
+  .gemini-check[aria-busy="true"] .gemini-icon { animation: gemini-pulse 1.2s ease-in-out infinite alternate; }
+  @keyframes gemini-pulse { to { opacity: .55; } }
+}

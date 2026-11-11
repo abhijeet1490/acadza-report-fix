@@ -83,7 +83,10 @@
             </div>
             <p id="stored-answer" class="stored-answer"></p>
             <iframe id="question" title="Original question with options" sandbox></iframe>
-            <button id="check-answer" class="secondary" type="button">Check answer with Gemini</button>
+            <button id="check-answer" class="gemini-check" type="button" aria-controls="gemini-answer">
+              <span class="gemini-icon" aria-hidden="true">✦</span>
+              <span id="check-label">Check answer with Gemini</span>
+            </button>
             <div id="gemini-answer" role="status" aria-live="polite"></div>
             <details id="full-preview" hidden>
               <summary>Full question after correction</summary>

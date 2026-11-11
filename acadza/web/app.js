@@ -217,7 +217,12 @@ function saveDraft() {
 }
 function renderAnswerCheck() {
   const check = answerChecks.get(review.id);
-  $("check-answer").disabled = Boolean(check?.pending || check?.result);
+  const button = $("check-answer");
+  button.disabled = Boolean(check?.pending || check?.result);
+  button.setAttribute("aria-busy", String(Boolean(check?.pending)));
+  $("check-label").textContent = check?.pending ? "Checking with Gemini…" :
+    check?.result ? "Answer checked" : check?.error ? "Retry Gemini check" : "Check answer with Gemini";
+  button.querySelector(".gemini-icon").textContent = check?.result ? "✓" : "✦";
   const panel = $("gemini-answer");
   panel.replaceChildren();
   if (!check) return;
