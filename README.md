@@ -6,13 +6,11 @@ The submission uses precomputed analyses. All defect reports await faculty revie
 The public Render demo shares review state, and its free-instance SQLite history
 can reset on restart or idle spin-down.
 
-The release includes [PRODUCT.md](PRODUCT.md), [PROMPTS.md](PROMPTS.md), scored
-[results.json](results.json), a [three-minute recording](release/walkthrough.mp4)
-with [transcript](release/walkthrough.md), and an [email draft](SUBMISSION.md).
-After the final files are pushed, the walkthrough player is served at
-[the walkthrough URL](https://acadza-report-fix-acwx.onrender.com/walkthrough).
+The assignment includes [PRODUCT.md](PRODUCT.md), [PROMPTS.md](PROMPTS.md) and
+scored [results.json](results.json). The walkthrough is supplied separately.
+Local release materials and deployment notes are excluded from Git.
 
-Phases 1–5 provide dataset ingestion, proposal policy, resumable batch triage and a persistent faculty console for all 39 reported questions. Phase 6 adds submission materials, a captioned walkthrough and release verification. See [RELEASE.md](RELEASE.md) for the remaining publication steps.
+Phases 1–5 provide dataset ingestion, proposal policy, resumable batch triage and a persistent faculty console for all 39 reported questions. Phase 6 prepares the submission materials and verifies the release.
 
 Requires Python 3.10 or newer. Uses only the standard library.
 
@@ -22,7 +20,7 @@ python3 -m unittest discover -s tests -v
 python3 -m acadza --preview source-preview.html
 ```
 
-Open the generated HTML file in a browser to inspect one source question and solution per type, including native MathML. Each source fragment uses a sandboxed iframe with scripts and remote resources disabled. The preview is for local inspection. Console browser checks and release evidence are recorded in RELEASE.md.
+Open the generated HTML file in a browser to inspect one source question and solution per type, including native MathML. Each source fragment uses a sandboxed iframe with scripts and remote resources disabled. The preview is for local inspection. Console browser checks are described below.
 
 Use `--data /absolute/path/to/data` to inspect another dataset. Import `load_dataset` from `acadza.dataset` for the same read path.
 
@@ -123,7 +121,7 @@ and invalidates an outstanding edit preview. A conflict asks faculty to reload.
 This stage uses loopback access and the actor label “Local faculty”. Identity
 and shared public hosting require deployment work. Host validation and a
 same-origin request token protect the local HTTP mutation endpoints.
-The local default binds to 127.0.0.1. Render deployment settings are in RENDER.md.
+The local default binds to 127.0.0.1. Render deployment settings are listed below.
 
 ### Verification evidence
 
@@ -272,7 +270,7 @@ refresh within the same browser tab to support safe retries after lost responses
 
 The console is local and displays the explicitly precomputed analysis origin.
 It makes no LLM requests while reviewing. Replies are local previews/records,
-with delivery integration pending. Render hosting is documented in RENDER.md. Named faculty authentication remains
+with delivery integration pending. Render hosting settings are listed below. Named faculty authentication remains
 separate work.
 
 ### Phase 5 verification
@@ -302,6 +300,14 @@ results and the default workspace's decisions were preserved.
 
 ## Render deployment
 
-Follow [RENDER.md](RENDER.md) for GitHub-connected deployment, startup commands,
-health checks and the free-versus-persistent SQLite storage choice.
+Deploy the `main` branch as a Python web service with the root directory left empty.
+
+- Build command: `python -m unittest discover -s tests`
+- Start command: `python -m acadza.server --host 0.0.0.0 --port $PORT`
+- Health check: `/healthz`
+- Free-demo database: `REVIEW_DB_PATH=.local/review.sqlite3`
+
+The free instance can lose review history on restart or idle spin-down. Durable
+SQLite storage requires a persistent disk and a database path on that disk.
+Keep the live console available for the assignment’s seven-day review window.
 The public deployment is a shared demo using precomputed analysis.
