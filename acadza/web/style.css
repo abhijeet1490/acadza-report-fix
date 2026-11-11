@@ -185,3 +185,6 @@ textarea { resize: vertical; font-size: 13px; }
 }
 
 .stored-answer { font-size: 12px; color: #486251; border-bottom: 1px solid #edf0ec; padding-bottom: 12px; margin-bottom: 16px; }
+
+.walkthrough { max-width: 1100px; padding: 32px 24px; }
+.walkthrough video { display: block; width: 100%; margin: 24px 0; background: #172a23; border-radius: 10px; }

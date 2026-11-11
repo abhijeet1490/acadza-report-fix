@@ -6,3 +6,5 @@ __pycache__/
 source-preview.html
 
 .local/
+
+release/

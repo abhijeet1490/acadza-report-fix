@@ -215,6 +215,11 @@ function saveDraft() {
   });
 }
 function render() {
+  // Mount srcdoc frames in a visible container so WebKit lays out their content.
+  // Rendering is synchronous, so the case is populated before the next paint.
+  $("case-view").hidden = false;
+  // Commit visibility before replacing documents inside the existing frames.
+  $("case-view").getBoundingClientRect();
   const pending = review.status === "pending";
   const saved = drafts.get(review.id) || {
     editing: false, edits: review.editable_edits, note: "", rejecting: false, rejectNote: ""
@@ -294,7 +299,6 @@ function render() {
     $("audit").append(row);
   }
   if (!review.audit.length) $("audit").textContent = "No decision recorded yet.";
-  $("case-view").hidden = false;
   renderQueue();
 }
 async function api(path, body, signal) {

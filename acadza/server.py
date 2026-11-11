@@ -14,6 +14,7 @@ from .contracts import DataError
 from .review import Conflict, MissingCase, ReviewStore
 
 WEB = Path(__file__).parent / "web"
+RELEASE = Path(__file__).resolve().parent.parent / "release"
 
 
 def make_server(store, port=8765, *, host="127.0.0.1", public_host=None):
@@ -26,9 +27,14 @@ def make_server(store, port=8765, *, host="127.0.0.1", public_host=None):
     class Handler(BaseHTTPRequestHandler):
         def send(self, status, content, content_type="application/json"):
             body = content.encode("utf-8")
+            self.send_headers(status, len(body), content_type + "; charset=utf-8")
+            if self.command != "HEAD":
+                self.wfile.write(body)
+
+        def send_headers(self, status, length, content_type, extra=None):
             self.send_response(status)
-            self.send_header("Content-Type", content_type + "; charset=utf-8")
-            self.send_header("Content-Length", str(len(body)))
+            self.send_header("Content-Type", content_type)
+            self.send_header("Content-Length", str(length))
             self.send_header("Cache-Control", "no-store")
             self.send_header("X-Content-Type-Options", "nosniff")
             self.send_header("X-Frame-Options", "DENY")
@@ -36,8 +42,53 @@ def make_server(store, port=8765, *, host="127.0.0.1", public_host=None):
                              "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; "
                              "frame-src 'self' about:; object-src 'none'; base-uri 'none'; "
                              "frame-ancestors 'none'")
+            for key, value in (extra or {}).items():
+                self.send_header(key, value)
             self.end_headers()
-            self.wfile.write(body)
+
+        def send_media(self, path, content_type):
+            if not path.is_file():
+                self.send(404, '{"error":"Walkthrough file is unavailable"}')
+                return
+            size = path.stat().st_size
+            start, end = 0, size - 1
+            range_header = self.headers.get("Range")
+            status = 200
+            extra = {"Accept-Ranges": "bytes"}
+            if range_header:
+                match = re.fullmatch(r"bytes=([0-9]*)-([0-9]*)", range_header)
+                if not match or not any(match.groups()):
+                    self.send_headers(416, 0, content_type, {"Content-Range": f"bytes */{size}"})
+                    return
+                first, last = match.groups()
+                try:
+                    if first:
+                        start = int(first)
+                        end = min(int(last), size - 1) if last else size - 1
+                    else:
+                        count = int(last)
+                        start = max(0, size - count)
+                except ValueError:
+                    self.send_headers(416, 0, content_type, {"Content-Range": f"bytes */{size}"})
+                    return
+                if size == 0 or start > end or start >= size:
+                    self.send_headers(416, 0, content_type, {"Content-Range": f"bytes */{size}"})
+                    return
+                status = 206
+                extra["Content-Range"] = f"bytes {start}-{end}/{size}"
+            length = max(0, end - start + 1)
+            self.send_headers(status, length, content_type, extra)
+            if self.command == "HEAD":
+                return
+            with path.open("rb") as media:
+                media.seek(start)
+                remaining = length
+                while remaining:
+                    chunk = media.read(min(65536, remaining))
+                    if not chunk:
+                        break
+                    self.wfile.write(chunk)
+                    remaining -= len(chunk)
 
         def valid_host(self):
             allowed = {f"127.0.0.1:{self.server.server_port}",
@@ -72,15 +123,22 @@ def make_server(store, port=8765, *, host="127.0.0.1", public_host=None):
                     self.send(200, json.dumps({"case": case, "token": token}))
                 except MissingCase as exc:
                     self.send(404, json.dumps({"error": str(exc)}))
-            elif path in ("/", "/app.js", "/style.css"):
+            elif path in ("/walkthrough.mp4", "/walkthrough.vtt"):
+                content_type = "video/mp4" if path.endswith(".mp4") else "text/vtt; charset=utf-8"
+                self.send_media(RELEASE / path.lstrip("/"), content_type)
+            elif path in ("/", "/app.js", "/style.css", "/walkthrough"):
                 name, content_type = {
                     "/": ("index.html", "text/html"),
                     "/app.js": ("app.js", "text/javascript"),
                     "/style.css": ("style.css", "text/css"),
+                    "/walkthrough": ("walkthrough.html", "text/html"),
                 }[path]
                 self.send(200, (WEB / name).read_text(), content_type)
             else:
                 self.send(404, '{"error":"Page not found"}')
+
+        def do_HEAD(self):
+            self.do_GET()
 
         def do_POST(self):
             if not self.valid_host():

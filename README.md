@@ -1,6 +1,18 @@
 # Acadza Report → Fix
 
-Phases 1–5 provide dataset ingestion, proposal policy, resumable batch triage and a persistent faculty console for all 39 reported questions.
+[Open the live faculty console](https://acadza-report-fix-acwx.onrender.com/)
+
+The submission uses precomputed analyses. All defect reports await faculty review.
+The public Render demo shares review state, and its free-instance SQLite history
+can reset on restart or idle spin-down.
+
+The release includes [PRODUCT.md](PRODUCT.md), [PROMPTS.md](PROMPTS.md), scored
+[results.json](results.json), a [three-minute recording](release/walkthrough.mp4)
+with [transcript](release/walkthrough.md), and an [email draft](SUBMISSION.md).
+After the final files are pushed, the walkthrough player is served at
+[the walkthrough URL](https://acadza-report-fix-acwx.onrender.com/walkthrough).
+
+Phases 1–5 provide dataset ingestion, proposal policy, resumable batch triage and a persistent faculty console for all 39 reported questions. Phase 6 adds submission materials, a captioned walkthrough and release verification. See [RELEASE.md](RELEASE.md) for the remaining publication steps.
 
 Requires Python 3.10 or newer. Uses only the standard library.
 
@@ -10,7 +22,7 @@ python3 -m unittest discover -s tests -v
 python3 -m acadza --preview source-preview.html
 ```
 
-Open the generated HTML file in a browser to inspect one source question and solution per type, including native MathML. Each source fragment uses a sandboxed iframe with scripts and remote resources disabled. The preview is for local inspection. Browser layout verification is still pending.
+Open the generated HTML file in a browser to inspect one source question and solution per type, including native MathML. Each source fragment uses a sandboxed iframe with scripts and remote resources disabled. The preview is for local inspection. Console browser checks and release evidence are recorded in RELEASE.md.
 
 Use `--data /absolute/path/to/data` to inspect another dataset. Import `load_dataset` from `acadza.dataset` for the same read path.
 

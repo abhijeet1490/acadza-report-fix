@@ -301,3 +301,66 @@ was changed by these browser decisions.
   idle spin-down. Durable SQLite requires a persistent disk on paid compute.
 - Prepare local code and instructions. The applicant will commit, push and deploy
   through their GitHub and Render accounts.
+
+
+## Phase 6 — release preparation, 11 November 2026
+
+### AI coding assistant prompts, verbatim
+
+> check the implementation of phase 6., if not completed , complete it.
+
+Applicant answers to the assistant's submission questions, verbatim:
+
+> it for the remote Monday–Saturday role -> yes , i can start immediately and i am open to commit the month they want.
+
+> Prepare files; I will push
+
+When asked for the remaining motivation answer:
+
+> you write it for myself and make sure it in humanise way.
+
+### Decisions and discarded approaches
+
+- Audit the required deliverables against the original assessment README. Add
+  PRODUCT.md covering all four product questions and an email draft containing
+  the applicant's answers. Draft the motivation at the applicant's request and
+  mark it for personal review. Do not invent a numerical month commitment.
+- Keep results.json and the source dataset unchanged. Explicitly retain the
+  analyst-authored reference provenance and the distinction between mocked
+  provider tests and live-model qualification. Do not claim measured accuracy.
+- Record a three-minute console walkthrough with six edited chapters. Use an
+  isolated local SQLite workspace so recording decisions do not change the live
+  demo. Capture actual browser frames at one frame per second and encode a
+  30 fps H.264/AAC MP4. Narration uses macOS system text-to-speech. Captions and
+  the full narration transcript are included. This is an edited demonstration,
+  not a latency benchmark or a live-model run.
+- Include an optional same-origin video player and byte-range streaming for
+  seeking, with HEAD support and bounded chunk reads. This keeps the recording
+  reviewable after deployment. The brief requests Loom, unlisted YouTube or
+  Drive, so the applicant must upload the provided MP4 to one of those services
+  and substitute that link before sending the email.
+- Do not add provider libraries, database migrations or a frontend build step.
+  Preserve existing console routes, local defaults and the current review API.
+- Preserve the user's choice to push personally. Publication, video upload and
+  sending the email remain applicant actions. Seven-day availability is an
+  ongoing obligation, not something a single health check can certify.
+
+### AI mistake caught during release verification
+
+A source-question iframe appeared in accessibility output but was blank in
+recorded screenshots after navigating between cases. Initially moving the
+unhide operation earlier looked sufficient. A second browser navigation showed
+that it was not. WebKit needed the newly visible ancestor's layout committed
+before replacing its existing iframe documents. The render path now unhides
+and reads the container geometry first. Browser checks switched from R012 to
+R027 and back, verified visible iframe bodies, and recorded the corrected
+question. No source question markup or sandbox permissions changed.
+
+### Verification
+
+See RELEASE.md and release/verification.json for the delivered source fingerprint,
+clean-copy checks, video metadata and qualification limits. The full suite has
+52 Python tests. The shipped JavaScript checks cover draft prefilling, unfinished
+JSON preservation and case-note isolation. The video player was checked in
+WebKit with loaded metadata, 180-second duration, advancing playback, captions
+and no media error. Local decisions remained in ignored QA databases.
