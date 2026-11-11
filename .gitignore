@@ -1,0 +1,8 @@
+__pycache__/
+.DS_Store
+*.pyc
+.venv/
+.env
+source-preview.html
+
+.local/

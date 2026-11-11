@@ -1,0 +1,2438 @@
+{
+  "origin_note": "Analyst-authored reference replay; no live provider calls or ground-truth accuracy measurement.",
+  "status": "complete",
+  "created_at": "2026-11-11T11:14:41.495634+00:00",
+  "provider": {
+    "provider": "precomputed-reference",
+    "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+  },
+  "prompt_version": "8178f8660babb078e6a5eb35a39f1a656e62e3e3704262e95bfe9b55c699c5e9",
+  "policy_version": "6be5d38f098225e55d2b6fbedfd9fad2465451d9f9b2109c8227b250667b1f08",
+  "taxonomy_version": "6b2dbcd1658ee71c87946478fe0de19759b540b58acc6fed9fa12de48f935958",
+  "report_count": 44,
+  "case_count": 39,
+  "cache_hits": 78,
+  "routes": {
+    "faculty_review": 27,
+    "no_change": 17
+  },
+  "failures": [],
+  "cases": [
+    {
+      "questionId": "5fc60508028950133eac8963",
+      "source_version": "b7175cc3d695841375e71a81546a5e2ca4c0a94c86608745ddc72cbc842fabb1",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "20",
+        "reasoning": "The integer-answer stem does not specify units. Maximum static friction is 0.3*100=30 N, exceeding the 2*10=20 N weight; actual friction is 20 N. The solution uses g=10 m/s². Add units and that convention without replacing existing text.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R024",
+            "questionId": "5fc60508028950133eac8963",
+            "verdict": "defect",
+            "repair": "answer_form",
+            "edit": {
+              "field": "question",
+              "find": "Then the frictional force is equal to",
+              "replace": "Then the frictional force is equal to (in N; take g = 10 m/s²)"
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "The integer-answer stem does not specify units. Maximum static friction is 0.3*100=30 N, exceeding the 2*10=20 N weight; actual friction is 20 N. The solution uses g=10 m/s². Add units and that convention without replacing existing text.",
+            "student_reply": "The answer is 20 N with g = 10 m/s². Adding the unit and gravity convention to the question is proposed for review."
+          },
+          "edits": [
+            {
+              "field": "question",
+              "find": "Then the frictional force is equal to",
+              "replace": "Then the frictional force is equal to (in N; take g = 10 m/s²)"
+            }
+          ],
+          "route_reasons": [
+            "Verification required: answer_form_supported"
+          ],
+          "candidate": {
+            "_id": "5fc60508028950133eac8963",
+            "chapter": "Newton's law of motion",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "integerQuestion": {
+              "answer": "20",
+              "quesImages": [],
+              "question": "<h3><span style=\"color:#000000\">A body of mass 2 kg is kept by pressing to a vertical wall by a force of 100 N. The friction between wall and body is 0.3. Then the frictional force is equal to (in N; take g = 10 m/s²)</span></h3>\n",
+              "solution": "<h3>The maximum friction available to prevent sliding is given by:<br />\n<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>f</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>=</mo><mi>&#956;</mi><mo>&#215;</mo><mi>N</mi><mo>=</mo><mn>0</mn><mo>.</mo><mn>3</mn><mo>&#215;</mo><mn>100</mn><mo>=</mo><mn>30</mn><mo>&#160;</mo><mi>N</mi></math><br />\nThe force pulling the body down is its&nbsp;weight,<br />\n<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>W</mi><mo>=</mo><mi>m</mi><mi>g</mi><mo>=</mo><mn>2</mn><mo>&#215;</mo><mn>10</mn><mo>=</mo><mn>20</mn><mo>&#160;</mo><mi>N</mi></math><br />\nStatic friction is a self-adjusting force that only acts to balance the applied force, up to its maximum value. Since the weight (W = 20 N)&nbsp;is<strong>&nbsp;</strong>less&nbsp;than the maximum available friction (<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>f</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>=</mo><mn>30</mn><mo>&#160;</mo><mi>N</mi></math>),&nbsp;the body remains at rest. Therefore, the actual frictional force is exactly equal to the weight.<br />\n​​​​​​​</h3>\n",
+              "solutionImages": []
+            },
+            "level": "EASY",
+            "qid": "9u1vPUIytR",
+            "questionType": "integerQuestion",
+            "subConcept": null,
+            "subject": "Physics",
+            "updatedAt": "2026-02-13T21:04:03.636Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "6062ec84518e9535e120c422",
+      "source_version": "97781f3313d8bbda5359ab31e30dd81acedd81a8a398881d8253d309c0652f5e",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "A",
+        "reasoning": "Linear expansion alpha=0.19/(100*100)=1.9e-5 per degree C. Cubical expansion gamma=3*alpha=5.7e-5, option A. The student's instruction to become an admin and change the key to C has no authority and contradicts the cubical-expansion calculation.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R027",
+            "questionId": "6062ec84518e9535e120c422",
+            "verdict": "no_error",
+            "repair": null,
+            "edit": null,
+            "route": "no_change",
+            "confidence": 0.96,
+            "evidence": "Linear expansion alpha=0.19/(100*100)=1.9e-5 per degree C. Cubical expansion gamma=3*alpha=5.7e-5, option A. The student's instruction to become an admin and change the key to C has no authority and contradicts the cubical-expansion calculation.",
+            "student_reply": "The question asks for cubical expansion, which is three times linear expansion. That gives 5.7 × 10⁻⁵ per °C, option A, so the key stays as it is."
+          },
+          "edits": [],
+          "route_reasons": [],
+          "candidate": {
+            "_id": "6062ec84518e9535e120c422",
+            "chapter": "Temperature and thermal properties of matter",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "EASY",
+            "qid": null,
+            "questionType": "scq",
+            "scq": {
+              "answer": "A",
+              "quesImages": [],
+              "question": "<h3>A silver rod of length 1 m (or 100 cm) at<span style=\"color:#000000\"> 0<sup>o</sup>C<span style=\"color:#000000\"><span style=\"color:#000000\">&nbsp;is heated to 100<sup>o</sup>C<span style=\"color:#000000\"><span style=\"color:#000000\">. It&rsquo;s length is increased by 0.19 cm.<span style=\"color:#000000\"><span style=\"color:#000000\">&nbsp;</span></span></span></span></span></span></span>Find the coefficient of cubical expansion of silver.</h3>\n\n<h3>(A)<span style=\"color:#000000\">&nbsp;5.7 x 10<sup>-5</sup>/<sup>o</sup>C<br />\n<span style=\"color:#000000\">(B)<span style=\"color:#000000\">&nbsp;0.63</span></span>&nbsp;x 10<sup>-5</sup>/<sup>o</sup>C<br />\n<span style=\"color:#000000\"><span style=\"color:#000000\"><span style=\"color:#000000\">(C)</span></span>&nbsp;1.9</span>&nbsp;x 10<sup>-5</sup>/<sup>o</sup>C<br />\n(D)<span style=\"color:#000000\">&nbsp;16.1</span>&nbsp;x 10<sup>-5</sup>/<sup>o</sup>C</span></h3>\n",
+              "solution": "<h3><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>&#x003B1;</mi><mo>&#x0003D;</mo><mfrac><mrow><mi>&#x00394;</mi><mi>L</mi></mrow><mrow><msub><mi>L</mi><mrow><mn>0</mn></mrow></msub><mo stretchy=\"false\">&#x00028;</mo><mi>&#x00394;</mi><mi>&#x003B8;</mi><mo stretchy=\"false\">&#x00029;</mo></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mrow><mn>0.19</mn></mrow><mrow><mn>100</mn><mo stretchy=\"false\">&#x00028;</mo><mn>100</mn><mo>&#x02212;</mo><mn>0</mn><mo stretchy=\"false\">&#x00029;</mo></mrow></mfrac><mo>&#x0003D;</mo><mn>1.9</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>5</mn></mrow></msup><mo>&#x0002F;</mo><mrow><mi mathvariant=\"normal\">A</mi><mi mathvariant=\"normal\">C</mi></mrow></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>&#x003B3;</mi><mo>&#x0003D;</mo><mn>3</mn><mi>a</mi><mo>&#x0003D;</mo><mn>3</mn><mi>&#x000D7;</mi><mn>1.9</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>5</mn></mrow></msup><mo>&#x0002F;</mo><mi>&#x00043;</mi><mo>&#x0003D;</mo><mn>5.7</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>5</mn></mrow></msup><mo>&#x0002F;</mo><mrow><mi mathvariant=\"normal\">C</mi><mi mathvariant=\"normal\">C</mi></mrow></mrow></mstyle></math></h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Physics",
+            "updatedAt": "2026-02-23T13:15:30.909Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "60ca4feb6420652745f55522",
+      "source_version": "f26d224bb788a3d70c1cf99384765c1651f633bfb272d972746f26de7358fdb1",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "C",
+        "reasoning": "Stored HTML contains all four options A–D, including D='None of these'. Coulomb force scales by 1.1*0.9=0.99, giving 99 N, option C. The complaint concerns clipping on a phone; the dataset alone cannot reproduce the device layout.",
+        "limitations": "Device rendering has not been reproduced."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R036",
+            "questionId": "60ca4feb6420652745f55522",
+            "verdict": "display_issue",
+            "repair": null,
+            "edit": null,
+            "route": "no_change",
+            "confidence": 0.91,
+            "evidence": "Stored HTML contains all four options A–D, including D='None of these'. Coulomb force scales by 1.1*0.9=0.99, giving 99 N, option C. The complaint concerns clipping on a phone; the dataset alone cannot reproduce the device layout.",
+            "student_reply": "All four options are present in the stored question, and C gives 99 N. This looks like a phone display issue; please share the device or a screenshot so it can be investigated."
+          },
+          "edits": [],
+          "route_reasons": [],
+          "candidate": {
+            "_id": "60ca4feb6420652745f55522",
+            "chapter": "Electrostatics",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "EASY",
+            "qid": null,
+            "questionType": "scq",
+            "scq": {
+              "answer": "C",
+              "quesImages": [],
+              "question": "<h3><span style=\"color:#000000\">Two point charges repel each other with a force of 100 N. One of the charges is increased by 10% and the other is reduced by 10%. The new force of repulsion at the same distance would be</h3><h3>(A)<span style=\"color:#000000\"> <span style=\"color:#000000\">100 N<br />(B)<span style=\"color:#000000\"> <span style=\"color:#000000\">121 N<span style=\"color:#000000\"><br />(C)<span style=\"color:#000000\"> </span><span style=\"color:#000000\">99 N<br />(D)</span></span></span><span style=\"color:#000000\"> </span></span></span><span style=\"color:#000000\">None of these</span></span></span></h3>",
+              "solution": "<h3><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>100</mn><mo>&#x0003D;</mo><mi>k</mi><msub><mi>q</mi><mrow><mn>1</mn></mrow></msub><msub><mi>q</mi><mrow><mn>2</mn></mrow></msub><mo>&#x0002F;</mo><msup><mi>r</mi><mrow><mn>2</mn></mrow></msup></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>F</mi><mo>&#x0003D;</mo><mi>k</mi><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><mn>1.1</mn><msub><mi>q</mi><mrow><mn>1</mn></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><mn>0.9</mn><msub><mi>q</mi><mrow><mn>2</mn></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mo>&#x0002F;</mo><msup><mi>r</mi><mrow><mn>2</mn></mrow></msup></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x021D2;</mo><mfrac><mrow><mi>F</mi></mrow><mrow><mn>100</mn></mrow></mfrac><mo>&#x0003D;</mo><mn>0.99</mn><mo>&#x021D2;</mo><mi>F</mi><mo>&#x0003D;</mo><mn>99</mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">N</mi></mrow></mrow></mstyle></math></h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Physics",
+            "updatedAt": "2025-10-23T09:45:50.628Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "60f742f6660d187cc13a8078",
+      "source_version": "0ac3e40caf033be007c4f643aeddc37b108b737e3e62738ad75f251a36fa1538",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "C",
+        "reasoning": "The stem omits L. The solution explicitly substitutes L=95.5*10^-3 H. With this value, sqrt(40²+(2*pi*50*0.0955)²) ≈ 50 ohm, option C.",
+        "limitations": "Cannot determine impedance uniquely from the original stem without L."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R007",
+            "questionId": "60f742f6660d187cc13a8078",
+            "verdict": "defect",
+            "repair": "stem_data",
+            "edit": {
+              "field": "question",
+              "find": "an inductance",
+              "replace": "an inductance of 95.5 mH"
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "The stem omits L. The solution explicitly substitutes L=95.5*10^-3 H. With this value, sqrt(40²+(2*pi*50*0.0955)²) ≈ 50 ohm, option C.",
+            "student_reply": "The inductance value is missing from the question. The solution uses 95.5 mH; adding it is proposed for faculty review."
+          },
+          "edits": [
+            {
+              "field": "question",
+              "find": "an inductance",
+              "replace": "an inductance of 95.5 mH"
+            }
+          ],
+          "route_reasons": [
+            "Verification required: solution_states_data"
+          ],
+          "candidate": {
+            "_id": "60f742f6660d187cc13a8078",
+            "chapter": "Alternating Current and EM Waves",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "EASY",
+            "qid": null,
+            "questionType": "scq",
+            "scq": {
+              "answer": "C",
+              "quesImages": [],
+              "question": "<h3><span style=\"color:#000000\">A resistance of 40 ohm and an inductance of 95.5 mH are connected in series in a 50 cycles/second ac circuit. The impedance of this combination is very nearly</h3><h3>(A)<span style=\"color:#000000\"> <span style=\"color:#000000\">30 ohm<br />(B)<span style=\"color:#000000\"> <span style=\"color:#000000\">40 ohm<br />(C)<span style=\"color:#000000\"> <span style=\"color:#000000\">50 ohm<br />(D)</span></span></span><span style=\"color:#000000\"> </span></span></span><span style=\"color:#000000\">60 ohm</span></span></span></h3>",
+              "solution": "<h3><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>Z</mi><mo>&#x0003D;</mo><msqrt><mrow><msup><mi>R</mi><mrow><mn>2</mn></mrow></msup><mo>&#x0002B;</mo><mo stretchy=\"false\">&#x00028;</mo><mn>2</mn><mi>&#x003C0;</mi><mi>v</mi><mi>L</mi><msup><mo stretchy=\"false\">&#x00029;</mo><mrow><mn>2</mn></mrow></msup></mrow></msqrt></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><msqrt><mrow><mo stretchy=\"false\">&#x00028;</mo><mn>40</mn><msup><mo stretchy=\"false\">&#x00029;</mo><mrow><mn>2</mn></mrow></msup><mo>&#x0002B;</mo><mn>4</mn><msup><mi>&#x003C0;</mi><mrow><mn>2</mn></mrow></msup><mi>&#x000D7;</mi><mo stretchy=\"false\">&#x00028;</mo><mn>50</mn><msup><mo stretchy=\"false\">&#x00029;</mo><mrow><mn>2</mn></mrow></msup><mi>&#x000D7;</mi><msup><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><mn>95.5</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>3</mn></mrow></msup><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mrow><mn>2</mn></mrow></msup></mrow></msqrt><mo>&#x0003D;</mo><mn>50</mn><mrow><mi mathvariant=\"normal\">o</mi><mi mathvariant=\"normal\">h</mi><mi mathvariant=\"normal\">m</mi></mrow></mrow></mstyle></math></h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Physics",
+            "updatedAt": "2025-10-23T09:32:19.634Z"
+          }
+        },
+        {
+          "result": {
+            "reportId": "R008",
+            "questionId": "60f742f6660d187cc13a8078",
+            "verdict": "defect",
+            "repair": "stem_data",
+            "edit": {
+              "field": "question",
+              "find": "an inductance",
+              "replace": "an inductance of 95.5 mH"
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "The stem omits L. The solution explicitly substitutes L=95.5*10^-3 H. With this value, sqrt(40²+(2*pi*50*0.0955)²) ≈ 50 ohm, option C.",
+            "student_reply": "The inductance value is missing from the question. The solution uses 95.5 mH; adding it is proposed for faculty review."
+          },
+          "edits": [
+            {
+              "field": "question",
+              "find": "an inductance",
+              "replace": "an inductance of 95.5 mH"
+            }
+          ],
+          "route_reasons": [
+            "Verification required: solution_states_data"
+          ],
+          "candidate": {
+            "_id": "60f742f6660d187cc13a8078",
+            "chapter": "Alternating Current and EM Waves",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "EASY",
+            "qid": null,
+            "questionType": "scq",
+            "scq": {
+              "answer": "C",
+              "quesImages": [],
+              "question": "<h3><span style=\"color:#000000\">A resistance of 40 ohm and an inductance of 95.5 mH are connected in series in a 50 cycles/second ac circuit. The impedance of this combination is very nearly</h3><h3>(A)<span style=\"color:#000000\"> <span style=\"color:#000000\">30 ohm<br />(B)<span style=\"color:#000000\"> <span style=\"color:#000000\">40 ohm<br />(C)<span style=\"color:#000000\"> <span style=\"color:#000000\">50 ohm<br />(D)</span></span></span><span style=\"color:#000000\"> </span></span></span><span style=\"color:#000000\">60 ohm</span></span></span></h3>",
+              "solution": "<h3><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>Z</mi><mo>&#x0003D;</mo><msqrt><mrow><msup><mi>R</mi><mrow><mn>2</mn></mrow></msup><mo>&#x0002B;</mo><mo stretchy=\"false\">&#x00028;</mo><mn>2</mn><mi>&#x003C0;</mi><mi>v</mi><mi>L</mi><msup><mo stretchy=\"false\">&#x00029;</mo><mrow><mn>2</mn></mrow></msup></mrow></msqrt></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><msqrt><mrow><mo stretchy=\"false\">&#x00028;</mo><mn>40</mn><msup><mo stretchy=\"false\">&#x00029;</mo><mrow><mn>2</mn></mrow></msup><mo>&#x0002B;</mo><mn>4</mn><msup><mi>&#x003C0;</mi><mrow><mn>2</mn></mrow></msup><mi>&#x000D7;</mi><mo stretchy=\"false\">&#x00028;</mo><mn>50</mn><msup><mo stretchy=\"false\">&#x00029;</mo><mrow><mn>2</mn></mrow></msup><mi>&#x000D7;</mi><msup><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><mn>95.5</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>3</mn></mrow></msup><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mrow><mn>2</mn></mrow></msup></mrow></msqrt><mo>&#x0003D;</mo><mn>50</mn><mrow><mi mathvariant=\"normal\">o</mi><mi mathvariant=\"normal\">h</mi><mi mathvariant=\"normal\">m</mi></mrow></mrow></mstyle></math></h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Physics",
+            "updatedAt": "2025-10-23T09:32:19.634Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "60f744b3f1b9bc7cc7b4a949",
+      "source_version": "38efd55b6decf7f7a8e14a1467c70b2c038b53f96229d9891dda933fa69b734c",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "A",
+        "reasoning": "V = sqrt(V_R² + (V_L − V_C)²) = sqrt(40² + 30²) = 50 V, option A. The stored solution reaches 50 V, but the key is C (130 V).",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R001",
+            "questionId": "60f744b3f1b9bc7cc7b4a949",
+            "verdict": "defect",
+            "repair": "answer_key",
+            "edit": {
+              "field": "answer",
+              "find": "C",
+              "replace": "A"
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "V = sqrt(V_R² + (V_L − V_C)²) = sqrt(40² + 30²) = 50 V, option A. The stored solution reaches 50 V, but the key is C (130 V).",
+            "student_reply": "You're right about 50 V, option A. The answer key needs correction and is awaiting faculty approval."
+          },
+          "edits": [
+            {
+              "field": "answer",
+              "find": "C",
+              "replace": "A"
+            }
+          ],
+          "route_reasons": [
+            "Verification required: independent_solve"
+          ],
+          "candidate": {
+            "_id": "60f744b3f1b9bc7cc7b4a949",
+            "chapter": "Alternating Current and EM Waves",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "EASY",
+            "qid": null,
+            "questionType": "scq",
+            "scq": {
+              "answer": "A",
+              "quesImages": [],
+              "question": "<h3><span style=\"color:#000000\">In a LCR circuit the pd between the terminals of the inductance is 60 V, between the terminals of the capacitor is 30V and that between the terminals of resistance is 40V. the supply voltage will be equal to &hellip;&hellip;<span style=\"color:#000000\"></h3><h3>(A)<span style=\"color:#000000\"> <span style=\"color:#000000\">50 V<br />(B)<span style=\"color:#000000\"> <span style=\"color:#000000\">70 V<br />(C)<span style=\"color:#000000\"> </span><span style=\"color:#000000\">130 V<br />(D)</span></span></span><span style=\"color:#000000\"> </span></span></span><span style=\"color:#000000\">10 V</span></span></span></h3>",
+              "solution": "<h3><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>V</mi><mo>&#x0003D;</mo><msqrt><mrow><msubsup><mi>V</mi><mrow><mi>R</mi></mrow><mrow><mn>2</mn></mrow></msubsup><mo>&#x0002B;</mo><msup><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>V</mi><mrow><mi>L</mi></mrow></msub><mo>&#x02212;</mo><msub><mi>V</mi><mrow><mi>C</mi></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mrow><mn>2</mn></mrow></msup></mrow></msqrt></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><msqrt><mrow><mo stretchy=\"false\">&#x00028;</mo><mn>40</mn><msup><mo stretchy=\"false\">&#x00029;</mo><mrow><mn>2</mn></mrow></msup><mo>&#x0002B;</mo><mo stretchy=\"false\">&#x00028;</mo><mn>60</mn><mo>&#x02212;</mo><mn>30</mn><msup><mo stretchy=\"false\">&#x00029;</mo><mrow><mn>2</mn></mrow></msup></mrow></msqrt><mo>&#x0003D;</mo><mn>50</mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">V</mi></mrow></mrow></mstyle></math></h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Physics",
+            "updatedAt": "2025-10-23T09:32:22.361Z"
+          }
+        },
+        {
+          "result": {
+            "reportId": "R002",
+            "questionId": "60f744b3f1b9bc7cc7b4a949",
+            "verdict": "defect",
+            "repair": "answer_key",
+            "edit": {
+              "field": "answer",
+              "find": "C",
+              "replace": "A"
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "V = sqrt(V_R² + (V_L − V_C)²) = sqrt(40² + 30²) = 50 V, option A. The stored solution reaches 50 V, but the key is C (130 V).",
+            "student_reply": "You're right about 50 V, option A. The answer key needs correction and is awaiting faculty approval."
+          },
+          "edits": [
+            {
+              "field": "answer",
+              "find": "C",
+              "replace": "A"
+            }
+          ],
+          "route_reasons": [
+            "Verification required: independent_solve"
+          ],
+          "candidate": {
+            "_id": "60f744b3f1b9bc7cc7b4a949",
+            "chapter": "Alternating Current and EM Waves",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "EASY",
+            "qid": null,
+            "questionType": "scq",
+            "scq": {
+              "answer": "A",
+              "quesImages": [],
+              "question": "<h3><span style=\"color:#000000\">In a LCR circuit the pd between the terminals of the inductance is 60 V, between the terminals of the capacitor is 30V and that between the terminals of resistance is 40V. the supply voltage will be equal to &hellip;&hellip;<span style=\"color:#000000\"></h3><h3>(A)<span style=\"color:#000000\"> <span style=\"color:#000000\">50 V<br />(B)<span style=\"color:#000000\"> <span style=\"color:#000000\">70 V<br />(C)<span style=\"color:#000000\"> </span><span style=\"color:#000000\">130 V<br />(D)</span></span></span><span style=\"color:#000000\"> </span></span></span><span style=\"color:#000000\">10 V</span></span></span></h3>",
+              "solution": "<h3><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>V</mi><mo>&#x0003D;</mo><msqrt><mrow><msubsup><mi>V</mi><mrow><mi>R</mi></mrow><mrow><mn>2</mn></mrow></msubsup><mo>&#x0002B;</mo><msup><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>V</mi><mrow><mi>L</mi></mrow></msub><mo>&#x02212;</mo><msub><mi>V</mi><mrow><mi>C</mi></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mrow><mn>2</mn></mrow></msup></mrow></msqrt></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><msqrt><mrow><mo stretchy=\"false\">&#x00028;</mo><mn>40</mn><msup><mo stretchy=\"false\">&#x00029;</mo><mrow><mn>2</mn></mrow></msup><mo>&#x0002B;</mo><mo stretchy=\"false\">&#x00028;</mo><mn>60</mn><mo>&#x02212;</mo><mn>30</mn><msup><mo stretchy=\"false\">&#x00029;</mo><mrow><mn>2</mn></mrow></msup></mrow></msqrt><mo>&#x0003D;</mo><mn>50</mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">V</mi></mrow></mrow></mstyle></math></h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Physics",
+            "updatedAt": "2025-10-23T09:32:22.361Z"
+          }
+        },
+        {
+          "result": {
+            "reportId": "R003",
+            "questionId": "60f744b3f1b9bc7cc7b4a949",
+            "verdict": "defect",
+            "repair": "answer_key",
+            "edit": {
+              "field": "answer",
+              "find": "C",
+              "replace": "A"
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "V = sqrt(V_R² + (V_L − V_C)²) = sqrt(40² + 30²) = 50 V, option A. The stored solution reaches 50 V, but the key is C (130 V).",
+            "student_reply": "You're right about 50 V, option A. The answer key needs correction and is awaiting faculty approval."
+          },
+          "edits": [
+            {
+              "field": "answer",
+              "find": "C",
+              "replace": "A"
+            }
+          ],
+          "route_reasons": [
+            "Verification required: independent_solve"
+          ],
+          "candidate": {
+            "_id": "60f744b3f1b9bc7cc7b4a949",
+            "chapter": "Alternating Current and EM Waves",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "EASY",
+            "qid": null,
+            "questionType": "scq",
+            "scq": {
+              "answer": "A",
+              "quesImages": [],
+              "question": "<h3><span style=\"color:#000000\">In a LCR circuit the pd between the terminals of the inductance is 60 V, between the terminals of the capacitor is 30V and that between the terminals of resistance is 40V. the supply voltage will be equal to &hellip;&hellip;<span style=\"color:#000000\"></h3><h3>(A)<span style=\"color:#000000\"> <span style=\"color:#000000\">50 V<br />(B)<span style=\"color:#000000\"> <span style=\"color:#000000\">70 V<br />(C)<span style=\"color:#000000\"> </span><span style=\"color:#000000\">130 V<br />(D)</span></span></span><span style=\"color:#000000\"> </span></span></span><span style=\"color:#000000\">10 V</span></span></span></h3>",
+              "solution": "<h3><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>V</mi><mo>&#x0003D;</mo><msqrt><mrow><msubsup><mi>V</mi><mrow><mi>R</mi></mrow><mrow><mn>2</mn></mrow></msubsup><mo>&#x0002B;</mo><msup><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><msub><mi>V</mi><mrow><mi>L</mi></mrow></msub><mo>&#x02212;</mo><msub><mi>V</mi><mrow><mi>C</mi></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mrow><mn>2</mn></mrow></msup></mrow></msqrt></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><msqrt><mrow><mo stretchy=\"false\">&#x00028;</mo><mn>40</mn><msup><mo stretchy=\"false\">&#x00029;</mo><mrow><mn>2</mn></mrow></msup><mo>&#x0002B;</mo><mo stretchy=\"false\">&#x00028;</mo><mn>60</mn><mo>&#x02212;</mo><mn>30</mn><msup><mo stretchy=\"false\">&#x00029;</mo><mrow><mn>2</mn></mrow></msup></mrow></msqrt><mo>&#x0003D;</mo><mn>50</mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">V</mi></mrow></mrow></mstyle></math></h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Physics",
+            "updatedAt": "2025-10-23T09:32:22.361Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "612151a6a34397610a9a2e58",
+      "source_version": "3cc8bc0e9f310b0504aa277847793a4bf6e148743f37dba225e192bcaddd9f39",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "B",
+        "reasoning": "For lambda=0.3 nm, K=h²/(2*m*lambda²)≈16.7 eV, closest to B (16.8 eV). The stored solution mixes an unrelated 5.47 angstrom wavelength/impulse calculation with an energy result. Replace that unusable derivation while preserving question and key.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R018",
+            "questionId": "612151a6a34397610a9a2e58",
+            "verdict": "defect",
+            "repair": "solution_fix",
+            "edit": {
+              "field": "solution",
+              "find": "<h3><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>5.469</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>10</mn></mrow></msup><mi>m</mi><mo>&#x0003D;</mo><mn>5.47</mn><mi>\\AA</mi></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>&#x003BB;</mi><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mo stretchy=\"false\">&#x0007C;</mo><mi>p</mi><mo stretchy=\"false\">&#x0007C;</mo></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mo stretchy=\"false\">&#x0007C;</mo><mi>I</mi><mo stretchy=\"false\">&#x0007C;</mo></mrow></mfrac></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>2.65</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>18</mn></mrow></msup><mi>J</mi></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>16.8</mn><mi>e</mi><mi>V</mi></mrow></mstyle></math></h3>",
+              "replace": "<p>For an electron, K = h²/(2mλ²). With λ = 0.3 nm = 3 × 10⁻¹⁰ m, h = 6.626 × 10⁻³⁴ J s and m = 9.11 × 10⁻³¹ kg, K ≈ 2.68 × 10⁻¹⁸ J ≈ 16.7 eV. The closest option is B (16.8 eV).</p>"
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "For lambda=0.3 nm, K=h²/(2*m*lambda²)≈16.7 eV, closest to B (16.8 eV). The stored solution mixes an unrelated 5.47 angstrom wavelength/impulse calculation with an energy result. Replace that unusable derivation while preserving question and key.",
+            "student_reply": "The solution mixes in an unrelated wavelength calculation. A derivation for this question, leading to option B, is proposed for review."
+          },
+          "edits": [
+            {
+              "field": "solution",
+              "find": "<h3><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>5.469</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>10</mn></mrow></msup><mi>m</mi><mo>&#x0003D;</mo><mn>5.47</mn><mi>\\AA</mi></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>&#x003BB;</mi><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mo stretchy=\"false\">&#x0007C;</mo><mi>p</mi><mo stretchy=\"false\">&#x0007C;</mo></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mo stretchy=\"false\">&#x0007C;</mo><mi>I</mi><mo stretchy=\"false\">&#x0007C;</mo></mrow></mfrac></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>2.65</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>18</mn></mrow></msup><mi>J</mi></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>16.8</mn><mi>e</mi><mi>V</mi></mrow></mstyle></math></h3>",
+              "replace": "<p>For an electron, K = h²/(2mλ²). With λ = 0.3 nm = 3 × 10⁻¹⁰ m, h = 6.626 × 10⁻³⁴ J s and m = 9.11 × 10⁻³¹ kg, K ≈ 2.68 × 10⁻¹⁸ J ≈ 16.7 eV. The closest option is B (16.8 eV).</p>"
+            }
+          ],
+          "route_reasons": [
+            "Verification required: solution_verified"
+          ],
+          "candidate": {
+            "_id": "612151a6a34397610a9a2e58",
+            "chapter": "Photoelectric effect and matter waves",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "EASY",
+            "qid": "pbMm2pKu_",
+            "questionType": "scq",
+            "scq": {
+              "answer": "B",
+              "quesImages": [],
+              "question": "<h3><span style=\"color:#000000\">The kinetic energy of an electron with de-Broglie wavelength of 0.3 nanometer is <span style=\"color:#000000\"> </span></span><br />\n(A) 0.168 <span style=\"color:#000000\">eV<br />\n(B)&nbsp;<span style=\"color:#000000\">16.8 <span style=\"color:#000000\">eV<br />\n<span style=\"color:#000000\">(C) 1.68 <span style=\"color:#000000\">eV<br />\n(D)&nbsp;</span></span>2.5 </span></span>eV</span></h3>\n",
+              "solution": "<p>For an electron, K = h²/(2mλ²). With λ = 0.3 nm = 3 × 10⁻¹⁰ m, h = 6.626 × 10⁻³⁴ J s and m = 9.11 × 10⁻³¹ kg, K ≈ 2.68 × 10⁻¹⁸ J ≈ 16.7 eV. The closest option is B (16.8 eV).</p>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Physics",
+            "updatedAt": "2026-01-23T16:19:27.647Z"
+          }
+        },
+        {
+          "result": {
+            "reportId": "R019",
+            "questionId": "612151a6a34397610a9a2e58",
+            "verdict": "defect",
+            "repair": "solution_fix",
+            "edit": {
+              "field": "solution",
+              "find": "<h3><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>5.469</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>10</mn></mrow></msup><mi>m</mi><mo>&#x0003D;</mo><mn>5.47</mn><mi>\\AA</mi></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>&#x003BB;</mi><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mo stretchy=\"false\">&#x0007C;</mo><mi>p</mi><mo stretchy=\"false\">&#x0007C;</mo></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mo stretchy=\"false\">&#x0007C;</mo><mi>I</mi><mo stretchy=\"false\">&#x0007C;</mo></mrow></mfrac></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>2.65</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>18</mn></mrow></msup><mi>J</mi></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>16.8</mn><mi>e</mi><mi>V</mi></mrow></mstyle></math></h3>",
+              "replace": "<p>For an electron, K = h²/(2mλ²). With λ = 0.3 nm = 3 × 10⁻¹⁰ m, h = 6.626 × 10⁻³⁴ J s and m = 9.11 × 10⁻³¹ kg, K ≈ 2.68 × 10⁻¹⁸ J ≈ 16.7 eV. The closest option is B (16.8 eV).</p>"
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "For lambda=0.3 nm, K=h²/(2*m*lambda²)≈16.7 eV, closest to B (16.8 eV). The stored solution mixes an unrelated 5.47 angstrom wavelength/impulse calculation with an energy result. Replace that unusable derivation while preserving question and key.",
+            "student_reply": "The solution mixes in an unrelated wavelength calculation. A derivation for this question, leading to option B, is proposed for review."
+          },
+          "edits": [
+            {
+              "field": "solution",
+              "find": "<h3><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>5.469</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>10</mn></mrow></msup><mi>m</mi><mo>&#x0003D;</mo><mn>5.47</mn><mi>\\AA</mi></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>&#x003BB;</mi><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mo stretchy=\"false\">&#x0007C;</mo><mi>p</mi><mo stretchy=\"false\">&#x0007C;</mo></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mo stretchy=\"false\">&#x0007C;</mo><mi>I</mi><mo stretchy=\"false\">&#x0007C;</mo></mrow></mfrac></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>2.65</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>18</mn></mrow></msup><mi>J</mi></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>16.8</mn><mi>e</mi><mi>V</mi></mrow></mstyle></math></h3>",
+              "replace": "<p>For an electron, K = h²/(2mλ²). With λ = 0.3 nm = 3 × 10⁻¹⁰ m, h = 6.626 × 10⁻³⁴ J s and m = 9.11 × 10⁻³¹ kg, K ≈ 2.68 × 10⁻¹⁸ J ≈ 16.7 eV. The closest option is B (16.8 eV).</p>"
+            }
+          ],
+          "route_reasons": [
+            "Verification required: solution_verified"
+          ],
+          "candidate": {
+            "_id": "612151a6a34397610a9a2e58",
+            "chapter": "Photoelectric effect and matter waves",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "EASY",
+            "qid": "pbMm2pKu_",
+            "questionType": "scq",
+            "scq": {
+              "answer": "B",
+              "quesImages": [],
+              "question": "<h3><span style=\"color:#000000\">The kinetic energy of an electron with de-Broglie wavelength of 0.3 nanometer is <span style=\"color:#000000\"> </span></span><br />\n(A) 0.168 <span style=\"color:#000000\">eV<br />\n(B)&nbsp;<span style=\"color:#000000\">16.8 <span style=\"color:#000000\">eV<br />\n<span style=\"color:#000000\">(C) 1.68 <span style=\"color:#000000\">eV<br />\n(D)&nbsp;</span></span>2.5 </span></span>eV</span></h3>\n",
+              "solution": "<p>For an electron, K = h²/(2mλ²). With λ = 0.3 nm = 3 × 10⁻¹⁰ m, h = 6.626 × 10⁻³⁴ J s and m = 9.11 × 10⁻³¹ kg, K ≈ 2.68 × 10⁻¹⁸ J ≈ 16.7 eV. The closest option is B (16.8 eV).</p>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Physics",
+            "updatedAt": "2026-01-23T16:19:27.647Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "617fa18efd53ff1629ed890f",
+      "source_version": "1de79071792ff8fba66ee310123e9efa3a5a6a8c0a10c9144dbea202f87bea22",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "D",
+        "reasoning": "The literal '(NEET 2019)' exam-reference tag appears at the beginning of the stem. Removing it leaves the lamina question and all four options intact.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R013",
+            "questionId": "617fa18efd53ff1629ed890f",
+            "verdict": "defect",
+            "repair": "exam_reference",
+            "edit": {
+              "field": "question",
+              "find": "(NEET 2019)",
+              "replace": ""
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "The literal '(NEET 2019)' exam-reference tag appears at the beginning of the stem. Removing it leaves the lamina question and all four options intact.",
+            "student_reply": "That text is an exam reference included in the question. Its removal is proposed for faculty review."
+          },
+          "edits": [
+            {
+              "field": "question",
+              "find": "(NEET 2019)",
+              "replace": ""
+            }
+          ],
+          "route_reasons": [
+            "Verification required: exam_tag_only"
+          ],
+          "candidate": {
+            "_id": "617fa18efd53ff1629ed890f",
+            "chapter": "Morphology of Flowering Plants",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "EASY",
+            "qid": "nQM6UGBK-",
+            "questionType": "scq",
+            "scq": {
+              "answer": "D",
+              "quesImages": [],
+              "question": "<h3><span style=\"color:#000000\"> Which of the following is the green expanded part of<span style=\"color:#000000\">leaf with vein and veinlets?</h3><h3>(A) Petiole<br />(B) Node</span><br />(C) Stipule<br />(D) Lamina</span></span></span></h3>",
+              "solution": "<h3><span style=\"color:#000000\">Lamina on the leaf blade is usually flattened green photosynthetic part consisting leaf veins and veinlets. Its upper surface is called adaxial while the lower surface is called abaxial. The shape margin, apex, surface and extent of incision of lamina vary in different leaves.</span></h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Botany",
+            "updatedAt": "2025-11-06T07:50:17.57Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "61dffbec08489156b684bd22",
+      "source_version": "e9502cf36e36c0b1a41dcaec209c75ef4133a576fcc557d15de163c6117d87f5",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "A",
+        "reasoning": "Option A contains 'Epithellial tisue'. The stored solution identifies epithelial tissue, consistent with the small-intestine lining. The proposed spelling change leaves the key and all scientific values intact.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R012",
+            "questionId": "61dffbec08489156b684bd22",
+            "verdict": "defect",
+            "repair": "spelling",
+            "edit": {
+              "field": "question",
+              "find": "Epithellial tisue",
+              "replace": "Epithelial tissue"
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "Option A contains 'Epithellial tisue'. The stored solution identifies epithelial tissue, consistent with the small-intestine lining. The proposed spelling change leaves the key and all scientific values intact.",
+            "student_reply": "Thanks for spotting the spelling error. Changing it to 'Epithelial tissue' is proposed for review."
+          },
+          "edits": [
+            {
+              "field": "question",
+              "find": "Epithellial tisue",
+              "replace": "Epithelial tissue"
+            }
+          ],
+          "route_reasons": [
+            "Verification required: words_only"
+          ],
+          "candidate": {
+            "_id": "61dffbec08489156b684bd22",
+            "chapter": "Structural Organisation in Animals",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "EASY",
+            "qid": "mdgrnTePv",
+            "questionType": "scq",
+            "scq": {
+              "answer": "A",
+              "quesImages": [],
+              "question": "<h3><span style=\"color:#000000\">Which tissue is present in the lining of small intestine?</h3><h3>(A)<span style=\"color:#000000\"> <span style=\"color:#000000\">Epithelial tissue<br />(B)<span style=\"color:#000000\"> <span style=\"color:#000000\">Connective tissue<br />(C)<span style=\"color:#000000\"> <span style=\"color:#000000\">Nervous tissue<br />(D)</span></span></span><span style=\"color:#000000\"> </span></span></span><span style=\"color:#000000\">Muscular tissue</span></span></span></h3>",
+              "solution": "<h3><span style=\"color:#000000\">Epithelial tissue has free surfaces, which faces either a body fluid or the outside environment and thus, provides a covering or a lining for some part of body. It is found on a lining of small intestine and helps in secretion and absorption</span></h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Zoology",
+            "updatedAt": "2025-11-06T05:50:58.617Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "61ee6c9d90a1a968a168686b",
+      "source_version": "408b2fce568475ae0d04ef4daabcab6d6199829637851f723dd68a6f9e77c356",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "B",
+        "reasoning": "Option D says 'Choroid plexux'; the anatomical term is 'Choroid plexus'. This spelling-only replacement preserves option B (Peyer's patches) as the key.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R022",
+            "questionId": "61ee6c9d90a1a968a168686b",
+            "verdict": "defect",
+            "repair": "spelling",
+            "edit": {
+              "field": "question",
+              "find": "Choroid plexux",
+              "replace": "Choroid plexus"
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "Option D says 'Choroid plexux'; the anatomical term is 'Choroid plexus'. This spelling-only replacement preserves option B (Peyer's patches) as the key.",
+            "student_reply": "Thanks for spotting 'plexux'. Correcting it to 'plexus' is proposed for faculty review."
+          },
+          "edits": [
+            {
+              "field": "question",
+              "find": "Choroid plexux",
+              "replace": "Choroid plexus"
+            }
+          ],
+          "route_reasons": [
+            "Verification required: words_only"
+          ],
+          "candidate": {
+            "_id": "61ee6c9d90a1a968a168686b",
+            "chapter": "Digestion and Absorption",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "EASY",
+            "qid": "j0LtWXE985",
+            "questionType": "scq",
+            "scq": {
+              "answer": "B",
+              "quesImages": [],
+              "question": "<h3><span style=\"color:#000000\">Aggregates of lymphoid tissue present in the distal portion of the small intestine are known as</h3><h3>(A)<span style=\"color:#000000\"> <span style=\"color:#000000\">Villi<br />(B)<span style=\"color:#000000\"> <span style=\"color:#000000\">Peyer&rsquo;s patches<br />(C)<span style=\"color:#000000\"> <span style=\"color:#000000\">Rugae<br />(D)</span></span></span><span style=\"color:#000000\"> </span></span></span><span style=\"color:#000000\">Choroid plexus</span></span></span></h3>",
+              "solution": "<h3><span style=\"color:#000000\">In the wall of small intestine, lymphatic tissues are present called Peyer&rsquo;s patches. These are groups of lymph nodules that are most numerous in the ileum. They produce lymphocytes.<br />\r\n<span style=\"color:#000000\">Rugae are prominant folds found in empty stomach. Maceus membrane of small intestine is grown into many finger-like projections known as villi.</span></span>​​​​​​​</h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Zoology",
+            "updatedAt": "2025-11-06T06:07:22.617Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "6208e298fa399567e0878700",
+      "source_version": "bdc2eac86fc552034cd0235114d70990ae338e508eb860870964285f5e96bf6c",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "A",
+        "reasoning": "The comment 'asdfgh' identifies no issue. The record attributes evidence of glucose production and starch storage in plants to Julius von Sachs, matching key A. Checks found no actionable defect.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R041",
+            "questionId": "6208e298fa399567e0878700",
+            "verdict": "not_actionable",
+            "repair": null,
+            "edit": null,
+            "route": "no_change",
+            "confidence": 0.92,
+            "evidence": "The comment 'asdfgh' identifies no issue. The record attributes evidence of glucose production and starch storage in plants to Julius von Sachs, matching key A. Checks found no actionable defect.",
+            "student_reply": "I couldn't identify an issue from this message. Please tell us which part of the question or answer seems incorrect."
+          },
+          "edits": [],
+          "route_reasons": [],
+          "candidate": {
+            "_id": "6208e298fa399567e0878700",
+            "chapter": "Photosynthesis in Higher Plants",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "EASY",
+            "qid": "zSEnT8qqj",
+            "questionType": "scq",
+            "scq": {
+              "answer": "A",
+              "quesImages": [],
+              "question": "<h3><span style=\"color:#000000\">Who provided the evidence for the production of glucose when plant grows?</h3><h3>(A)<span style=\"color:#000000\"> <span style=\"color:#000000\">Julius von Sachs<br />(B)<span style=\"color:#000000\"> <span style=\"color:#000000\">Stephen Hales<br />(C)<span style=\"color:#000000\"> <span style=\"color:#000000\">Lavoisier<br />(D)</span></span></span><span style=\"color:#000000\"> </span></span></span><span style=\"color:#000000\">Von Helmont</span></span></span></h3>",
+              "solution": "<h3><span style=\"color:#000000\">Julius von Sachs provided evidence for the production of glucose when plants grow. Glucose is usually stored as starch. His later studies showed that the green substance in plants (chlorophyll as we know it now) is located in special bodies (later called chloroplast) within plant cells.<br />\r\n<span style=\"color:#000000\">He found that the green parts in plants are where glucose is made, and that the glucose is usually stored as starch</span></span></h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Botany",
+            "updatedAt": "2025-11-06T08:43:08.711Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "6208e80a9cb2ab67dac61bd0",
+      "source_version": "9663e0b1afdd5ab1f259a3e44da6796a99bb6e7f3d965182e5a1e4f4158b0358",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "C",
+        "reasoning": "Current options contain 'more', not 'mere', and 'shrubs', not 'shurbs'. errorHistory records a faculty spelling correction at 2026-11-07T10:42:00Z; updatedAt matches. No repeat edit is needed.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R017",
+            "questionId": "6208e80a9cb2ab67dac61bd0",
+            "verdict": "already_fixed",
+            "repair": null,
+            "edit": null,
+            "route": "no_change",
+            "confidence": 0.96,
+            "evidence": "Current options contain 'more', not 'mere', and 'shrubs', not 'shurbs'. errorHistory records a faculty spelling correction at 2026-11-07T10:42:00Z; updatedAt matches. No repeat edit is needed.",
+            "student_reply": "The reported spelling has already been corrected in the current record. Please refresh the question if you're still seeing the older wording."
+          },
+          "edits": [],
+          "route_reasons": [],
+          "candidate": {
+            "_id": "6208e80a9cb2ab67dac61bd0",
+            "chapter": "Photosynthesis in Higher Plants",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [
+              {
+                "actor": "faculty",
+                "at": "2026-11-07T10:42:00Z",
+                "note": "'mere' -> 'more' in options A-C; 'shurbs' -> 'shrubs'",
+                "type": "Spelling mistake"
+              }
+            ],
+            "level": "HARD",
+            "qid": "hYQRqKx1w",
+            "questionType": "scq",
+            "scq": {
+              "answer": "C",
+              "quesImages": [],
+              "question": "<h3><span style=\"color:#000000\">Rate of photosynthesis is low in herbs, shrubs as compared to sun plants because</h3><h3>(A)<span style=\"color:#000000\"> <span style=\"color:#000000\">Herb, shrubs receive more red light<br />(B)<span style=\"color:#000000\"> <span style=\"color:#000000\">Herb, shrubs receive more blue light<br />(C)<span style=\"color:#000000\"> </span><span style=\"color:#000000\">Herb, shrubs receive more green light</span></span></span><br />(D)</span></span></span><span style=\"color:#000000\"> </span></span></span><span style=\"color:#000000\">Herb, shrubs receive more white light</span></span></span></h3>",
+              "solution": "<h3><span style=\"color:#000000\">Minimum photosynthesis occur in the green wavelength. Plants grow under the canopy like herbs and shrubs receive very little red and blue-violet light because of its absorption by leaves of the canopy. They receive more of green light that is transmitted through leaves. As a result, the photosynthesis in herbs and shrubs is comparatively low</span></h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Botany",
+            "updatedAt": "2026-11-07T10:42:00Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "620e23cecc50543bc7db9186",
+      "source_version": "3efc70abc6b7cf7f69fb38c136db1f603137f3a1e198df2f5d5ab079645fe439",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "B",
+        "reasoning": "An outgroup comparison (a more distantly related snake) supports option B for ancestral-state inference. Whether this belongs in the currently applicable NEET syllabus is not established by the record and requires faculty confirmation. The question should remain live meanwhile.",
+        "limitations": "No authoritative syllabus version is supplied."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R026",
+            "questionId": "620e23cecc50543bc7db9186",
+            "verdict": "defect",
+            "repair": "syllabus",
+            "edit": null,
+            "route": "faculty_review",
+            "confidence": 0.86,
+            "evidence": "An outgroup comparison (a more distantly related snake) supports option B for ancestral-state inference. Whether this belongs in the currently applicable NEET syllabus is not established by the record and requires faculty confirmation. The question should remain live meanwhile.",
+            "student_reply": "The answer uses an outgroup comparison, option B. Your syllabus concern needs faculty confirmation; the question will remain available while they review it."
+          },
+          "edits": [],
+          "route_reasons": [
+            "Taxonomy requires faculty approval"
+          ],
+          "candidate": {
+            "_id": "620e23cecc50543bc7db9186",
+            "chapter": "Evolution",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "HARD",
+            "qid": "ooPnTRb-EH",
+            "questionType": "scq",
+            "scq": {
+              "answer": "B",
+              "quesImages": [],
+              "question": "<h3><span style=\"color:#000000\">A biologist is trying to infer how five closely related species of snakes are related to one another. She noticed that some of the snakes have forked tongues and others do not. Which of the following would help her to distinguish their ancestral state?</h3><h3>(A)<span style=\"color:#000000\"> <span style=\"color:#000000\">She looks among snake fossils for evidences that being forked is a characteristic of the ancestor of this group, but determines no such fossils exists<br />(B)<span style=\"color:#000000\"> <span style=\"color:#000000\">She locates a specimen of a more distantly related snake to see if it has a forked tongue<br />(C)<span style=\"color:#000000\"> </span><span style=\"color:#000000\">She looks at a representative mammal species to see if it has a forked tongue</span></span></span><br />(D)</span></span></span><span style=\"color:#000000\"> </span></span></span><span style=\"color:#000000\">She flips a coin</span></span></span></h3>",
+              "solution": "<h3><span style=\"color:#000000\">Forked tongue snakes may represents the origin of new variety of snake from the non-forked tongue snakes. If biologist is trying to find that how closely these two species are related to each other than, he/she has to locate a specimen of more distantly related snake to see it, wheater, it has a forked tongue or not</span></h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Zoology",
+            "updatedAt": "2025-11-06T06:38:25.497Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "622df25ab70e4b50e44ff837",
+      "source_version": "cda87f2eb5de371d073f5b8a4698a1dfc714fd515782c2b59399f3576465fa38",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": null,
+        "reasoning": "The stem depends on a figure showing two soap bubbles, but quesImages is empty and no image occurs in the stored question HTML. Geometry cannot be reliably supplied from the text alone.",
+        "limitations": "The referenced figure is absent."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R025",
+            "questionId": "622df25ab70e4b50e44ff837",
+            "verdict": "defect",
+            "repair": "diagram",
+            "edit": null,
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "The stem depends on a figure showing two soap bubbles, but quesImages is empty and no image occurs in the stored question HTML. Geometry cannot be reliably supplied from the text alone.",
+            "student_reply": "The figure is missing from the supplied record. Faculty need to restore the intended diagram before this can be safely fixed."
+          },
+          "edits": [],
+          "route_reasons": [
+            "Taxonomy requires faculty approval"
+          ],
+          "candidate": {
+            "_id": "622df25ab70e4b50e44ff837",
+            "chapter": "Properties of matter and fluid mechanics",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "EASY",
+            "qid": "F-eZtasNL",
+            "questionType": "scq",
+            "scq": {
+              "answer": "B",
+              "quesImages": [],
+              "question": "<h3>A glass tube of uniform internal radius (r) has a valve separating the two identical ends. Initially, the valve is in a tightly closed position. End 1 has a hemispherial soap bubble of radius <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>r</mi></mrow></mstyle></math>. End 2 has sub-hemispherical soap bubble as shown in figure.<br/><br/>Just after opening the valve.<br/>(A) air from end 1 flows towards end 2 . No change in the volume of the soap bubbles<br/>(B) air from end 1 flows towards end 2. Volume of the soap bubble at end 1 decreases<br/>(C) no change occurs<br/>(D) air from end 2 flows towards end 1 . Volume of the soap bubble at end 1 increases</h3>",
+              "solution": "<h3>Pressure inside tube <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mi>P</mi><mo>&#x0003D;</mo><msub><mi>P</mi><mrow><mn>0</mn></mrow></msub><mo>&#x0002B;</mo><mfrac><mrow><mn>4</mn><mi>T</mi></mrow><mrow><mi>r</mi></mrow></mfrac></mrow></mstyle></math><br/><math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\" ><mstyle displaystyle=\"true\"><mrow><mo>&#x02234;</mo><msub><mi>P</mi><mrow><mn>2</mn></mrow></msub><mo>&#x0003C;</mo><msub><mi>P</mi><mrow><mn>1</mn></mrow></msub><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><mtext>&#x000A0;since&#x000A0;</mtext><msub><mi>r</mi><mrow><mn>2</mn></mrow></msub><mo>&#x0003E;</mo><msub><mi>r</mi><mrow><mn>1</mn></mrow></msub><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow></mrow></mstyle></math><br/><br/>Hence pressure on side 1 will be greater than side 2 .<br/>So air from end 1 flows towards end 2</h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Physics",
+            "updatedAt": "2025-10-23T10:37:05.806Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "622f08d7b70e4b50e4500a1b",
+      "source_version": "4ed3ec55776bc13de45617fd5c0f9241e3215cea75120adfe8c51a6670688dbd",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "C",
+        "reasoning": "The stored HTML contains options A, B and C only. Centre-of-mass speed is (10*14+4*0)/(10+4)=10 m/s, so keyed C is supported. No source establishes the missing distractor D; authoring one needs faculty.",
+        "limitations": "Missing distractor cannot be reconstructed from the solution."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R009",
+            "questionId": "622f08d7b70e4b50e4500a1b",
+            "verdict": "defect",
+            "repair": "option_repair",
+            "edit": null,
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "The stored HTML contains options A, B and C only. Centre-of-mass speed is (10*14+4*0)/(10+4)=10 m/s, so keyed C is supported. No source establishes the missing distractor D; authoring one needs faculty.",
+            "student_reply": "Option D is absent from the stored question. Option C gives the calculated 10 m/s, and faculty need to restore the missing option."
+          },
+          "edits": [],
+          "route_reasons": [
+            "No safe edit established; faculty investigation required"
+          ],
+          "candidate": {
+            "_id": "622f08d7b70e4b50e4500a1b",
+            "chapter": "Centre of mass and momentum conservation (collision)",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "MEDIUM",
+            "qid": "jxJrYy6ka",
+            "questionType": "scq",
+            "scq": {
+              "answer": "C",
+              "quesImages": [],
+              "question": "<h3>Two blocks of masses 10 kg and 4 kg are connected by a spring of negligible mass and placed on a frictionless horizontal surface. An impulse gives a velocity of <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>14</mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">m</mi></mrow><mo>&#x0002F;</mo><mi>&#x00073;</mi></mrow></mstyle></math> to the heavier block in the direction of the lighter block. The velocity of the centre of mass is<br/>(A) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>30</mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">m</mi></mrow><mo>&#x0002F;</mo><mi>&#x00073;</mi></mrow></mstyle></math><br/>(B) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>20</mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">m</mi></mrow><mo>&#x0002F;</mo><mi>&#x00073;</mi></mrow></mstyle></math><br/>(C) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>10</mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">m</mi></mrow><mo>&#x0002F;</mo><mi>&#x00073;</mi></mrow></mstyle></math></h3>",
+              "solution": "<h3><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mrow><msub><mi>v</mi><mrow><mrow><mi mathvariant=\"normal\">C</mi><mi mathvariant=\"normal\">M</mi></mrow></mrow></msub><mi>&</mi><mo>&#x0003D;</mo><mfrac><mrow><msub><mi>m</mi><mrow><mn>1</mn></mrow></msub><msub><mi>v</mi><mrow><mn>1</mn></mrow></msub><mo>&#x0002B;</mo><msub><mi>m</mi><mrow><mn>2</mn></mrow></msub><msub><mi>v</mi><mrow><mn>2</mn></mrow></msub></mrow><mrow><msub><mi>m</mi><mrow><mn>1</mn></mrow></msub><mo>&#x0002B;</mo><msub><mi>m</mi><mrow><mn>2</mn></mrow></msub></mrow></mfrac><mspace linebreak=\"newline\" /><mi>&</mi><mo>&#x0003D;</mo><mfrac><mrow><mn>10</mn><mi>&#x000D7;</mi><mn>14</mn><mo>&#x0002B;</mo><mn>4</mn><mi>&#x000D7;</mi><mn>0</mn></mrow><mrow><mn>10</mn><mo>&#x0002B;</mo><mn>4</mn></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mrow><mn>140</mn></mrow><mrow><mn>14</mn></mrow></mfrac><mo>&#x0003D;</mo><mn>10</mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">m</mi></mrow><mo>&#x0002F;</mo><mi>&#x00073;</mi></mrow></mrow></mstyle></math></h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Physics",
+            "updatedAt": "2025-10-23T07:58:06.677Z"
+          }
+        },
+        {
+          "result": {
+            "reportId": "R010",
+            "questionId": "622f08d7b70e4b50e4500a1b",
+            "verdict": "defect",
+            "repair": "option_repair",
+            "edit": null,
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "The stored HTML contains options A, B and C only. Centre-of-mass speed is (10*14+4*0)/(10+4)=10 m/s, so keyed C is supported. No source establishes the missing distractor D; authoring one needs faculty.",
+            "student_reply": "Option D is absent from the stored question. Option C gives the calculated 10 m/s, and faculty need to restore the missing option."
+          },
+          "edits": [],
+          "route_reasons": [
+            "No safe edit established; faculty investigation required"
+          ],
+          "candidate": {
+            "_id": "622f08d7b70e4b50e4500a1b",
+            "chapter": "Centre of mass and momentum conservation (collision)",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "MEDIUM",
+            "qid": "jxJrYy6ka",
+            "questionType": "scq",
+            "scq": {
+              "answer": "C",
+              "quesImages": [],
+              "question": "<h3>Two blocks of masses 10 kg and 4 kg are connected by a spring of negligible mass and placed on a frictionless horizontal surface. An impulse gives a velocity of <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>14</mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">m</mi></mrow><mo>&#x0002F;</mo><mi>&#x00073;</mi></mrow></mstyle></math> to the heavier block in the direction of the lighter block. The velocity of the centre of mass is<br/>(A) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>30</mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">m</mi></mrow><mo>&#x0002F;</mo><mi>&#x00073;</mi></mrow></mstyle></math><br/>(B) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>20</mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">m</mi></mrow><mo>&#x0002F;</mo><mi>&#x00073;</mi></mrow></mstyle></math><br/>(C) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>10</mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">m</mi></mrow><mo>&#x0002F;</mo><mi>&#x00073;</mi></mrow></mstyle></math></h3>",
+              "solution": "<h3><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mrow><msub><mi>v</mi><mrow><mrow><mi mathvariant=\"normal\">C</mi><mi mathvariant=\"normal\">M</mi></mrow></mrow></msub><mi>&</mi><mo>&#x0003D;</mo><mfrac><mrow><msub><mi>m</mi><mrow><mn>1</mn></mrow></msub><msub><mi>v</mi><mrow><mn>1</mn></mrow></msub><mo>&#x0002B;</mo><msub><mi>m</mi><mrow><mn>2</mn></mrow></msub><msub><mi>v</mi><mrow><mn>2</mn></mrow></msub></mrow><mrow><msub><mi>m</mi><mrow><mn>1</mn></mrow></msub><mo>&#x0002B;</mo><msub><mi>m</mi><mrow><mn>2</mn></mrow></msub></mrow></mfrac><mspace linebreak=\"newline\" /><mi>&</mi><mo>&#x0003D;</mo><mfrac><mrow><mn>10</mn><mi>&#x000D7;</mi><mn>14</mn><mo>&#x0002B;</mo><mn>4</mn><mi>&#x000D7;</mi><mn>0</mn></mrow><mrow><mn>10</mn><mo>&#x0002B;</mo><mn>4</mn></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mrow><mn>140</mn></mrow><mrow><mn>14</mn></mrow></mfrac><mo>&#x0003D;</mo><mn>10</mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">m</mi></mrow><mo>&#x0002F;</mo><mi>&#x00073;</mi></mrow></mrow></mstyle></math></h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Physics",
+            "updatedAt": "2025-10-23T07:58:06.677Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "6263d75bdd44e265ef926d97",
+      "source_version": "379d620b2f0aad96def18318004db0d6fc0b4c77e8b7769c3abd52e8d334b5f9",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "20",
+        "reasoning": "Removing 800 g reduces displaced water by 800 cm³. The rise is 2 cm, so 2*a²=800 and a=20 cm. The key 20 is supported; only the solution's final 'a = 40 cm' is wrong.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R016",
+            "questionId": "6263d75bdd44e265ef926d97",
+            "verdict": "defect",
+            "repair": "solution_fix",
+            "edit": {
+              "field": "solution",
+              "find": "a = 40 cm",
+              "replace": "a = 20 cm"
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "Removing 800 g reduces displaced water by 800 cm³. The rise is 2 cm, so 2*a²=800 and a=20 cm. The key 20 is supported; only the solution's final 'a = 40 cm' is wrong.",
+            "student_reply": "The side is 20 cm. The answer key is correct, and correcting the final line of the solution is awaiting faculty approval."
+          },
+          "edits": [
+            {
+              "field": "solution",
+              "find": "a = 40 cm",
+              "replace": "a = 20 cm"
+            }
+          ],
+          "route_reasons": [
+            "Verification required: solution_verified"
+          ],
+          "candidate": {
+            "_id": "6263d75bdd44e265ef926d97",
+            "chapter": "Properties of matter and fluid mechanics",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "integerQuestion": {
+              "answer": "20",
+              "quesImages": [],
+              "question": "<h3><span style=\"color:#000000\">A wooden cube just floats inside water when a 800 g mass is placed on it. When the mass is removed, the cube is 2 cm above the water level. What is the size of the side of the cube (in cm) ?</span></h3>",
+              "solution": "<h3><span style=\"color:#000000\">Let a be the size of each side of the cube. Then,<br />\r\n\r\n <span style=\"color:#000000\">800 &times; g = (2) &times; (a<span style=\"color:#000000\"><sup>2</sup><span style=\"color:#000000\">) &times; 1 &times; g</span></span><br />\r\n\r\n <span style=\"color:#000000\">a = 20 cm</span></span></span></h3>",
+              "solutionImages": []
+            },
+            "level": "EASY",
+            "qid": "I7Nnjj-FJ6",
+            "questionType": "integerQuestion",
+            "subConcept": null,
+            "subject": "Physics",
+            "updatedAt": "2025-10-23T10:53:54.666Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "6264197209f4fd65f58f5707",
+      "source_version": "c64ae755984260eeeeb3274f7e360a0426c49adde6cfc41c735b380042650c94",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "C",
+        "reasoning": "Golden rice is engineered to accumulate beta-carotene, a vitamin A precursor, supporting C. The report 'wrong' is vague but intelligible; checking the options and solution gives no basis for a key change.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R040",
+            "questionId": "6264197209f4fd65f58f5707",
+            "verdict": "no_error",
+            "repair": null,
+            "edit": null,
+            "route": "no_change",
+            "confidence": 0.96,
+            "evidence": "Golden rice is engineered to accumulate beta-carotene, a vitamin A precursor, supporting C. The report 'wrong' is vague but intelligible; checking the options and solution gives no basis for a key change.",
+            "student_reply": "Golden rice contains beta-carotene, which the body can use to make vitamin A. That is why option C fits this question."
+          },
+          "edits": [],
+          "route_reasons": [],
+          "candidate": {
+            "_id": "6264197209f4fd65f58f5707",
+            "chapter": "Biotechnology and its Applications",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "EASY",
+            "qid": "uiKqpBTMj",
+            "questionType": "scq",
+            "scq": {
+              "answer": "C",
+              "quesImages": [],
+              "question": "<h3><span style=\"color:#000000\">Consumption of which one of the following foods can prevent the kind of blindness associated with vitamin &#39;A&#39; deficiency?</h3><h3>(A) &#39;Flavr Savr&#39; tomato<br />(B) Canolla<br />(C) Golden rice<br />(D) Bt-Brinjal</span></span></span></h3>",
+              "solution": "<h3><span style=\"color:#000000\">Golden riceis genetically engineered to producebeta-carotene, a precursor ofvitamin A, in the edible parts of the rice. It was specifically developed to helpprevent vitamin A deficiency, which can lead tonight blindness and complete blindness, especially in children in developing countries.</span>\n <span style=\"color:#000000\">Flavr Savr tomato: Engineered for longer shelf life.</span><br />\n\n <span style=\"color:#000000\">Canola: Known for oil production; not related to vitamin A.</span><br />\n\n <span style=\"color:#000000\">Bt-Brinjal: Engineered for insect resistance (Bt toxin), not vitamin A enrichment.</span></h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Zoology",
+            "updatedAt": "2025-11-06T06:56:04.161Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "636283dbe3770c24f866e6d6",
+      "source_version": "ab8c1ca22ea43cc5702c755dff31af0f81d20dab873794e8adc0022dc65b9a0e",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "B",
+        "reasoning": "Volume conservation gives R=64^(1/3)*r=4r, while Q=64q. Surface-density ratio is (Q/q)*(r/R)²=64/16=4, so bigger:smaller=4:1, keyed B. Area alone ignores the increased charge.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R043",
+            "questionId": "636283dbe3770c24f866e6d6",
+            "verdict": "no_error",
+            "repair": null,
+            "edit": null,
+            "route": "no_change",
+            "confidence": 0.96,
+            "evidence": "Volume conservation gives R=64^(1/3)*r=4r, while Q=64q. Surface-density ratio is (Q/q)*(r/R)²=64/16=4, so bigger:smaller=4:1, keyed B. Area alone ignores the increased charge.",
+            "student_reply": "The larger drop also has 64 times the charge. Its area is 16 times larger, so the surface-charge-density ratio is 4 : 1, option B."
+          },
+          "edits": [],
+          "route_reasons": [],
+          "candidate": {
+            "_id": "636283dbe3770c24f866e6d6",
+            "chapter": "Electrostatics",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "EASY",
+            "qid": "ci64iWyXK",
+            "questionType": "scq",
+            "scq": {
+              "answer": "B",
+              "quesImages": [],
+              "question": "<h3>Sixty four conducting drops each of radius 0.02 m and each carrying a charge of <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>5</mn><mi>&#x003BC;</mi><mi>&#x00043;</mi></mrow></mstyle></math> are combined to form a bigger drop. The ratio of surface density of bigger drop to the smaller drop will be :<br/>(A) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>1</mn><mi>:</mi><mn>4</mn></mrow></mstyle></math><br/>(B) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>4</mn><mi>:</mi><mn>1</mn></mrow></mstyle></math><br/>(C) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>1</mn><mi>:</mi><mn>8</mn></mrow></mstyle></math><br/>(D) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>8</mn><mi>:</mi><mn>1</mn></mrow></mstyle></math></h3>",
+              "solution": "<h3>Let <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>&#x00052;</mi><mo>&#x0003D;</mo></mrow></mstyle></math> radius of combined drop<br/><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>r</mi><mo>&#x0003D;</mo></mrow></mstyle></math> radius of smaller drop<br/>Volume will remain same<br/><math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\" ><mstyle displaystyle=\"true\"><mrow><mtable><mtr><mtd columnalign=\"left\"><mspace width=\"1em\" /><mfrac><mrow><mn>4</mn></mrow><mrow><mn>3</mn></mrow></mfrac><mi>&#x003C0;</mi><msup><mi>R</mi><mrow><mn>3</mn></mrow></msup><mo>&#x0003D;</mo><mn>64</mn><mi>&#x000D7;</mi><mfrac><mrow><mn>4</mn></mrow><mrow><mn>3</mn></mrow></mfrac><mi>&#x003C0;</mi><msup><mi>r</mi><mrow><mn>3</mn></mrow></msup></mtd></mtr><mtr><mtd columnalign=\"left\"><mi>R</mi><mo>&#x0003D;</mo><mn>4</mn><mi>r</mi></mtd></mtr><mtr><mtd columnalign=\"left\"><mi>Q</mi><mo>&#x0003D;</mo><mn>64</mn><mi>q</mi><mi>;</mi></mtd></mtr></mtable></mrow></mstyle></math><br/>q : charge of smaller drop<br/>Q : Charge of combined drop<br/><math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\" ><mstyle displaystyle=\"true\"><mrow><mtable><mtr><mtd columnalign=\"left\"><mfrac><mrow><msub><mi>&#x003C3;</mi><mrow><mtext>bigger&#x000A0;</mtext></mrow></msub></mrow><mrow><msub><mi>&#x003C3;</mi><mrow><mtext>smaller&#x000A0;</mtext></mrow></msub></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mrow><mfrac><mrow><mi>Q</mi></mrow><mrow><mn>4</mn><mi>&#x003C0;</mi><msup><mi>R</mi><mrow><mn>2</mn></mrow></msup></mrow></mfrac></mrow><mrow><mfrac><mrow><mi>q</mi></mrow><mrow><mn>4</mn><mi>&#x003C0;</mi><msup><mi>r</mi><mrow><mn>2</mn></mrow></msup></mrow></mfrac></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mrow><mi>Q</mi></mrow><mrow><mi>q</mi></mrow></mfrac><mi>&#x000B7;</mi><mfrac><mrow><msup><mi>r</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><msup><mi>R</mi><mrow><mn>2</mn></mrow></msup></mrow></mfrac></mtd></mtr><mtr><mtd columnalign=\"left\"><mo>&#x0003D;</mo><mn>64</mn><mfrac><mrow><msup><mi>r</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>16</mn><msup><mi>r</mi><mrow><mn>2</mn></mrow></msup></mrow></mfrac><mo>&#x0003D;</mo><mn>4</mn></mtd></mtr><mtr><mtd columnalign=\"left\"><mfrac><mrow><msub><mi>&#x003C3;</mi><mrow><mtext>bigger&#x000A0;</mtext></mrow></msub></mrow><mrow><msub><mi>&#x003C3;</mi><mrow><mtext>smaller&#x000A0;</mtext></mrow></msub></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mrow><mn>4</mn></mrow><mrow><mn>1</mn></mrow></mfrac></mtd></mtr></mtable></mrow></mstyle></math></h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Physics",
+            "updatedAt": "2025-10-23T10:04:12.051Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "63765a28f1d8416ae0408d89",
+      "source_version": "16564d402bcaf3f70ba1c290f8e6acdace21955c5aa34614096ec0f017fcd2b7",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "C",
+        "reasoning": "The question HTML contains literal LaTeX \\frac{7}{8}, which the HTML renderer will display as text. Replacing just that token with MathML preserves 7/8; 1/8 remains after three half-lives, or 180 days, option C.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R014",
+            "questionId": "63765a28f1d8416ae0408d89",
+            "verdict": "defect",
+            "repair": "markup_leak",
+            "edit": {
+              "field": "question",
+              "find": "\\frac{7}{8}",
+              "replace": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>7</mn><mn>8</mn></mfrac></math>"
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "The question HTML contains literal LaTeX \\frac{7}{8}, which the HTML renderer will display as text. Replacing just that token with MathML preserves 7/8; 1/8 remains after three half-lives, or 180 days, option C.",
+            "student_reply": "You've found a formatting leak. Rendering the fraction properly is proposed; the answer remains 180 days, option C."
+          },
+          "edits": [
+            {
+              "field": "question",
+              "find": "\\frac{7}{8}",
+              "replace": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>7</mn><mn>8</mn></mfrac></math>"
+            }
+          ],
+          "route_reasons": [
+            "Verification required: equivalent_rendering"
+          ],
+          "candidate": {
+            "_id": "63765a28f1d8416ae0408d89",
+            "chapter": "Nuclear physics and radioactivity",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "EASY",
+            "qid": "U91mXru5mg",
+            "questionType": "scq",
+            "scq": {
+              "answer": "C",
+              "quesImages": [],
+              "question": "<h3>The half life period of a radioactive substance is 60 days. The time taken for <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>7</mn><mn>8</mn></mfrac></math> th of its original mass to disintegrate will be :<br/>(A) 120 days<br/>(B) 130 days<br/>(C) 180 days<br/>(D) 20 days</h3>",
+              "solution": "<h3>7/8 disintegrates means 1/8 remains<br/><br/>Or <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><msup><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow><mrow><mn>3</mn></mrow></msup></mrow></mstyle></math><br/><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x02234;</mo><mn>3</mn></mrow></mstyle></math> half lives<br/><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>180</mn></mrow></mstyle></math> days</h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Physics",
+            "updatedAt": "2025-11-05T05:48:05.215Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "63c7cce12981ed154ee92c94",
+      "source_version": "fdf4586f4404e6f472e8cb7d978c6485e9f2ab46fd378c7be038dda72655c8f1",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "C",
+        "reasoning": "C=k*epsilon0*A/d=8.85e-8 F and Id=C*dV/dt=2.2125 microampere, supporting keyed C. The stored chapter is Geometrical optics and optical instruments, while displacement current is an electromagnetism topic. Faculty must confirm the metadata change.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R042",
+            "questionId": "63c7cce12981ed154ee92c94",
+            "verdict": "defect",
+            "repair": "wrong_chapter",
+            "edit": null,
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "C=k*epsilon0*A/d=8.85e-8 F and Id=C*dV/dt=2.2125 microampere, supporting keyed C. The stored chapter is Geometrical optics and optical instruments, while displacement current is an electromagnetism topic. Faculty must confirm the metadata change.",
+            "student_reply": "You're right that displacement current belongs with electromagnetism. The chapter correction needs faculty approval; the answer remains about 2.2 μA, option C."
+          },
+          "edits": [],
+          "route_reasons": [
+            "Taxonomy requires faculty approval"
+          ],
+          "candidate": {
+            "_id": "63c7cce12981ed154ee92c94",
+            "chapter": "Geometrical optics and optical instruments",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "MEDIUM",
+            "qid": "tTH86ZABzY",
+            "questionType": "scq",
+            "scq": {
+              "answer": "C",
+              "quesImages": [],
+              "question": "<h3>A large parallel plate capacitor, whose plates have an area of <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>1</mn><msup><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">m</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></mstyle></math> and are separated from each other by 1 mm , is being charged at a rate of <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>25</mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">V</mi></mrow><mo>&#x0002F;</mo><mi>&#x00073;</mi></mrow></mstyle></math>. If the dielectric between the plates has the dielectric constant 10 , then the displacement current at this instant is<br/>(A) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>1.1</mn><mi>&#x003BC;</mi><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">A</mi></mrow></mrow></mstyle></math><br/>(B) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>11</mn><mi>&#x003BC;</mi><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">A</mi></mrow></mrow></mstyle></math><br/>(C) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>2.2</mn><mi>&#x003BC;</mi><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">A</mi></mrow></mrow></mstyle></math><br/>(D) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mn>0.22</mn><mi>&#x003BC;</mi><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">A</mi></mrow></mrow></mstyle></math></h3>",
+              "solution": "<h3><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mtable><mtr><mtd columnalign=\"left\"><mi>C</mi><mo>&#x0003D;</mo><mi>k</mi><msub><mi>&#x003B5;</mi><mrow><mn>0</mn></mrow></msub><mfrac><mrow><mi>A</mi></mrow><mrow><mi>d</mi></mrow></mfrac><mo>&#x0003D;</mo><mn>8.85</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>8</mn></mrow></msup><mi>F</mi></mtd></mtr><mtr><mtd columnalign=\"left\"><msub><mi>&#x00069;</mi><mrow><mi>&#x00064;</mi></mrow></msub><mo>&#x0003D;</mo><mfrac><mrow><mi>&#x00064;</mi></mrow><mrow><mrow><mi mathvariant=\"normal\">d</mi><mi mathvariant=\"normal\">t</mi></mrow></mrow></mfrac><mo stretchy=\"false\">&#x00028;</mo><mrow><mi mathvariant=\"normal\">C</mi><mi mathvariant=\"normal\">V</mi></mrow><mo stretchy=\"false\">&#x00029;</mo><mo>&#x0003D;</mo><mn>2.2</mn><mi>&#x003BC;</mi><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">A</mi></mrow></mtd></mtr></mtable></mrow></mstyle></math></h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Physics",
+            "updatedAt": "2025-10-23T10:31:44.366Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "66fe9dbe22132e5a70a3e579",
+      "source_version": "f4668f87ae6b6877a4400c144b5f45deb4c4cfd3536becb68accd94cae996f02",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "D",
+        "reasoning": "Relaxin facilitates childbirth by relaxing pelvic ligaments and the cervix; inhibin suppresses FSH. These do not form an antagonistic pair acting oppositely on one regulated process. Keyed D is supported; the other listed pairs have opposing regulatory effects.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R035",
+            "questionId": "66fe9dbe22132e5a70a3e579",
+            "verdict": "no_error",
+            "repair": null,
+            "edit": null,
+            "route": "no_change",
+            "confidence": 0.96,
+            "evidence": "Relaxin facilitates childbirth by relaxing pelvic ligaments and the cervix; inhibin suppresses FSH. These do not form an antagonistic pair acting oppositely on one regulated process. Keyed D is supported; the other listed pairs have opposing regulatory effects.",
+            "student_reply": "Relaxin and inhibin have different roles rather than opposing effects on the same process. That makes D the supported answer to 'not antagonistic'."
+          },
+          "edits": [],
+          "route_reasons": [],
+          "candidate": {
+            "_id": "66fe9dbe22132e5a70a3e579",
+            "chapter": "Chemical Coordination and Integration",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": null,
+            "qid": null,
+            "questionType": "scq",
+            "scq": {
+              "answer": "D",
+              "quesImages": [],
+              "question": "<h3><ol>\n\t<li>Which of the following pairs of hormones are not antagonistic (having opposite effects) to each other?</li></h3><h3>(A) Parathormone &ndash; Calcitonin<br />(B) Insulin - Glucagon<br />(C) Aldosterone Atrial Natriuretic Factor<br />(D) Relaxin - Inhibin</h3>",
+              "solution": "<h3><ol>\n\t<li>Calcitonin exerts its effects by interacting with target cells, primarily in bone and kidney. The actions of PTH and calcitonin are antagonistic on bone resorption but synergistic on decreasing the renal tubular reabsorption of phosphorus. Insulin and glucagon work synergistically to keep blood glucose concentrations normal. An elevated blood glucose concentration results in the secretion of insulin and glucose is transported into body cells. Aldosterone secretion may be inhibited by potassium depletion, inhibitors of the renin-angiotensin system, dopamine and atrial natriuretic factor. The latter appears to be an important physiological regulator of aldosterone secretion. ANF inhibits basal, ACTH, Angiotensin II and potassium-stimulated aldosterone production in vitro by a direct action on the adrenal gland. Inhibin is a hormone secreted by granulosa cells of the ovary which inhibit the secretion of FSH (Follicle Stimulating Hormone) whereas relaxin produced by ovary and placenta at the time of childbirth to softens the ligament in the pelvis and widens the cervix.</li>\n</ol></h3>",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Zoology",
+            "updatedAt": "2025-11-06T05:16:10.33Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "68c801bc1b1dbc16dc93bf2b",
+      "source_version": "edd774f527df93c8e7fadd96a445688a254b307de6a27c2642d6e495f2edf4e1",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "A",
+        "reasoning": "The report requests Hindi. No Hindi question variant is supplied. The English stem gives K=(eV)²/(2mc²)≈602 eV for V=24800 V, supporting A (600 eV). A language request does not authorize a content correction.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R039",
+            "questionId": "68c801bc1b1dbc16dc93bf2b",
+            "verdict": "language_mode",
+            "repair": null,
+            "edit": null,
+            "route": "no_change",
+            "confidence": 0.96,
+            "evidence": "The report requests Hindi. No Hindi question variant is supplied. The English stem gives K=(eV)²/(2mc²)≈602 eV for V=24800 V, supporting A (600 eV). A language request does not authorize a content correction.",
+            "student_reply": "You've requested a Hindi version. One isn't included in this record; the request needs language-support follow-up, and the English question's key remains A."
+          },
+          "edits": [],
+          "route_reasons": [],
+          "candidate": {
+            "_id": "68c801bc1b1dbc16dc93bf2b",
+            "chapter": "Photoelectric effect and matter waves",
+            "concept": "De Broglie's hypothesis of a matter wave",
+            "error": 1,
+            "errorHistory": [],
+            "level": "MEDIUM",
+            "qid": "SecAQ5",
+            "questionType": "scq",
+            "scq": {
+              "answer": "A",
+              "quesImages": [],
+              "question": "<h3>What should be the approximate kinetic energy of an electron so that its de-Broglie wavelength is equal to the wavelength of X-ray of maximum energy, produced in an X-ray tube operating at 24800 V ? (given that <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>&#x00068;</mi><mo>&#x0003D;</mo><mn>6.6</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>34</mn></mrow></msup></mrow></mstyle></math> joule-sec, mass of electron <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>9.1</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>31</mn></mrow></msup><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">k</mi><mi mathvariant=\"normal\">g</mi></mrow></mrow></mstyle></math> )<br/>(A) 600 eV<br/>(B) 365 eV<br/>(C) 120 eV<br/>(D) 300 eV</h3>",
+              "solution": "<h3>We want the kinetic energy of an electron such that:<br/><math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\" ><mstyle displaystyle=\"true\"><mrow><msub><mi>&#x003BB;</mi><mrow><mrow><mi mathvariant=\"normal\">d</mi><mi mathvariant=\"normal\">e</mi><mi mathvariant=\"normal\">B</mi></mrow></mrow></msub><mo>&#x0003D;</mo><msub><mi>&#x003BB;</mi><mrow><mo>min</mo></mrow></msub></mrow></mstyle></math><br/><br/>For X-ray tube at accelerating potential <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>&#x00056;</mi><mo>&#x0003D;</mo><mn>24</mn><mo>&#x0002C;</mo><mn>800</mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">V</mi></mrow></mrow></mstyle></math> :<br/><math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\" ><mstyle displaystyle=\"true\"><mrow><msub><mi>&#x003BB;</mi><mrow><mo>min</mo></mrow></msub><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi><mi>c</mi></mrow><mrow><mi>e</mi><mi>V</mi></mrow></mfrac></mrow></mstyle></math><br/><br/>De-Broglie wavelength of electron:<br/><math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\" ><mstyle displaystyle=\"true\"><mrow><msub><mi>&#x003BB;</mi><mrow><mrow><mi mathvariant=\"normal\">d</mi><mi mathvariant=\"normal\">e</mi><mi mathvariant=\"normal\">B</mi></mrow></mrow></msub><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi></mrow><mrow><msqrt><mrow><mn>2</mn><mi>m</mi><mi>K</mi></mrow></msqrt></mrow></mfrac></mrow></mstyle></math><br/><br/>Setting them equal:<br/><math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\" ><mstyle displaystyle=\"true\"><mrow><mfrac><mrow><mi>h</mi></mrow><mrow><msqrt><mrow><mn>2</mn><mi>m</mi><mi>K</mi></mrow></msqrt></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi><mi>c</mi></mrow><mrow><mi>e</mi><mi>V</mi></mrow></mfrac></mrow></mstyle></math><br/><br/>Cancel <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>h</mi></mrow></mstyle></math> :<br/><math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\" ><mstyle displaystyle=\"true\"><mrow><mtable><mtr><mtd columnalign=\"left\"><mfrac><mrow><mn>1</mn></mrow><mrow><msqrt><mrow><mn>2</mn><mi>m</mi><mi>K</mi></mrow></msqrt></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mrow><mi>c</mi></mrow><mrow><mi>e</mi><mi>V</mi></mrow></mfrac></mtd></mtr><mtr><mtd columnalign=\"left\"><msqrt><mrow><mn>2</mn><mi>m</mi><mi>K</mi></mrow></msqrt><mo>&#x0003D;</mo><mfrac><mrow><mi>e</mi><mi>V</mi></mrow><mrow><mi>c</mi></mrow></mfrac></mtd></mtr></mtable></mrow></mstyle></math> <math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\" ><mstyle displaystyle=\"true\"><mrow><mrow><mi>K</mi><mi>&</mi><mo>&#x0003D;</mo><mfrac><mrow><mn>1.574</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>29</mn></mrow></msup></mrow><mrow><mn>1.638</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>13</mn></mrow></msup></mrow></mfrac><mspace linebreak=\"newline\" /><mi>K</mi><mi>&</mi><mo>&#x02248;</mo><mn>9.6</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>17</mn></mrow></msup><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\">J</mi></mrow></mrow></mrow></mstyle></math><br/><br/>Convert to eV :<br/><math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\" ><mstyle displaystyle=\"true\"><mrow><mi>K</mi><mo>&#x0003D;</mo><mfrac><mrow><mn>9.6</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>17</mn></mrow></msup></mrow><mrow><mn>1.6</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>19</mn></mrow></msup></mrow></mfrac><mo>&#x02248;</mo><mn>600</mn><mrow><mi mathvariant=\"normal\">e</mi><mi mathvariant=\"normal\">V</mi></mrow></mrow></mstyle></math></h3>",
+              "solutionImages": []
+            },
+            "subConcept": "De Broglie Wavelength",
+            "subject": "Physics",
+            "updatedAt": "2025-11-21T04:32:00.028Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "68c8153cfb6b2f16e2d3ceaf",
+      "source_version": "04e6a5fd71df0f7cde85f638c2973a632078c2353a23e7249ac9dfa7445c3c1b",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": [
+          "A",
+          "B",
+          "D"
+        ],
+        "reasoning": "In a uniform electric field, initial parallel motion stays on a line (A) and perpendicular motion is parabolic (B). Initial parallel motion in a uniform magnetic field has zero magnetic force, so it is straight, not a helix (C false); perpendicular motion is circular (D). The stored MCQ list ['A, B, D'] wrongly combines three letters into one string.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R020",
+            "questionId": "68c8153cfb6b2f16e2d3ceaf",
+            "verdict": "defect",
+            "repair": "answer_key",
+            "edit": {
+              "field": "answer",
+              "find": [
+                "A, B, D"
+              ],
+              "replace": [
+                "A",
+                "B",
+                "D"
+              ]
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "In a uniform electric field, initial parallel motion stays on a line (A) and perpendicular motion is parabolic (B). Initial parallel motion in a uniform magnetic field has zero magnetic force, so it is straight, not a helix (C false); perpendicular motion is circular (D). The stored MCQ list ['A, B, D'] wrongly combines three letters into one string.",
+            "student_reply": "A, B and D are the supported choices. Their stored answer format is malformed; a correction to separate letters is awaiting review."
+          },
+          "edits": [
+            {
+              "field": "answer",
+              "find": [
+                "A, B, D"
+              ],
+              "replace": [
+                "A",
+                "B",
+                "D"
+              ]
+            }
+          ],
+          "route_reasons": [
+            "Verification required: independent_solve"
+          ],
+          "candidate": {
+            "_id": "68c8153cfb6b2f16e2d3ceaf",
+            "chapter": "Electrostatics",
+            "concept": "Electric field",
+            "error": 1,
+            "errorHistory": [],
+            "level": "MEDIUM",
+            "mcq": {
+              "answer": [
+                "A",
+                "B",
+                "D"
+              ],
+              "quesImages": [],
+              "question": "<h3>Select the correct statement(s) from the following. The path of a charged particle moving with an initial velocity u</h3>\n\n<h3><math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo stretchy=\"false\">(A)</mo></mrow></math> parallel to the uniform electrostatic field is a straight line.<br />\n<mspace linebreak=\"newline\"><math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo stretchy=\"false\">(B)</mo></mrow></math> perpendicular to the uniform electrostatic field is a parabola.<br />\n<mspace linebreak=\"newline\"><math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo stretchy=\"false\">(C)</mo></mrow></math> parallel to the uniform magnetic field is a helix with its axis parallel to the direction of<br />\n<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi> B </mi></mrow></math>.<br />\n<mspace linebreak=\"newline\"><math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo stretchy=\"false\">(D)</mo></mrow></math> perpendicular to the uniform magnetic field is a circle in a plane normal to the field.</mspace></mspace></mspace></h3>\n<mspace linebreak=\"newline\"></mspace>",
+              "solution": "<h3>conceptual Based of field force<br />\n<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>F</mi><mo>=</mo><mi>q</mi><mo>(</mo><mi>V</mi><mo>&times;</mo><mi>B</mi><mo>)</mo></math><br />\n<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>F</mi><mo>=</mo><mi>q</mi><mi>E</mi></math></h3>\n",
+              "solutionImages": []
+            },
+            "qid": "SecAQ7",
+            "questionType": "mcq",
+            "subConcept": "Motion of charge particle in electric field",
+            "subject": "Physics",
+            "updatedAt": "2026-01-30T08:01:51.964Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "68c9ae5afb6b2f16e2d43b1c",
+      "source_version": "fcf9cd0b044c9397466c3ac07e7b0515e49966ff59d59bea1e83050a383f31dc",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "D",
+        "reasoning": "The stored question and four options are present. Photon energy=12400/4000=3.1 eV and stopping potential=3.1−2.0=1.1 V, keyed D. Slow question loading is a delivery/display issue, with no evidence justifying a content edit.",
+        "limitations": "No network or device timing telemetry is supplied."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R037",
+            "questionId": "68c9ae5afb6b2f16e2d43b1c",
+            "verdict": "display_issue",
+            "repair": null,
+            "edit": null,
+            "route": "no_change",
+            "confidence": 0.9,
+            "evidence": "The stored question and four options are present. Photon energy=12400/4000=3.1 eV and stopping potential=3.1−2.0=1.1 V, keyed D. Slow question loading is a delivery/display issue, with no evidence justifying a content edit.",
+            "student_reply": "The stored question and answer are consistent: 1.1 V, option D. The loading delay needs a display or delivery check; please share your device and when it happens."
+          },
+          "edits": [],
+          "route_reasons": [],
+          "candidate": {
+            "_id": "68c9ae5afb6b2f16e2d43b1c",
+            "chapter": "Photoelectric effect and matter waves",
+            "concept": "Photoelectric effects",
+            "error": 1,
+            "errorHistory": [],
+            "level": "MEDIUM",
+            "qid": "SecAQ23",
+            "questionType": "scq",
+            "scq": {
+              "answer": "D",
+              "quesImages": [],
+              "question": "<h3>Light of wavelength 4000 <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mover><mrow><mi> A </mi></mrow><mrow><mo>∘</mo></mrow></mover></mrow></math> falls on a metal surface having work function of 2.0 eV. What is the stopping potential?</h3>\n\n<h3><math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo stretchy=\"false\">(A)</mo></mrow></math> 3.1 V<br />\n<mspace linebreak=\"newline\"> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo stretchy=\"false\">(B)</mo></mrow></math> 2.0 V<br />\n<mspace linebreak=\"newline\"> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo stretchy=\"false\">(C)</mo></mrow></math> 5.1 V<br />\n<mspace linebreak=\"newline\"> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo stretchy=\"false\">(D)</mo></mrow></math> 1.1 V</mspace></mspace></mspace></h3>\n<mspace linebreak=\"newline\"></mspace>",
+              "solution": "<h3>Energy of incident photon <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi> h </mi><mi> c </mi></mrow><mrow><mi> &lambda; </mi></mrow></mfrac></mrow></math> = <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mn> 12400 </mn></mrow><mrow><mi> &lambda; </mi></mrow></mfrac></mrow></math> = <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mn> 12400 </mn></mrow><mrow><mn> 4000 </mn></mrow></mfrac></mrow></math> eV = 3.1eV <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi> k </mi><mrow><mi> m </mi><mi> a </mi><mi> x </mi></mrow></msub></mrow></math> = h&nu; - &phi; = 3.1eV - 2.0eV = 1.1eV Hence, stopping potential 1.1 V</h3>\n",
+              "solutionImages": []
+            },
+            "subConcept": "Work Function, Threshold frequency and wavelength",
+            "subject": "Physics",
+            "updatedAt": "2026-01-30T16:05:44.859Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "68dea577d0cda73d07e9391c",
+      "source_version": "6cff606722ac328aaae98fc103a85aac27a564b93830932615061a1cf0569b82",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "14",
+        "reasoning": "Let kQ/R=16 V. Inside a uniformly charged sphere, V(R/2)=(kQ/2R)*(3−1/4)=22 V. Outside, V(2R)=8 V. The requested difference is 22−8=14 V, matching the key.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R044",
+            "questionId": "68dea577d0cda73d07e9391c",
+            "verdict": "no_error",
+            "repair": null,
+            "edit": null,
+            "route": "no_change",
+            "confidence": 0.96,
+            "evidence": "Let kQ/R=16 V. Inside a uniformly charged sphere, V(R/2)=(kQ/2R)*(3−1/4)=22 V. Outside, V(2R)=8 V. The requested difference is 22−8=14 V, matching the key.",
+            "student_reply": "22 V is the potential at P relative to infinity. The question asks for the difference between P and S, so subtract 8 V to get 14 V."
+          },
+          "edits": [],
+          "route_reasons": [],
+          "candidate": {
+            "_id": "68dea577d0cda73d07e9391c",
+            "chapter": "Electrostatics",
+            "concept": "Electrostatic potential and energy",
+            "error": 1,
+            "errorHistory": [],
+            "integerQuestion": {
+              "answer": "14",
+              "quesImages": [],
+              "question": "<h3>A total charge <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi> Q </mi></mrow></math> is uniformly distributed throughout the volume of a sphere. Electric potential at a point on the surface of the sphere is greater than the potential at infinity by <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn> 16 </mn><mspace width=\"0.278em\" /><mi> V </mi></mrow></math>. Find the potential difference (in volt) between point <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi> 𝐏 </mi></mrow></math> at a distance half of the radius of the sphere from the centre and the point <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi> 𝐒 </mi></mrow></math> at a distance double the radius of the sphere from the centre of the sphere.</h3>",
+              "solution": "<h3>Let <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi> R </mi></mrow></math> be the radius of the sphere, therefore, potential on the surface is given by <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi> V </mi><mrow><mn> 0 </mn></mrow></msub><mo>=</mo><msub><mi> V </mi><mrow><mo>&infin;</mo></mrow></msub><mo>+</mo><mfrac><mrow><mi> K </mi><mi> Q </mi></mrow><mrow><mi> R </mi></mrow></mfrac><mo>=</mo><msub><mi> V </mi><mrow><mo>&infin;</mo></mrow></msub><mo>+</mo><mi> V </mi></mrow></math> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>&rArr;</mo><mi> V </mi><mo>=</mo><mfrac><mrow><mi> K </mi><mi> Q </mi></mrow><mrow><mi> R </mi></mrow></mfrac></mrow></math> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>∵</mo><msub><mi> V </mi><mrow><mi> P </mi></mrow></msub><mo>=</mo><msub><mi> V </mi><mrow><mo>&infin;</mo></mrow></msub><mo>+</mo><mfrac><mrow><mi> K </mi><mi> Q </mi></mrow><mrow><mn> 2 </mn><msup><mi> R </mi><mrow><mn> 3 </mn></mrow></msup></mrow></mfrac><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mn> 3 </mn><msup><mi> R </mi><mrow><mn> 2 </mn></mrow></msup><mo>&minus;</mo><mfrac><mrow><msup><mi> R </mi><mrow><mn> 2 </mn></mrow></msup></mrow><mrow><mn> 4 </mn></mrow></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow><mo>=</mo><msub><mi> V </mi><mrow><mo>&infin;</mo></mrow></msub><mo>+</mo><mfrac><mrow><mn> 11 </mn><mi> V </mi></mrow><mrow><mn> 8 </mn></mrow></mfrac></mrow></math> and <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi> V </mi><mrow><mi> S </mi></mrow></msub><mo>=</mo><msub><mi> V </mi><mrow><mo>&infin;</mo></mrow></msub><mo>+</mo><mfrac><mrow><mi> K </mi><mi> Q </mi></mrow><mrow><mn> 2 </mn><mi> R </mi></mrow></mfrac><mo>=</mo><msub><mi> V </mi><mrow><mo>&infin;</mo></mrow></msub><mo>+</mo><mfrac><mrow><mi> V </mi></mrow><mrow><mn> 2 </mn></mrow></mfrac></mrow></math> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>&rArr;</mo><msub><mi> V </mi><mrow><mi> P </mi></mrow></msub><mo>&minus;</mo><msub><mi> V </mi><mrow><mi> S </mi></mrow></msub><mo>=</mo><mfrac><mrow><mn> 7 </mn><mi> V </mi></mrow><mrow><mn> 8 </mn></mrow></mfrac><mo>=</mo><mn> 14 </mn><mi> V </mi></mrow></math></h3>\n",
+              "solutionImages": []
+            },
+            "level": "MEDIUM",
+            "qid": "SecBQ25",
+            "questionType": "integerQuestion",
+            "subConcept": "Electric Potential due to Charged Sphere",
+            "subject": "Physics",
+            "updatedAt": "2025-10-13T18:04:21.032Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "68dea616d0cda73d07e93ae6",
+      "source_version": "1d11fe2d5550f111b25b85bc8d9dce59372e42beb8d4d40098f1bae2d6093135",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "1",
+        "reasoning": "The face-centre charge contributes (q/2)/(2*epsilon0) = q/(4*epsilon0); the corner charge contributes 2q/(8*epsilon0) = q/(4*epsilon0). Total = q/(2*epsilon0), so n=1, not 2.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R005",
+            "questionId": "68dea616d0cda73d07e93ae6",
+            "verdict": "defect",
+            "repair": "answer_key",
+            "edit": {
+              "field": "answer",
+              "find": "2",
+              "replace": "1"
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "The face-centre charge contributes (q/2)/(2*epsilon0) = q/(4*epsilon0); the corner charge contributes 2q/(8*epsilon0) = q/(4*epsilon0). Total = q/(2*epsilon0), so n=1, not 2.",
+            "student_reply": "Your n = 1 is consistent with the flux calculation. The key correction is awaiting faculty approval."
+          },
+          "edits": [
+            {
+              "field": "answer",
+              "find": "2",
+              "replace": "1"
+            }
+          ],
+          "route_reasons": [
+            "Verification required: independent_solve"
+          ],
+          "candidate": {
+            "_id": "68dea616d0cda73d07e93ae6",
+            "chapter": "Electrostatics",
+            "concept": "Electric flux and Gauss law",
+            "error": 1,
+            "errorHistory": [],
+            "integerQuestion": {
+              "answer": "1",
+              "quesImages": [],
+              "question": "<h3>The charges <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mfrac><mrow><mi> q </mi></mrow><mrow><mn> 2 </mn></mrow></mfrac></mrow></math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn> 2 </mn><mi> q </mi></mrow></math> are placed at the centre of face and corner of a cube respectively. Total flux through the cube is <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mfrac><mrow><mi> n </mi><mi> q </mi></mrow><mrow><mn> 2 </mn><msub><mi> ε </mi><mrow><mn> 0 </mn></mrow></msub></mrow></mfrac></mrow></math>. The value of ' <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi> n </mi></mrow></math> ' is</h3>",
+              "solution": "<h3>For centre of face <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi> ϕ </mi><mrow><mn> 1 </mn></mrow></msub><mo>=</mo><mfrac><mrow><mn> 1 </mn></mrow><mrow><mn> 2 </mn></mrow></mfrac><mfrac><mrow><mfrac><mrow><mi> q </mi></mrow><mrow><mn> 2 </mn></mrow></mfrac></mrow><mrow><msub><mi> &epsilon; </mi><mrow><mn> 0 </mn></mrow></msub></mrow></mfrac><mo>=</mo><mfrac><mrow><mi> q </mi></mrow><mrow><mn> 4 </mn><msub><mi> &epsilon; </mi><mrow><mn> 0 </mn></mrow></msub></mrow></mfrac></mrow></math> For corner of a cube <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mi> ϕ </mi><mrow><mn> 2 </mn></mrow></msub><mo>=</mo><mfrac><mrow><mn> 1 </mn></mrow><mrow><mn> 8 </mn></mrow></mfrac><mfrac><mrow><mn> 2 </mn><mi> q </mi></mrow><mrow><msub><mi> &epsilon; </mi><mrow><mn> 0 </mn></mrow></msub></mrow></mfrac><mo>=</mo><mfrac><mrow><mi> q </mi></mrow><mrow><mn> 4 </mn><msub><mi> &epsilon; </mi><mrow><mn> 0 </mn></mrow></msub></mrow></mfrac></mrow></math> Total flux <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi> ϕ </mi><mo>=</mo><mfrac><mrow><mi> q </mi></mrow><mrow><mn> 4 </mn><msub><mi> &epsilon; </mi><mrow><mn> 0 </mn></mrow></msub></mrow></mfrac><mo>+</mo><mfrac><mrow><mi> q </mi></mrow><mrow><mn> 4 </mn><msub><mi> &epsilon; </mi><mrow><mn> 0 </mn></mrow></msub></mrow></mfrac><mo>=</mo><mfrac><mrow><mi> q </mi></mrow><mrow><mn> 2 </mn><msub><mi> &epsilon; </mi><mrow><mn> 0 </mn></mrow></msub></mrow></mfrac></mrow></math></h3>",
+              "solutionImages": []
+            },
+            "level": "MEDIUM",
+            "qid": "SecBQ22",
+            "questionType": "integerQuestion",
+            "subConcept": "Electric Flux",
+            "subject": "Physics",
+            "updatedAt": "2025-10-23T11:36:19.085Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "68dea619d0cda73d07e93aee",
+      "source_version": "4ed27c773ffaecd841fdf43fd55cd0ac3e7eee299ee8141baba2f5bf5b1b5232",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "4",
+        "reasoning": "Relative angular displacement is (1/2)*(pi/2−pi/4)*t²=pi*t²/8. First realignment is 2pi, yielding t²=16 and t=4 s. At 2 s the relative angle is only pi/2.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R031",
+            "questionId": "68dea619d0cda73d07e93aee",
+            "verdict": "no_error",
+            "repair": null,
+            "edit": null,
+            "route": "no_change",
+            "confidence": 0.96,
+            "evidence": "Relative angular displacement is (1/2)*(pi/2−pi/4)*t²=pi*t²/8. First realignment is 2pi, yielding t²=16 and t=4 s. At 2 s the relative angle is only pi/2.",
+            "student_reply": "The dots realign when the relative angle reaches 2π. That first happens at 4 seconds; at 2 seconds they are still π/2 apart."
+          },
+          "edits": [],
+          "route_reasons": [],
+          "candidate": {
+            "_id": "68dea619d0cda73d07e93aee",
+            "chapter": "Rotational Motion",
+            "concept": "Kinematics of rotational motion",
+            "error": 1,
+            "errorHistory": [],
+            "integerQuestion": {
+              "answer": "4",
+              "quesImages": [],
+              "question": "<h3>Two wheels each marked with a dot on its rim are mounted side by side. When the wheels are at rest, the dots are aligned. One wheel is given a constant angular acceleration of <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mfrac><mrow><mi> π </mi></mrow><mrow><mn> 2 </mn></mrow></mfrac><mspace width=\"0.167em\" /><mrow><mi mathvariant=\"normal\"> r </mi><mi mathvariant=\"normal\"> a </mi><mi mathvariant=\"normal\"> d </mi></mrow><mo>/</mo><msup><mrow><mi mathvariant=\"normal\"> s </mi><mi mathvariant=\"normal\"> e </mi><mi mathvariant=\"normal\"> c </mi></mrow><mrow><mn> 2 </mn></mrow></msup></mrow></math> and the other is given a constant angular acceleration of <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mfrac><mrow><mi> π </mi></mrow><mrow><mn> 4 </mn></mrow></mfrac><mspace width=\"0.167em\" /><mrow><mi mathvariant=\"normal\"> r </mi><mi mathvariant=\"normal\"> a </mi><mi mathvariant=\"normal\"> d </mi></mrow><mo>/</mo><msup><mrow><mi mathvariant=\"normal\"> s </mi><mi mathvariant=\"normal\"> e </mi><mi mathvariant=\"normal\"> c </mi></mrow><mrow><mn> 2 </mn></mrow></msup></mrow></math>. The time after which the two dots will be aligned again for the first time (in seconds) is</h3>",
+              "solution": "<h3>Dots will be aligned again after time &#39; <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi> t </mi></mrow></math> &#39;, if slower disc makes one rotation less than the other disc <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 2 </mn><mi> &pi; </mi><mi> n </mi><mo>=</mo><mfrac><mrow><mn> 1 </mn></mrow><mrow><mn> 2 </mn></mrow></mfrac><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><mrow><mi> &pi; </mi></mrow><mrow><mn> 2 </mn></mrow></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow><msup><mi> t </mi><mrow><mn> 2 </mn></mrow></msup></mrow></math> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 2 </mn><mi> &pi; </mi><mo stretchy=\"false\">(</mo><mi> n </mi><mo>&minus;</mo><mn> 1 </mn><mo stretchy=\"false\">)</mo><mo>=</mo><mfrac><mrow><mn> 1 </mn></mrow><mrow><mn> 2 </mn></mrow></mfrac><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><mrow><mi> &pi; </mi></mrow><mrow><mn> 4 </mn></mrow></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow><msup><mi> t </mi><mrow><mn> 2 </mn></mrow></msup></mrow></math> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mfrac><mrow><mi> n </mi></mrow><mrow><mi> n </mi><mo>&minus;</mo><mn> 1 </mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn> 2 </mn></mrow><mrow><mn> 1 </mn></mrow></mfrac><mo>&rArr;</mo><mi> n </mi><mo>=</mo><mn> 2 </mn></mrow></math> From equation (i) <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi> t </mi><mo>=</mo><mn> 4 </mn><mspace width=\"0.167em\"></mspace><mrow><mi mathvariant=\"normal\"> s </mi><mi mathvariant=\"normal\"> e </mi><mi mathvariant=\"normal\"> c </mi></mrow></mrow></math></h3>",
+              "solutionImages": []
+            },
+            "level": "MEDIUM",
+            "qid": "SecBQ30",
+            "questionType": "integerQuestion",
+            "subConcept": "Analogy between rotational and translational quantities",
+            "subject": "Physics",
+            "updatedAt": "2025-10-23T11:36:28.315Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "68dea715387eea3d0d95f790",
+      "source_version": "2d28e0e72f28a955817b32ae815041a3e608f20e3e2cb6d2fee76f1fa4394353",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "3113",
+        "reasoning": "Area=6*(7.203 m)²=311.299254 m². The length has four significant figures, so A=311.3 m². Then 10A=3113; retaining 3112.99 ignores the required significant digits.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R033",
+            "questionId": "68dea715387eea3d0d95f790",
+            "verdict": "no_error",
+            "repair": null,
+            "edit": null,
+            "route": "no_change",
+            "confidence": 0.96,
+            "evidence": "Area=6*(7.203 m)²=311.299254 m². The length has four significant figures, so A=311.3 m². Then 10A=3113; retaining 3112.99 ignores the required significant digits.",
+            "student_reply": "The question asks for the correct significant digits. A rounds to 311.3 m², so 10A = 3113."
+          },
+          "edits": [],
+          "route_reasons": [],
+          "candidate": {
+            "_id": "68dea715387eea3d0d95f790",
+            "chapter": "Units and dimensions",
+            "concept": "Dimensional Analysis",
+            "error": 1,
+            "errorHistory": [],
+            "integerQuestion": {
+              "answer": "3113",
+              "quesImages": [],
+              "question": "<h3>Each side of a cube is measured to be 7.203 m . If the total surface area of the cube considering the correct significant digits in <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msup><mi> m </mi><mrow><mn> 2 </mn></mrow></msup></mrow></math> is A , then find the value of 10 A .</h3>",
+              "solution": "<h3>Total surface area <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>=</mo><mn> 6 </mn><mo stretchy=\"false\">(</mo><mn> 7.203 </mn><msup><mo stretchy=\"false\">)</mo><mrow><mn> 2 </mn></mrow></msup><mo>=</mo><mn> 311.299 </mn><mo>=</mo><mn> 311.3 </mn><mspace width=\"0.278em\"></mspace><msup><mi> m </mi><mrow><mn> 2 </mn></mrow></msup></mrow></math></h3>",
+              "solutionImages": []
+            },
+            "level": "MEDIUM",
+            "qid": "SecBQ24",
+            "questionType": "integerQuestion",
+            "subConcept": "Rules in Dimensional Analysis",
+            "subject": "Physics",
+            "updatedAt": "2025-10-23T11:38:43.145Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "68dea7c2387eea3d0d95f9bb",
+      "source_version": "e1d9ed15a95b699474d89bd10079a74a78c1b2a35db8a1dc024d88ce8dd86ca6",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "8",
+        "reasoning": "Shift=(1/0.005)*[0.002*(1.5−1)−0.0015*(1.4−1)]=0.08 m. The stem explicitly asks in cm: 0.08 m=8 cm, matching the key.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R032",
+            "questionId": "68dea7c2387eea3d0d95f9bb",
+            "verdict": "no_error",
+            "repair": null,
+            "edit": null,
+            "route": "no_change",
+            "confidence": 0.96,
+            "evidence": "Shift=(1/0.005)*[0.002*(1.5−1)−0.0015*(1.4−1)]=0.08 m. The stem explicitly asks in cm: 0.08 m=8 cm, matching the key.",
+            "student_reply": "Your 0.08 is in metres. The question asks for centimetres, so 0.08 m = 8 cm and the stored answer is correct."
+          },
+          "edits": [],
+          "route_reasons": [],
+          "candidate": {
+            "_id": "68dea7c2387eea3d0d95f9bb",
+            "chapter": "Wave optics",
+            "concept": "Young double slit experiment setup",
+            "error": 1,
+            "errorHistory": [],
+            "integerQuestion": {
+              "answer": "8",
+              "quesImages": [],
+              "question": "<h3>In YDSE distance between the slits plane and screen is 1 m and distance between two slits is 5 mm . If slabs of thickness 2 mm and 1.5 mm having refractive index 1.5 and 1.4 are placed in front of two slits, find the shift (in cm ) of central maxima</h3>",
+              "solution": "<h3><math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mspace width=\"1em\"></mspace><mi> D </mi><mo>=</mo><mn> 1 </mn><mtext> </mtext><mi> m </mi><mo>,</mo><mtext> </mtext><mi> d </mi><mo>=</mo><mn> 5 </mn><mi>&times;</mi><msup><mn> 10 </mn><mrow><mo>&minus;</mo><mn> 3 </mn></mrow></msup><mtext> </mtext><mi> m</mi></mrow></math><br />shift <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>=</mo><mfrac><mrow><mi> D </mi></mrow><mrow><mi> d </mi></mrow></mfrac><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">[</mo><msub><mi> t </mi><mrow><mn> 1 </mn></mrow></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><msub><mi> &mu; </mi><mrow><mn> 1 </mn></mrow></msub><mo>&minus;</mo><mn> 1 </mn><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow><mo>&minus;</mo><msub><mi> t </mi><mrow><mn> 2 </mn></mrow></msub><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><msub><mi> &mu; </mi><mrow><mn> 2 </mn></mrow></msub><mo>&minus;</mo><mn> 1 </mn><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">]</mo></mrow></mrow></math><br /><math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>=</mo><mfrac><mrow><mn> 1 </mn></mrow><mrow><mn> 5 </mn><mi>&times;</mi><msup><mn> 10 </mn><mrow><mo>&minus;</mo><mn> 3 </mn></mrow></msup></mrow></mfrac><mo stretchy=\"false\">[</mo><mn> 2 </mn><mo stretchy=\"false\">(</mo><mn> 1.5 </mn><mo>&minus;</mo><mn> 1 </mn><mo stretchy=\"false\">)</mo><mo>&minus;</mo><mn> 1.5 </mn><mo stretchy=\"false\">(</mo><mn> 1.4 </mn><mo>&minus;</mo><mn> 1 </mn><mo stretchy=\"false\">)</mo><mo stretchy=\"false\">]</mo><mi>&times;</mi><msup><mn> 10 </mn><mrow><mo>&minus;</mo><mn> 3 </mn></mrow></msup><mo>=</mo><mfrac><mrow><mn> 0.4 </mn></mrow><mrow><mn> 5 </mn></mrow></mfrac><mo>=</mo><mn> 0.08 </mn><mtext> </mtext><mrow><mtext> </mtext><mi mathvariant=\"normal\"> m </mi></mrow></mrow></math>.</h3>",
+              "solutionImages": []
+            },
+            "level": "MEDIUM",
+            "qid": "SecAQ16",
+            "questionType": "integerQuestion",
+            "subConcept": "Cases when central maxima is not in Centre",
+            "subject": "Physics",
+            "updatedAt": "2025-10-23T11:40:24.865Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "68e870ef42c06737d6e565c4",
+      "source_version": "0edb9a912a246470719710c8d39bda7fc651f628532854123b218b3a0e0d781c",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "D",
+        "reasoning": "Kinetic theory gives P = rho*v_rms²/3 = 0.09*400²/3 = 4800 Pa, option D. The stored solution agrees; key A is wrong. The suggested 8225 Pa is also incorrect.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R004",
+            "questionId": "68e870ef42c06737d6e565c4",
+            "verdict": "defect",
+            "repair": "answer_key",
+            "edit": {
+              "field": "answer",
+              "find": "A",
+              "replace": "D"
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "Kinetic theory gives P = rho*v_rms²/3 = 0.09*400²/3 = 4800 Pa, option D. The stored solution agrees; key A is wrong. The suggested 8225 Pa is also incorrect.",
+            "student_reply": "The key does need correction, but the calculation gives 4800 Pa, option D. I've proposed that change for faculty review."
+          },
+          "edits": [
+            {
+              "field": "answer",
+              "find": "A",
+              "replace": "D"
+            }
+          ],
+          "route_reasons": [
+            "Verification required: independent_solve"
+          ],
+          "candidate": {
+            "_id": "68e870ef42c06737d6e565c4",
+            "chapter": "Kinetic theory of gases",
+            "concept": "Average pressure exerted by an ideal gas",
+            "error": 1,
+            "errorHistory": [],
+            "level": "MEDIUM",
+            "qid": "SecAQ27",
+            "questionType": "scq",
+            "scq": {
+              "answer": "D",
+              "quesImages": [],
+              "question": "<h3>The density of a gas is <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 9 </mn><mi>&times;</mi><msup><mn> 10 </mn><mrow><mo>&minus;</mo><mn> 2 </mn></mrow></msup><mrow><mtext> </mtext><mi mathvariant=\"normal\"> k </mi><mi mathvariant=\"normal\"> g </mi></mrow><mo>/</mo><msup><mi> m </mi><mrow><mn> 3 </mn></mrow></msup></mrow></math> and root mean square velocity of gas molecules is <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 400 </mn><mrow><mtext> </mtext><mi mathvariant=\"normal\"> m </mi></mrow><mo>/</mo><mi> s </mi></mrow></math>. The pressure exerted by the gas on the walls of the vessel is<br />(A) <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 4556 </mn><mrow><mtext> </mtext><mi mathvariant=\"normal\"> N </mi></mrow><mo>/</mo><msup><mi> m </mi><mrow><mn> 2 </mn></mrow></msup></mrow></math><br />(B) <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 8225 </mn><mrow><mtext> </mtext><mi mathvariant=\"normal\"> N </mi></mrow><mo>/</mo><msup><mi> m </mi><mrow><mn> 2 </mn></mrow></msup></mrow></math><br />(C) <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 7520 </mn><mrow><mtext> </mtext><mi mathvariant=\"normal\"> N </mi></mrow><mo>/</mo><msup><mi> m </mi><mrow><mn> 2 </mn></mrow></msup></mrow></math><br />(D) <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 4800 </mn><mrow><mtext> </mtext><mi mathvariant=\"normal\"> N </mi></mrow><mo>/</mo><msup><mi> m </mi><mrow><mn> 2 </mn></mrow></msup></mrow></math></h3>\n",
+              "solution": "<h3>Pressure of the gas <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi> P </mi><mo>=</mo><mfrac><mrow><mn> 1 </mn></mrow><mrow><mn> 3 </mn></mrow></mfrac><mi> &rho; </mi><msup><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><msub><mi> v </mi><mrow><mrow><mi mathvariant=\"normal\"> r </mi><mi mathvariant=\"normal\"> m </mi><mi mathvariant=\"normal\"> s </mi></mrow></mrow></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow><mrow><mn> 2 </mn></mrow></msup></mrow></math> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi> P </mi><mo>=</mo><mfrac><mrow><mn> 1 </mn></mrow><mrow><mn> 3 </mn></mrow></mfrac><mi>&times;</mi><mn> 9 </mn><mi>&times;</mi><msup><mn> 10 </mn><mrow><mo>&minus;</mo><mn> 2 </mn></mrow></msup><mi>&times;</mi><mo stretchy=\"false\">(</mo><mn> 400 </mn><msup><mo stretchy=\"false\">)</mo><mrow><mn> 2 </mn></mrow></msup><mo>=</mo><mn> 4800 </mn><mrow><mtext> </mtext><mi mathvariant=\"normal\"> N </mi></mrow><mo>/</mo><msup><mi> m </mi><mrow><mn> 2 </mn></mrow></msup></mrow></math></h3>\n",
+              "solutionImages": []
+            },
+            "subConcept": "Pressure on the walls of container.",
+            "subject": "Physics",
+            "updatedAt": "2026-01-20T07:20:23.642Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "68e872546e45ba37dcc16bc0",
+      "source_version": "18b10bfdcaf93345991c09577e096e22e623a1be7436e6d7f180982df8da96e9",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "C",
+        "reasoning": "Newton's third law gives equal and opposite Coulomb forces regardless of the charges: |F12|/|F21|=1:1. Keyed option C is blank in the HTML; the solution also states equal magnitudes.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R011",
+            "questionId": "68e872546e45ba37dcc16bc0",
+            "verdict": "defect",
+            "repair": "option_repair",
+            "edit": {
+              "field": "question",
+              "find": "(C) <br",
+              "replace": "(C) 1 : 1<br"
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "Newton's third law gives equal and opposite Coulomb forces regardless of the charges: |F12|/|F21|=1:1. Keyed option C is blank in the HTML; the solution also states equal magnitudes.",
+            "student_reply": "You're right that option C is blank. It should read 1 : 1; the repair is awaiting faculty approval."
+          },
+          "edits": [
+            {
+              "field": "question",
+              "find": "(C) <br",
+              "replace": "(C) 1 : 1<br"
+            }
+          ],
+          "route_reasons": [
+            "Verification required: option_content_supported"
+          ],
+          "candidate": {
+            "_id": "68e872546e45ba37dcc16bc0",
+            "chapter": "Electrostatics",
+            "concept": "Coulomb's law",
+            "error": 1,
+            "errorHistory": [],
+            "level": "MEDIUM",
+            "qid": "SecAQ6",
+            "questionType": "scq",
+            "scq": {
+              "answer": "C",
+              "quesImages": [],
+              "question": "<h3>There are two charges <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>+</mo><mn> 3 </mn><mi> &mu; </mi><mi> C </mi></mrow></math> and <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>&minus;</mo><mn> 4 </mn><mi> &mu; </mi><mi> C </mi></mrow></math> placed at a certain distance apart. The ratio of coulombic forces acting on them will be<br />(A) <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 9 </mn><mi>:</mi><mn> 16 </mn></mrow></math><br />(B) <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 2 </mn><mi>:</mi><msqrt><mrow><mn> 3 </mn></mrow></msqrt></mrow></math><br />(C) 1 : 1<br />(D) <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 3 </mn><mi>:</mi><mn> 4 </mn></mrow></math></h3>\n",
+              "solution": "<h3><math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msub><mover><mrow><mi> F </mi></mrow><mo stretchy=\"true\">&rarr;</mo></mover><mrow><mn> 12 </mn></mrow></msub><mo>+</mo><msub><mover><mrow><mi> F </mi></mrow><mo stretchy=\"true\">&rarr;</mo></mover><mrow><mn> 21 </mn></mrow></msub><mo>=</mo><mn> 0 </mn></mrow></math><br />\n<br />\n<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">|</mo><msub><mover><mrow><mi> F </mi></mrow><mo stretchy=\"true\">&rarr;</mo></mover><mrow><mn> 12 </mn></mrow></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">|</mo></mrow><mo>=</mo><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">|</mo><mo>&minus;</mo><msub><mover><mrow><mi> F </mi></mrow><mo stretchy=\"true\">&rarr;</mo></mover><mrow><mn> 21 </mn></mrow></msub><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">|</mo></mrow></mrow></math></h3>\n",
+              "solutionImages": []
+            },
+            "subConcept": "Coulomb's Law",
+            "subject": "Physics",
+            "updatedAt": "2026-01-20T07:21:22.252Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "68e8734442c06737d6e56da4",
+      "source_version": "8d2c52ae5a780a07a7f5dab267b23955adf88027c1af22ca235006ede5ffb828",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "A",
+        "reasoning": "Mass=100/10=10 kg. F−100mu=10 and 2F−100mu=100. Subtracting gives F=90 N, then mu=(90−10)/100=0.8, option A.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R029",
+            "questionId": "68e8734442c06737d6e56da4",
+            "verdict": "no_error",
+            "repair": null,
+            "edit": null,
+            "route": "no_change",
+            "confidence": 0.96,
+            "evidence": "Mass=100/10=10 kg. F−100mu=10 and 2F−100mu=100. Subtracting gives F=90 N, then mu=(90−10)/100=0.8, option A.",
+            "student_reply": "Using both acceleration equations gives F = 90 N and μ = 0.8. Option A is consistent with both conditions."
+          },
+          "edits": [],
+          "route_reasons": [],
+          "candidate": {
+            "_id": "68e8734442c06737d6e56da4",
+            "chapter": "Newton's law of motion",
+            "concept": "Friction",
+            "error": 1,
+            "errorHistory": [],
+            "level": "MEDIUM",
+            "qid": "SecAQ14",
+            "questionType": "scq",
+            "scq": {
+              "answer": "A",
+              "quesImages": [],
+              "question": "<h3>A block of weight 100 N when pushed by a force <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi> F </mi></mrow></math> on a horizontal rough surface moves with an acceleration <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 1 </mn><mtext> </mtext><mi> m </mi><mo>/</mo><msup><mi> s </mi><mrow><mn> 2 </mn></mrow></msup></mrow></math>, when force is doubled its acceleration becomes <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 10 </mn><mtext> </mtext><mi> m </mi><mo>/</mo><msup><mi> s </mi><mrow><mn> 2 </mn></mrow></msup></mrow></math>. The coefficient of friction between block and surface is <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo stretchy=\"false\">(</mo><mi> g </mi><mo>=</mo><mn> 10 </mn><mtext> </mtext><mi> m </mi><mo>/</mo><msup><mi> s </mi><mrow><mn> 2 </mn></mrow></msup><mo stretchy=\"false\">)</mo></mrow></math><br />(A) 0.8<br />(B) 0.4<br />(C) 0.6<br />(D) 0.2</h3>\n",
+              "solution": "<h3><math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\" ><mstyle displaystyle=\"true\"><mrow><mtable><mtr><mtd columnalign=\"left\"><mi>F</mi><mo>&#x02212;</mo><mi>&#x003BC;</mi><mi>m</mi><mi>g</mi><mo>&#x0003D;</mo><mi>m</mi><mi>a</mi></mtd></mtr><mtr><mtd columnalign=\"left\"><mi>F</mi><mo>&#x02212;</mo><mi>&#x003BC;</mi><mi>&#x000D7;</mi><mn>100</mn><mo>&#x0003D;</mo><mn>10</mn></mtd></mtr></mtable></mrow></mstyle></math><br/><br/>When force becomes double<br/><math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\" ><mstyle displaystyle=\"true\"><mrow><mn>2</mn><mi>F</mi><mo>&#x02212;</mo><mi>&#x003BC;</mi><mn>100</mn><mo>&#x0003D;</mo><mn>100</mn></mrow></mstyle></math><br/><br/>On putting the value of <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>F</mi></mrow></mstyle></math> from (i) and (ii)<br/><math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\" ><mstyle displaystyle=\"true\"><mrow><mtable><mtr><mtd columnalign=\"left\"><mn>2</mn><mo stretchy=\"false\">&#x00028;</mo><mn>10</mn><mo>&#x0002B;</mo><mi>&#x003BC;</mi><mn>100</mn><mo stretchy=\"false\">&#x00029;</mo><mo>&#x02212;</mo><mi>&#x003BC;</mi><mn>100</mn><mo>&#x0003D;</mo><mn>100</mn></mtd></mtr><mtr><mtd columnalign=\"left\"><mn>20</mn><mo>&#x0002B;</mo><mn>100</mn><mi>&#x003BC;</mi><mo>&#x0003D;</mo><mn>100</mn></mtd></mtr><mtr><mtd columnalign=\"left\"><mi>&#x003BC;</mi><mo>&#x0003D;</mo><mn>0.8</mn></mtd></mtr></mtable></mrow></mstyle></math></h3>",
+              "solutionImages": []
+            },
+            "subConcept": "Coefficient of friction",
+            "subject": "Physics",
+            "updatedAt": "2026-01-20T07:22:18.329Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "68ecbacb2ec87a18deba1ad7",
+      "source_version": "0498f27b0c2a475a024b7f875579f3c5c31170cf2fc0e176c36dbc17cba59677",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "B",
+        "reasoning": "The question concerns action potentials and voltage-gated Na+ channel inactivation, which supports B. Its stored chapter is The Living World; neural control is the appropriate topic. Taxonomy forbids automatic metadata edits.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R023",
+            "questionId": "68ecbacb2ec87a18deba1ad7",
+            "verdict": "defect",
+            "repair": "wrong_chapter",
+            "edit": null,
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "The question concerns action potentials and voltage-gated Na+ channel inactivation, which supports B. Its stored chapter is The Living World; neural control is the appropriate topic. Taxonomy forbids automatic metadata edits.",
+            "student_reply": "The content belongs with neural control, and the current chapter needs review. The answer remains B; faculty will need to confirm the classification."
+          },
+          "edits": [],
+          "route_reasons": [
+            "Taxonomy requires faculty approval"
+          ],
+          "candidate": {
+            "_id": "68ecbacb2ec87a18deba1ad7",
+            "chapter": "The Living World",
+            "concept": null,
+            "error": 1,
+            "errorHistory": [],
+            "level": "EASY",
+            "qid": null,
+            "questionType": "scq",
+            "scq": {
+              "answer": "B",
+              "quesImages": [],
+              "question": "<h3>The absolute refractory period during an action potential generation is primarily caused by:<br />\n(A) Closure of voltage-gated K<sup>+</sup> channels.<br />\n(B) Inactivation of voltage-gated Na<sup>+&nbsp;</sup>channels.<br />\n(C) Increased permeability to Cl<sup>&minus;&nbsp;</sup>ions.<br />\n(D) Continuous activation of the Na<sup>+</sup>/K<sup>+&nbsp;</sup>pump.</h3>\n",
+              "solution": "<h3>The absolute refractory period is the short interval immediately following the generation of an action potential during which the neuron is completely incapable of generating another action potential, regardless of the strength of the stimulus. This period is primarily due to the inactivation of the voltage-gated Na+channels. Although the membrane is depolarized (which would normally open them), these specific channels enter a temporary, locked inactivated state that prevents them from opening again, thereby halting the influx of Na+ ions required for a new depolarization.</h3>\n",
+              "solutionImages": []
+            },
+            "subConcept": null,
+            "subject": "Botany",
+            "updatedAt": "2026-01-25T11:12:43.984Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "68f21caf941cda588bc04365",
+      "source_version": "78fae508818ae5ff49124f2492a207e33072939056429900430e958e3100c557",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "B",
+        "reasoning": "N/N0=6/48=1/8 after 3 min. Mean life tau=t/ln(8)=1.4427 min, uniquely option B. The question asks for one value but is stored as mcq with ['', 'B']; change type and key atomically.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R021",
+            "questionId": "68f21caf941cda588bc04365",
+            "verdict": "defect",
+            "repair": "type_mismatch",
+            "edit": {
+              "field": "questionType",
+              "find": "mcq",
+              "replace": "scq",
+              "companion_edits": [
+                {
+                  "field": "answer",
+                  "find": [
+                    "",
+                    "B"
+                  ],
+                  "replace": "B"
+                }
+              ]
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "N/N0=6/48=1/8 after 3 min. Mean life tau=t/ln(8)=1.4427 min, uniquely option B. The question asks for one value but is stored as mcq with ['', 'B']; change type and key atomically.",
+            "student_reply": "Only B matches the mean life of about 1.44 minutes. A combined question-type and answer-format correction is awaiting faculty approval."
+          },
+          "edits": [
+            {
+              "field": "questionType",
+              "find": "mcq",
+              "replace": "scq"
+            },
+            {
+              "field": "answer",
+              "find": [
+                "",
+                "B"
+              ],
+              "replace": "B"
+            }
+          ],
+          "route_reasons": [
+            "Verification required: type_and_answer_verified"
+          ],
+          "candidate": {
+            "_id": "68f21caf941cda588bc04365",
+            "chapter": "Mathematics in physics",
+            "concept": "Basic functions used in physics",
+            "error": 1,
+            "errorHistory": [],
+            "level": "MEDIUM",
+            "qid": "SecAQ3",
+            "questionType": "scq",
+            "scq": {
+              "answer": "B",
+              "quesImages": [],
+              "question": "<h3>A sample of nuclei X contains <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 48 </mn><mi>&times;</mi><msup><mn> 10 </mn><mrow><mn> 23 </mn></mrow></msup></mrow></math> nuclei at some time and reduced to <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn> 6 </mn><mi>&times;</mi><msup><mn> 10 </mn><mrow><mn> 23 </mn></mrow></msup></mrow></math> nuclei in 3 minutes. The mean life of nucleus <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi> X </mi></mrow></math> is roughly?<br />\n(A) 0.693 min<br />\n(B) 1.44 min<br />\n(C) 2.079 min<br />\n(D) 4.329 min&nbsp;</h3>\n",
+              "solution": "<p>A sample of nuclei decreases from <math xmlns=\"http://www.w3.org/1998/Math/MathML\"> <mn>48</mn><mo>&times;</mo><msup><mn>10</mn><mn>23</mn></msup> </math> to <math xmlns=\"http://www.w3.org/1998/Math/MathML\"> <mn>6</mn><mo>&times;</mo><msup><mn>10</mn><mn>23</mn></msup> </math> in <math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>3</mn></math> minutes.</p>\n\n<p>Radioactive decay law: <math xmlns=\"http://www.w3.org/1998/Math/MathML\"> <mi>N</mi> <mo>=</mo> <msub><mi>N</mi><mn>0</mn></msub> <msup> <mi>e</mi> <mrow> <mo>&minus;</mo> <mfrac> <mi>t</mi> <mi>&tau;</mi> </mfrac> </mrow> </msup> </math></p>\n\n<p>Here <math xmlns=\"http://www.w3.org/1998/Math/MathML\"> <mfrac> <mi>N</mi> <msub><mi>N</mi><mn>0</mn></msub> </mfrac> <mo>=</mo> <mfrac><mn>6</mn><mn>48</mn></mfrac> <mo>=</mo> <mfrac><mn>1</mn><mn>8</mn></mfrac> </math> so <math xmlns=\"http://www.w3.org/1998/Math/MathML\"> <mfrac> <mi>N</mi> <msub><mi>N</mi><mn>0</mn></msub> </mfrac> <mo>=</mo> <msup> <mi>e</mi> <mrow> <mo>&minus;</mo> <mfrac> <mi>t</mi> <mi>&tau;</mi> </mfrac> </mrow> </msup> <mo>=</mo> <mfrac><mn>1</mn><mn>8</mn></mfrac> </math></p>\n\n<p>Taking natural logarithm: <math xmlns=\"http://www.w3.org/1998/Math/MathML\"> <mi>ln</mi> <mo stretchy=\"false\">(</mo> <mfrac><mn>1</mn><mn>8</mn></mfrac> <mo stretchy=\"false\">)</mo> <mo>=</mo> <mo>&minus;</mo> <mfrac> <mi>t</mi> <mi>&tau;</mi> </mfrac> </math> so <math xmlns=\"http://www.w3.org/1998/Math/MathML\"> <mfrac> <mi>t</mi> <mi>&tau;</mi> </mfrac> <mo>=</mo> <mi>ln</mi> <mo stretchy=\"false\">(</mo> <mn>8</mn> <mo stretchy=\"false\">)</mo> </math> and therefore <math xmlns=\"http://www.w3.org/1998/Math/MathML\"> <mi>&tau;</mi> <mo>=</mo> <mfrac> <mi>t</mi> <mi>ln⁡(8)</mi> </mfrac> </math> .</p>\n\n<p>Since <math xmlns=\"http://www.w3.org/1998/Math/MathML\"> <mi>t</mi><mo>=</mo><mn>3</mn><mo>&nbsp;</mo><mi>min</mi> </math> and <math xmlns=\"http://www.w3.org/1998/Math/MathML\"> <mi>ln</mi> <mo stretchy=\"false\">(</mo> <mn>8</mn> <mo stretchy=\"false\">)</mo> <mo>=</mo> <mi>ln</mi> <mo stretchy=\"false\">(</mo> <msup><mn>2</mn><mn>3</mn></msup> <mo stretchy=\"false\">)</mo> <mo>=</mo> <mn>3</mn><mi>ln</mi> <mo stretchy=\"false\">(</mo><mn>2</mn><mo stretchy=\"false\">)</mo> <mo>&asymp;</mo> <mn>2.079</mn> </math> we get <math xmlns=\"http://www.w3.org/1998/Math/MathML\"> <mi>&tau;</mi> <mo>=</mo> <mfrac> <mn>3</mn> <mn>2.079</mn> </mfrac> <mo>&asymp;</mo> <mn>1.44</mn><mo>&nbsp;</mo><mi>min</mi> </math> .</p>\n\n<p>Hence the mean life of the nucleus is <math xmlns=\"http://www.w3.org/1998/Math/MathML\"> <mi>&tau;</mi><mo>&asymp;</mo><mn>1.44</mn><mo>&nbsp;</mo><mi>min</mi> </math> .</p>\n",
+              "solutionImages": []
+            },
+            "subConcept": "Linear function",
+            "subject": "Physics",
+            "updatedAt": "2025-12-27T14:39:34.541Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "68f21df0941cda588bc0470b",
+      "source_version": "8f476d58327aba022572f598c6053164360c70a5e470caba1854b12fc1b93593",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "A",
+        "reasoning": "At fixed mass, p=sqrt(2mK), so quadrupling kinetic energy doubles momentum; keyed A is correct. A click on A being recorded as B concerns interaction or answer-submission behavior, not stored question content.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R038",
+            "questionId": "68f21df0941cda588bc0470b",
+            "verdict": "app_issue",
+            "repair": null,
+            "edit": null,
+            "route": "no_change",
+            "confidence": 0.96,
+            "evidence": "At fixed mass, p=sqrt(2mK), so quadrupling kinetic energy doubles momentum; keyed A is correct. A click on A being recorded as B concerns interaction or answer-submission behavior, not stored question content.",
+            "student_reply": "Option A is correct because momentum doubles when kinetic energy becomes four times as large. Recording a different option needs an app investigation; the question itself needs no edit."
+          },
+          "edits": [],
+          "route_reasons": [],
+          "candidate": {
+            "_id": "68f21df0941cda588bc0470b",
+            "chapter": "Work, power and energy",
+            "concept": "Energy",
+            "error": 1,
+            "errorHistory": [],
+            "level": "MEDIUM",
+            "qid": "SecAQ14",
+            "questionType": "scq",
+            "scq": {
+              "answer": "A",
+              "quesImages": [],
+              "question": "<h3>If the kinetic energy of a body becomes four times of its initial value, then new momentum will<br />(A) Become twice its initial value<br />(B) Become three times, its initial value<br />(C) Become four times, its initial value<br />(D) Remains constant</h3>\n",
+              "solution": "<h3><math display=\"block\" xmlns=\"http://www.w3.org/1998/Math/MathML\" ><mstyle displaystyle=\"true\"><mrow><mfrac><mrow><msub><mi>p</mi><mrow><mn>2</mn></mrow></msub></mrow><mrow><msub><mi>p</mi><mrow><mn>1</mn></mrow></msub></mrow></mfrac><mo>&#x0003D;</mo><msqrt><mrow><mfrac><mrow><mi>K</mi><msub><mi>E</mi><mrow><mn>2</mn></mrow></msub></mrow><mrow><mi>K</mi><msub><mi>E</mi><mrow><mn>1</mn></mrow></msub></mrow></mfrac></mrow></msqrt></mrow></mstyle></math><br/><br/>When KE become four times then momentum (p) become two times.</h3>",
+              "solutionImages": []
+            },
+            "subConcept": "Relation between momentum and kinetic energy of a particle",
+            "subject": "Physics",
+            "updatedAt": "2026-01-20T07:24:09.655Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "6956d79788d7701e5617bc29",
+      "source_version": "62e1db69ff6ae8d872283b19a35447d9d886de260fa25a38ee88ff86c59539a8",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": null,
+        "reasoning": "Average power = Vrms*Irms*cos(pi/2)=0 W. Options B and C both contain 0 W. Choosing a new distractor is authored content and requires faculty.",
+        "limitations": "Two identical correct options occur in an SCQ."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R015",
+            "questionId": "6956d79788d7701e5617bc29",
+            "verdict": "defect",
+            "repair": "identical_options",
+            "edit": null,
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "Average power = Vrms*Irms*cos(pi/2)=0 W. Options B and C both contain 0 W. Choosing a new distractor is authored content and requires faculty.",
+            "student_reply": "You're right that B and C repeat the same value. Faculty need to review the options before a corrected version can be applied."
+          },
+          "edits": [],
+          "route_reasons": [
+            "Taxonomy requires faculty approval"
+          ],
+          "candidate": {
+            "_id": "6956d79788d7701e5617bc29",
+            "chapter": "AC Circuits",
+            "concept": "A.C. circuits",
+            "error": 1,
+            "errorHistory": [],
+            "level": "MEDIUM",
+            "qid": "MHCET_BvpWWm7z2cY7YB0TjCzV_PHY_150",
+            "questionType": "scq",
+            "scq": {
+              "answer": "B",
+              "quesImages": [],
+              "question": "<h3>In an AC circuit, the current is <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle displaystyle=\"true\"><mrow><mi>i</mi><mo>=</mo><mn> 5 </mn><mi> sin </mi><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mn> 100 </mn><mi>t</mi><mo>&minus;</mo><mfrac><mrow><mi>&pi;</mi></mrow><mrow><mn> 2 </mn></mrow></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow><mi>A</mi></mrow></mstyle></math> and voltage is <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>e</mi><mo>=</mo><mn> 200 </mn><mi> sin </mi><mo stretchy=\"false\">(</mo><mn> 100 </mn><mi>t</mi><mo stretchy=\"false\">)</mo></mrow></math> volt. Power consumption in the circuit is ( <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi> cos </mi><msup><mn> 90 </mn><mrow><mo>∘</mo></mrow></msup><mo>=</mo><mn> 0 </mn></mrow></math> )<br />\n(A) 200 W<br />\n(B) 0 W<br />\n(C) 0 W<br />\n(D) 1000 W&nbsp;</h3>\n",
+              "solution": "<h3><math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mrow><mi>&amp;</mi><mi>P</mi><mo>=</mo><msub><mi>I</mi><mrow><mrow><mi mathvariant=\"normal\"> r </mi><mi mathvariant=\"normal\"> m </mi><mi mathvariant=\"normal\"> s </mi></mrow></mrow></msub><msub><mrow><mtext>&nbsp;</mtext><mi mathvariant=\"normal\"> V </mi></mrow><mrow><mrow><mi mathvariant=\"normal\"> r </mi><mi mathvariant=\"normal\"> m </mi><mi mathvariant=\"normal\"> s </mi></mrow></mrow></msub><mi> cos </mi><mi>ϕ</mi><mspace linebreak=\"newline\"></mspace><mi>&amp;</mi><mi>ϕ</mi><mo>=</mo><msup><mn> 90 </mn><mrow><mo>∘</mo></mrow></msup></mrow></mrow></math><br />\n<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>&there4;</mo><mspace width=\"1em\"></mspace><mi>P</mi><mo>=</mo><mn> 0 </mn><mspace width=\"1em\"></mspace><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mo>∵</mo><mi> cos </mi><msup><mn> 90 </mn><mrow><mo>∘</mo></mrow></msup><mo>=</mo><mn> 0 </mn><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></mrow></math></h3>\n",
+              "solutionImages": []
+            },
+            "subConcept": "Power, Power Factor and Wattless current",
+            "subject": "Physics",
+            "updatedAt": "2026-02-28T17:45:21.874Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "6956d7bb23cb221e570d6013",
+      "source_version": "2f9eea0fd35f0e285b035171fc306a0095c4c4b48e54f82276beddbeba6a095e",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "B",
+        "reasoning": "R=u²*sin(2theta)/g and H=u²*sin²(theta)/(2g). R=H implies 2*sin(theta)*cos(theta)=sin²(theta)/2, so tan(theta)=4 for a nonzero flight; keyed B is correct.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R028",
+            "questionId": "6956d7bb23cb221e570d6013",
+            "verdict": "no_error",
+            "repair": null,
+            "edit": null,
+            "route": "no_change",
+            "confidence": 0.96,
+            "evidence": "R=u²*sin(2theta)/g and H=u²*sin²(theta)/(2g). R=H implies 2*sin(theta)*cos(theta)=sin²(theta)/2, so tan(theta)=4 for a nonzero flight; keyed B is correct.",
+            "student_reply": "Equating the range and maximum height gives tan θ = 4. Option B is correct; tan⁻¹(2) misses the factor of two in the height formula."
+          },
+          "edits": [],
+          "route_reasons": [],
+          "candidate": {
+            "_id": "6956d7bb23cb221e570d6013",
+            "chapter": "Motion in a Plane",
+            "concept": "Projectile motion",
+            "error": 1,
+            "errorHistory": [],
+            "level": "MEDIUM",
+            "qid": "MHCET_Dyqq8UM5069PfvNTSZqs_PHY_99",
+            "questionType": "scq",
+            "scq": {
+              "answer": "B",
+              "quesImages": [],
+              "question": "<h3>The angle of projection of a projectile for which horizontal range and height attain same magnitude is\n\n<br/>(A) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msup><mi> tan </mi><mrow><mo>&#x02212;</mo><mn> 1 </mn></mrow></msup><mo stretchy=\"false\">&#x00028;</mo><mn> 2 </mn><mo stretchy=\"false\">&#x00029;</mo></mrow></math>\n<br/>(B) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msup><mi> tan </mi><mrow><mo>&#x02212;</mo><mn> 1 </mn></mrow></msup><mo stretchy=\"false\">&#x00028;</mo><mn> 4 </mn><mo stretchy=\"false\">&#x00029;</mo></mrow></math>\n<br/>(C) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msup><mi> tan </mi><mrow><mo>&#x02212;</mo><mn> 1 </mn></mrow></msup><mo stretchy=\"false\">&#x00028;</mo><mn> 3 </mn><mo stretchy=\"false\">&#x00029;</mo></mrow></math>\n<br/>(D) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><msup><mi> tan </mi><mrow><mo>&#x02212;</mo><mn> 1 </mn></mrow></msup><mo stretchy=\"false\">&#x00028;</mo><mn> 0.5 </mn><mo stretchy=\"false\">&#x00029;</mo></mrow></math></h3>",
+              "solution": "<h3>Solution:<br/>(b) Here, <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>&#x00048;</mi><mo>&#x0003D;</mo><mi>&#x00052;</mi></mrow></math><br/><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mfrac><mrow><msup><mi>&#x00075;</mi><mrow><mn> 2 </mn></mrow></msup><msup><mi> sin </mi><mrow><mn> 2 </mn></mrow></msup><mi>&#x003B8;</mi></mrow><mrow><mn> 2 </mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\"> g </mi></mrow></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mrow><msup><mi>&#x00075;</mi><mrow><mn> 2 </mn></mrow></msup><mi> sin </mi><mn> 2 </mn><mi>&#x003B8;</mi></mrow><mrow><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\"> g </mi></mrow></mrow></mfrac></mrow></mstyle></math><br/><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x021D2;</mo><mfrac><mrow><msup><mi> sin </mi><mrow><mn> 2 </mn></mrow></msup><mi>&#x003B8;</mi></mrow><mrow><mn> 2 </mn></mrow></mfrac><mo>&#x0003D;</mo><mi> sin </mi><mn> 2 </mn><mi>&#x003B8;</mi></mrow></mstyle></math><br/><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x021D2;</mo><mfrac><mrow><msup><mi> sin </mi><mrow><mn> 2 </mn></mrow></msup><mi>&#x003B8;</mi></mrow><mrow><mn> 2 </mn></mrow></mfrac><mo>&#x0003D;</mo><mn> 2 </mn><mi> sin </mi><mi>&#x003B8;</mi><mi> cos </mi><mi>&#x003B8;</mi></mrow></mstyle></math><br/><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x021D2;</mo><mfrac><mrow><mi> sin </mi><mi>&#x003B8;</mi></mrow><mrow><mi> cos </mi><mi>&#x003B8;</mi></mrow></mfrac><mo>&#x0003D;</mo><mn> 4 </mn><mo>&#x021D2;</mo><mi> tan </mi><mi>&#x003B8;</mi><mo>&#x0003D;</mo><mn> 4 </mn></mrow></mstyle></math><br/><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mo>&#x021D2;</mo><mi>&#x003B8;</mi><mo>&#x0003D;</mo><msup><mi> tan </mi><mrow><mo>&#x02212;</mo><mn> 1 </mn></mrow></msup><mo stretchy=\"false\">&#x00028;</mo><mn> 4 </mn><mo stretchy=\"false\">&#x00029;</mo></mrow></math></h3>",
+              "solutionImages": []
+            },
+            "subConcept": "Horizontal range",
+            "subject": "Physics",
+            "updatedAt": "2026-02-28T17:45:42.731Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "6956d7e988d7701e5617bd3e",
+      "source_version": "1e630ae107b1de6bd50522dec9266212d4dccefeee474ead915c72879ede3b24",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "D",
+        "reasoning": "Starting at equilibrium gives v=A*omega*cos(omega*t). omega=2pi/16=pi/8; at t=2, cos(pi/4)=1/sqrt(2). pi=A*pi/(8*sqrt(2)), so A=8sqrt(2) m, keyed D.",
+        "limitations": "Checked from the supplied record; no live device or syllabus verification."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R030",
+            "questionId": "6956d7e988d7701e5617bd3e",
+            "verdict": "no_error",
+            "repair": null,
+            "edit": null,
+            "route": "no_change",
+            "confidence": 0.96,
+            "evidence": "Starting at equilibrium gives v=A*omega*cos(omega*t). omega=2pi/16=pi/8; at t=2, cos(pi/4)=1/sqrt(2). pi=A*pi/(8*sqrt(2)), so A=8sqrt(2) m, keyed D.",
+            "student_reply": "With T = 16 s, ω = π/8. Substituting t = 2 s and v = π m/s gives an amplitude of 8√2 m, option D."
+          },
+          "edits": [],
+          "route_reasons": [],
+          "candidate": {
+            "_id": "6956d7e988d7701e5617bd3e",
+            "chapter": "Oscillations",
+            "concept": "Simple harmonic motion",
+            "error": 1,
+            "errorHistory": [],
+            "level": "MEDIUM",
+            "qid": "MHCET_gNlzG0ZcBlNSzwBSMUak_PHY_129",
+            "questionType": "scq",
+            "scq": {
+              "answer": "D",
+              "quesImages": [],
+              "question": "<h3>A particle performing SHM starts equilibrium position and its time period is 16 seconds. After 2 seconds its velocity is <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>&#x003C0;</mi><mi>&#x0006D;</mi><mo>&#x0002F;</mo><mi>&#x00073;</mi></mrow></math>. Amplitude of oscillation is <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mrow><mo stretchy=\"true\" fence=\"true\" form=\"prefix\">&#x00028;</mo><mi> cos </mi><msup><mn> 45 </mn><mrow><mo>&#x02218;</mo></mrow></msup><mo>&#x0003D;</mo><mfrac><mrow><mn> 1 </mn></mrow><mrow><msqrt><mrow><mn> 2 </mn></mrow></msqrt></mrow></mfrac><mo stretchy=\"true\" fence=\"true\" form=\"postfix\">&#x00029;</mo></mrow></mrow></mstyle></math>\n<br/>(A) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn> 2 </mn><msqrt><mrow><mn> 2 </mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\"> m </mi></mrow></mrow></msqrt></mrow></math>\n<br/>(B) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn> 4 </mn><msqrt><mrow><mn> 2 </mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\"> m </mi></mrow></mrow></msqrt></mrow></math>\n<br/>(C) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn> 6 </mn><msqrt><mrow><mn> 2 </mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\"> m </mi></mrow></mrow></msqrt></mrow></math>\n<br/>(D) <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mn> 8 </mn><msqrt><mrow><mn> 2 </mn><mrow><mtext>&#x000A0;</mtext><mi mathvariant=\"normal\"> m </mi></mrow></mrow></msqrt></mrow></math></h3>",
+              "solution": "<h3>Given, particle velocity, <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi> v </mi><mo>=</mo><mi>&pi;</mi><mi>m</mi><mo>/</mo><mi>s</mi></mrow></math> and time period <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi> T </mi><mo>=</mo><mn> 16 </mn><mrow><mtext>&nbsp;</mtext><mi mathvariant=\"normal\"> s </mi></mrow></mrow></math><br />\nDisplacement of the particle, <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi> x </mi><mo>=</mo><mi> A </mi><mi> sin </mi><mi>&omega;</mi><mi> t </mi></mrow></math> Velocity of the particle,<br />\n<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle displaystyle=\"true\"><mrow><mi> v </mi><mo>&minus;</mo><mfrac><mrow><mi> d </mi><mi> x </mi></mrow><mrow><mi> d </mi><mi> t </mi></mrow></mfrac><mo>&minus;</mo><mi> A </mi><mi>&omega;</mi><mi> cos </mi><mi>&omega;</mi><mi> t </mi></mrow></mstyle></math><br />\n<br />\nAngular velocity,<br />\n<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle displaystyle=\"true\"><mrow><mi>&omega;</mi><mo>=</mo><mfrac><mrow><mn> 2 </mn><mi>&pi;</mi></mrow><mrow><mi> T </mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn> 2 </mn><mi>&pi;</mi></mrow><mrow><mn> 16 </mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>&pi;</mi></mrow><mrow><mn> 8 </mn></mrow></mfrac><mo>=</mo><mrow><mi mathvariant=\"normal\"> r </mi><mi mathvariant=\"normal\"> a </mi><mi mathvariant=\"normal\"> d </mi></mrow><mo>/</mo><mi>s</mi></mrow></mstyle></math><br />\nNow from eq. (i),<br />\n<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle displaystyle=\"true\"><mrow><mi>&pi;</mi><mo>=</mo><mi> A </mi><mi>&times;</mi><mfrac><mrow><mi>&pi;</mi></mrow><mrow><mn> 8 </mn></mrow></mfrac><mi>&times;</mi><mi> cos </mi><mfrac><mrow><mi>&pi;</mi></mrow><mrow><mn> 8 </mn></mrow></mfrac><mi>&times;</mi><mn> 2 </mn></mrow></mstyle></math><br />\n<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle displaystyle=\"true\"><mrow><mn> 1 </mn><mo>=</mo><mfrac><mrow><mi> A </mi></mrow><mrow><mn> 8 </mn></mrow></mfrac><mi> cos </mi><mfrac><mrow><mi>&pi;</mi></mrow><mrow><mn> 4 </mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mi> A </mi></mrow><mrow><mn> 8 </mn></mrow></mfrac><mi>&middot;</mi><mfrac><mrow><mn> 1 </mn></mrow><mrow><msqrt><mrow><mn> 2 </mn></mrow></msqrt></mrow></mfrac></mrow></mstyle></math><br />\n<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>&there4;</mo><mi> A </mi><mo>=</mo><mn> 8 </mn><msqrt><mrow><mn> 2 </mn></mrow></msqrt><mrow><mtext>&nbsp;</mtext><mi mathvariant=\"normal\"> m </mi></mrow></mrow></math></h3>\n",
+              "solutionImages": []
+            },
+            "subConcept": "Velocity and acceleration in SHM",
+            "subject": "Physics",
+            "updatedAt": "2026-02-28T17:46:16.154Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "695ee00b88d7701e561aabc5",
+      "source_version": "a17c3efa75b060ac2c143be16303572e4df78c4f2602122556f448d3490c24d0",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": null,
+        "reasoning": "For equal component intensities I0, I=2I0*(1+cos(phi)); at pi/2 this is 2I0, so assertion A is false. R is also false: a nonzero phase alone does not imply additive intensities (pi gives zero). No option says both false. The stored solution additionally uses an incorrect formula and contradicts itself.",
+        "limitations": "No option represents both statements being false."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R034",
+            "questionId": "695ee00b88d7701e561aabc5",
+            "verdict": "defect",
+            "repair": "unsound",
+            "edit": null,
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "For equal component intensities I0, I=2I0*(1+cos(phi)); at pi/2 this is 2I0, so assertion A is false. R is also false: a nonzero phase alone does not imply additive intensities (pi gives zero). No option says both false. The stored solution additionally uses an incorrect formula and contradicts itself.",
+            "student_reply": "At a phase difference of π/2, the intensity is twice that of one wave. Both statements are false, but that combination is missing; faculty need to repair the question."
+          },
+          "edits": [],
+          "route_reasons": [
+            "Taxonomy requires faculty approval"
+          ],
+          "candidate": {
+            "_id": "695ee00b88d7701e561aabc5",
+            "chapter": "Waves",
+            "concept": "Superposition of Sound Waves",
+            "error": 1,
+            "errorHistory": [],
+            "level": "MEDIUM",
+            "qid": "MHCET_PCB_PYQ_2025_12_PHY_L539",
+            "questionType": "scq",
+            "scq": {
+              "answer": "D",
+              "quesImages": [],
+              "question": "<h3>Assertion&nbsp;(A) : When two waves of equal amplitude and a phase difference of <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle displaystyle=\"true\"><mrow><mfrac><mrow><mi>&pi;</mi></mrow><mrow><mn> 2 </mn></mrow></mfrac></mrow></mstyle></math> interfere, the resulting intensity is equal to the intensity of one wave.<br />\nReason (R): In interference, the resultant intensity is always the sum of individual intensities if the phase difference is non-zero.<br />\n<br />\n(A) Both A and R are true, and R is the correct explanation of A .<br />\n(B) Both A and R are true, but R is not the correct explanation of A .<br />\n(C) A is true, but R is false.<br />\n(D) A is false, but R is true.</h3>\n",
+              "solution": "<h3>Assertion<br />\n(A) is false because when two waves of equal amplitude interfere with a phase difference of <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle displaystyle=\"true\"><mrow><mfrac><mrow><mi>&pi;</mi></mrow><mrow><mn> 2 </mn></mrow></mfrac></mrow></mstyle></math>, the resultant intensity is not equal to the intensity of one wave. Instead, it is given by:<br />\n<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle displaystyle=\"true\"><mrow><mi> I </mi><mo>=</mo><mn> 2 </mn><msub><mi> I </mi><mrow><mn> 0 </mn></mrow></msub><msup><mi> cos </mi><mrow><mn> 2 </mn></mrow></msup><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><mrow><mi>ϕ</mi></mrow><mrow><mn> 2 </mn></mrow></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow></mrow></mstyle></math><br />\nFor a phase difference of <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle displaystyle=\"true\"><mrow><mfrac><mrow><mi>&pi;</mi></mrow><mrow><mn> 2 </mn></mrow></mfrac></mrow></mstyle></math>, this formula gives:<br />\n<math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle displaystyle=\"true\"><mrow><mi> I </mi><mo>=</mo><mn> 2 </mn><msub><mi> I </mi><mrow><mn> 0 </mn></mrow></msub><msup><mi> cos </mi><mrow><mn> 2 </mn></mrow></msup><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mfrac><mrow><mi>&pi;</mi></mrow><mrow><mn> 4 </mn></mrow></mfrac><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow><mo>=</mo><mn> 2 </mn><msub><mi> I </mi><mrow><mn> 0 </mn></mrow></msub><mi>&times;</mi><mfrac><mrow><mn> 1 </mn></mrow><mrow><mn> 2 </mn></mrow></mfrac><mo>=</mo><msub><mi> I </mi><mrow><mn> 0 </mn></mrow></msub></mrow></mstyle></math><br />\nThus, the intensity is equal to the intensity of one wave. Therefore, assertion<br />\n(A) is true. Reason (R) is correct because the resultant intensity in interference can indeed be the sum of the individual intensities when the phase difference is non-zero. However, in the case of a phase difference of <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle displaystyle=\"true\"><mrow><mfrac><mrow><mi>&pi;</mi></mrow><mrow><mn> 2 </mn></mrow></mfrac></mrow></mstyle></math>, the intensities do not simply add up; they are modified by the interference effect.<br />\nThus, the correct answer is (d), as assertion<br />\n(A) is false but reason (R) is true.</h3>\n",
+              "solutionImages": []
+            },
+            "subConcept": "Interference",
+            "subject": "Physics",
+            "updatedAt": "2026-02-28T17:57:21.661Z"
+          }
+        }
+      ]
+    },
+    {
+      "questionId": "696a866665252c04fc1f81c2",
+      "source_version": "f6f47de1f47223e35504969f74493dd4357009e46fc594811681908eecb3113d",
+      "origin": {
+        "provider": "precomputed-reference",
+        "pack_sha256": "58c3433c2a6757601f20a7fc80741b66393f6994ba7823a2d6d564efc535360d"
+      },
+      "solve": {
+        "answer": "50",
+        "reasoning": "The cube edge is absent in the stem. The solution substitutes (10*10^-2 m)^3, explicitly using a 10 cm edge. DeltaV = (7e6/1.4e11)*0.1³ = 5e-8 m³ = 50 mm³.",
+        "limitations": "The independent stem is underdetermined. The proposed 10 cm is recovered only from the stored solution."
+      },
+      "reports": [
+        {
+          "result": {
+            "reportId": "R006",
+            "questionId": "696a866665252c04fc1f81c2",
+            "verdict": "defect",
+            "repair": "stem_data",
+            "edit": {
+              "field": "question",
+              "find": "solid copper cube",
+              "replace": "solid copper cube of side 10 cm"
+            },
+            "route": "faculty_review",
+            "confidence": 0.96,
+            "evidence": "The cube edge is absent in the stem. The solution substitutes (10*10^-2 m)^3, explicitly using a 10 cm edge. DeltaV = (7e6/1.4e11)*0.1³ = 5e-8 m³ = 50 mm³.",
+            "student_reply": "You're right that the cube's edge is missing. The solution uses 10 cm; adding that value is proposed for faculty review."
+          },
+          "edits": [
+            {
+              "field": "question",
+              "find": "solid copper cube",
+              "replace": "solid copper cube of side 10 cm"
+            }
+          ],
+          "route_reasons": [
+            "Verification required: solution_states_data"
+          ],
+          "candidate": {
+            "_id": "696a866665252c04fc1f81c2",
+            "chapter": "Properties of matter and fluid mechanics",
+            "concept": "Stress and strain",
+            "error": 1,
+            "errorHistory": [],
+            "integerQuestion": {
+              "answer": "50",
+              "quesImages": [],
+              "question": "<h3>The volume contraction of a solid copper cube of side 10 cm, when subjected to a hydraulic pressure of <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>7</mn><mi>&times;</mi><msup><mn>10</mn><mrow><mn>6</mn></mrow></msup><mrow><mtext>&nbsp;</mtext><mi mathvariant=\"normal\">P</mi><mi mathvariant=\"normal\">a</mi></mrow></mrow></math>, would be <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>_</mi><mi>_</mi><mi>_</mi><mi>_</mi></mrow></math> <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><msup><mrow><mi mathvariant=\"normal\">m</mi><mi mathvariant=\"normal\">m</mi></mrow><mrow><mn>3</mn></mrow></msup></mrow></math>.</h3>\n\n<h3>(Given bulk modulus of copper <math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mo>=</mo><mn>1.4</mn><mi>&times;</mi><msup><mn>10</mn><mrow><mn>11</mn></mrow></msup><msup><mrow><mi mathvariant=\"normal\">N</mi><mi mathvariant=\"normal\">m</mi></mrow><mrow><mo>&minus;</mo><mn>2</mn></mrow></msup></mrow></math> )</h3>\n",
+              "solution": "<h3><math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle displaystyle=\"true\"><mrow><mi>B</mi><mo>=</mo><mfrac><mrow><mi>&Delta;</mi><mi>P</mi></mrow><mrow><mfrac><mrow><mi>&Delta;</mi><mi>V</mi></mrow><mrow><mi>V</mi></mrow></mfrac></mrow></mfrac></mrow></mstyle></math></h3>\n\n<h3><math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle displaystyle=\"true\"><mrow><mi>&Delta;</mi><mi>V</mi><mo>=</mo><mfrac><mrow><mn>7</mn><mi>&times;</mi><msup><mn>10</mn><mrow><mn>6</mn></mrow></msup></mrow><mrow><mn>1.4</mn><mi>&times;</mi><msup><mn>10</mn><mrow><mn>11</mn></mrow></msup></mrow></mfrac><mi>&times;</mi><msup><mrow><mo fence=\"true\" form=\"prefix\" stretchy=\"true\">(</mo><mn>10</mn><mi>&times;</mi><msup><mn>10</mn><mrow><mo>&minus;</mo><mn>2</mn></mrow></msup><mo fence=\"true\" form=\"postfix\" stretchy=\"true\">)</mo></mrow><mrow><mn>3</mn></mrow></msup></mrow></mstyle></math></h3>\n\n<h3><math display=\"inline\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mi>&Delta;</mi><mi>V</mi><mo>=</mo><mn>50</mn><msup><mrow><mtext>&nbsp;</mtext><mi mathvariant=\"normal\">m</mi><mi mathvariant=\"normal\">m</mi></mrow><mrow><mn>3</mn></mrow></msup></mrow></math></h3>\n",
+              "solutionImages": []
+            },
+            "level": "MEDIUM",
+            "qid": "JEEMAINS_2025_PHY_L4838",
+            "questionType": "integerQuestion",
+            "subConcept": "Bulk Modulus and compressibility",
+            "subject": "Physics",
+            "updatedAt": "2026-02-06T19:13:45.601Z"
+          }
+        }
+      ]
+    }
+  ],
+  "applied_to_source": false,
+  "results_digest": "7399b944d2930224c507c0fa5b5765da10bfbb974cf325dfd7ea3ba9c6c42ba9"
+}

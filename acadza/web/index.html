@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Acadza · Faculty review</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header>
+    <a class="brand" href="/">acadza<span>Faculty review</span></a>
+    <span id="batch-summary">Loading review queue</span>
+  </header>
+  <div class="layout">
+    <aside class="queue" aria-label="Question review queue">
+      <h2>Review queue <span id="queue-count"></span></h2>
+      <label class="sr-only" for="search">Search reports, subjects or chapters</label>
+      <input type="search" id="search" placeholder="Search report or topic">
+      <label class="sr-only" for="queue-filter">Case status</label>
+      <select id="queue-filter">
+        <option value="pending">Awaiting review</option>
+        <option value="reviewed">Reviewed</option>
+        <option value="all">All cases</option>
+      </select>
+      <p class="sort-note">Grading impact, then distinct reporters and oldest report.</p>
+      <nav id="queue-list" aria-label="Cases"></nav>
+    </aside>
+    <main id="main">
+      <div id="notice" role="status" aria-live="polite"></div>
+      <div id="loading" role="status" hidden>Loading case…</div>
+      <div id="case-view" hidden>
+        <div class="case-heading">
+          <div>
+            <p id="subject" class="eyebrow"></p>
+            <h1 id="case-title" tabindex="-1"></h1>
+            <p id="case-meta" class="muted"></p>
+          </div>
+          <span id="status" class="status"></span>
+        </div>
+        <div class="workspace">
+          <article class="card analysis">
+            <div class="card-heading">
+              <h2 id="verdict"></h2>
+              <span id="origin"></span>
+            </div>
+            <p id="evidence"></p>
+            <div id="other-evidence"></div>
+          </article>
+          <article class="card change">
+            <div class="card-heading">
+              <h2 id="change-title">Proposed change</h2>
+              <span id="change-state"></span>
+            </div>
+            <p id="no-change" hidden></p>
+            <div id="diffs"></div>
+            <section id="editor" hidden aria-label="Faculty correction">
+              <h3>Your correction</h3>
+              <p class="muted">Use an exact fragment. Preview the rendered result before applying.</p>
+              <div id="edit-fields"></div>
+              <label for="edit-note">Reason for your correction</label>
+              <textarea id="edit-note" rows="3"></textarea>
+              <button id="preview" class="secondary">Preview correction</button>
+              <p id="preview-state" class="muted" role="status"></p>
+            </section>
+          </article>
+          <article class="card actions">
+            <h2 id="action-title">Review the change</h2>
+            <p id="action-help"></p>
+            <button id="approve" class="primary">Approve change</button>
+            <button id="edit" class="secondary">Edit proposed change</button>
+            <button id="reject" class="reject">Reject proposal</button>
+            <div id="reject-editor" hidden>
+              <label for="reject-note">Review note (optional)</label>
+              <textarea id="reject-note" rows="3"></textarea>
+              <button id="confirm-reject" class="secondary">Confirm rejection</button>
+            </div>
+            <button id="reload" class="text-button">Reload latest case</button>
+          </article>
+          <article class="card question-card">
+            <div class="card-heading">
+              <h2>Question as reported</h2><span id="question-type"></span>
+            </div>
+            <p id="stored-answer" class="stored-answer"></p>
+            <iframe id="question" title="Original question with options" sandbox></iframe>
+            <details id="full-preview" hidden>
+              <summary>Full question after correction</summary>
+              <iframe id="candidate-question" title="Question after correction" sandbox></iframe>
+            </details>
+          </article>
+          <article class="card replies">
+            <div class="card-heading">
+              <h2>Student reply preview</h2>
+              <span id="reply-label"></span>
+            </div>
+            <label class="sr-only" for="reply-report">Report reply</label>
+            <select id="reply-report"></select>
+            <blockquote id="reply"></blockquote>
+            <p class="muted">Saved locally with the decision. Student messaging awaits integration.</p>
+          </article>
+          <details class="card solution-card">
+            <summary>Stored solution</summary>
+            <iframe id="solution" title="Stored solution with MathML" sandbox></iframe>
+            <div id="solution-preview" hidden>
+              <h3>Solution after correction</h3>
+              <iframe id="candidate-solution" title="Solution after correction" sandbox></iframe>
+            </div>
+          </details>
+          <article class="card reports-card">
+            <h2>Student reports <span id="report-count" class="muted"></span></h2>
+            <div id="reports"></div>
+          </article>
+          <details class="card audit-card" id="audit-panel">
+            <summary>Decision history <span id="audit-count"></span></summary>
+            <div id="audit"></div>
+          </details>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

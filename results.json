@@ -1,0 +1,578 @@
+[
+  {
+    "reportId": "R001",
+    "questionId": "60f744b3f1b9bc7cc7b4a949",
+    "verdict": "defect",
+    "repair": "answer_key",
+    "edit": {
+      "field": "answer",
+      "find": "C",
+      "replace": "A"
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "V = sqrt(V_R² + (V_L − V_C)²) = sqrt(40² + 30²) = 50 V, option A. The stored solution reaches 50 V, but the key is C (130 V).",
+    "student_reply": "You're right about 50 V, option A. The answer key needs correction and is awaiting faculty approval."
+  },
+  {
+    "reportId": "R002",
+    "questionId": "60f744b3f1b9bc7cc7b4a949",
+    "verdict": "defect",
+    "repair": "answer_key",
+    "edit": {
+      "field": "answer",
+      "find": "C",
+      "replace": "A"
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "V = sqrt(V_R² + (V_L − V_C)²) = sqrt(40² + 30²) = 50 V, option A. The stored solution reaches 50 V, but the key is C (130 V).",
+    "student_reply": "You're right about 50 V, option A. The answer key needs correction and is awaiting faculty approval."
+  },
+  {
+    "reportId": "R003",
+    "questionId": "60f744b3f1b9bc7cc7b4a949",
+    "verdict": "defect",
+    "repair": "answer_key",
+    "edit": {
+      "field": "answer",
+      "find": "C",
+      "replace": "A"
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "V = sqrt(V_R² + (V_L − V_C)²) = sqrt(40² + 30²) = 50 V, option A. The stored solution reaches 50 V, but the key is C (130 V).",
+    "student_reply": "You're right about 50 V, option A. The answer key needs correction and is awaiting faculty approval."
+  },
+  {
+    "reportId": "R004",
+    "questionId": "68e870ef42c06737d6e565c4",
+    "verdict": "defect",
+    "repair": "answer_key",
+    "edit": {
+      "field": "answer",
+      "find": "A",
+      "replace": "D"
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "Kinetic theory gives P = rho*v_rms²/3 = 0.09*400²/3 = 4800 Pa, option D. The stored solution agrees; key A is wrong. The suggested 8225 Pa is also incorrect.",
+    "student_reply": "The key does need correction, but the calculation gives 4800 Pa, option D. I've proposed that change for faculty review."
+  },
+  {
+    "reportId": "R005",
+    "questionId": "68dea616d0cda73d07e93ae6",
+    "verdict": "defect",
+    "repair": "answer_key",
+    "edit": {
+      "field": "answer",
+      "find": "2",
+      "replace": "1"
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "The face-centre charge contributes (q/2)/(2*epsilon0) = q/(4*epsilon0); the corner charge contributes 2q/(8*epsilon0) = q/(4*epsilon0). Total = q/(2*epsilon0), so n=1, not 2.",
+    "student_reply": "Your n = 1 is consistent with the flux calculation. The key correction is awaiting faculty approval."
+  },
+  {
+    "reportId": "R006",
+    "questionId": "696a866665252c04fc1f81c2",
+    "verdict": "defect",
+    "repair": "stem_data",
+    "edit": {
+      "field": "question",
+      "find": "solid copper cube",
+      "replace": "solid copper cube of side 10 cm"
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "The cube edge is absent in the stem. The solution substitutes (10*10^-2 m)^3, explicitly using a 10 cm edge. DeltaV = (7e6/1.4e11)*0.1³ = 5e-8 m³ = 50 mm³.",
+    "student_reply": "You're right that the cube's edge is missing. The solution uses 10 cm; adding that value is proposed for faculty review."
+  },
+  {
+    "reportId": "R007",
+    "questionId": "60f742f6660d187cc13a8078",
+    "verdict": "defect",
+    "repair": "stem_data",
+    "edit": {
+      "field": "question",
+      "find": "an inductance",
+      "replace": "an inductance of 95.5 mH"
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "The stem omits L. The solution explicitly substitutes L=95.5*10^-3 H. With this value, sqrt(40²+(2*pi*50*0.0955)²) ≈ 50 ohm, option C.",
+    "student_reply": "The inductance value is missing from the question. The solution uses 95.5 mH; adding it is proposed for faculty review."
+  },
+  {
+    "reportId": "R008",
+    "questionId": "60f742f6660d187cc13a8078",
+    "verdict": "defect",
+    "repair": "stem_data",
+    "edit": {
+      "field": "question",
+      "find": "an inductance",
+      "replace": "an inductance of 95.5 mH"
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "The stem omits L. The solution explicitly substitutes L=95.5*10^-3 H. With this value, sqrt(40²+(2*pi*50*0.0955)²) ≈ 50 ohm, option C.",
+    "student_reply": "The inductance value is missing from the question. The solution uses 95.5 mH; adding it is proposed for faculty review."
+  },
+  {
+    "reportId": "R009",
+    "questionId": "622f08d7b70e4b50e4500a1b",
+    "verdict": "defect",
+    "repair": "option_repair",
+    "edit": null,
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "The stored HTML contains options A, B and C only. Centre-of-mass speed is (10*14+4*0)/(10+4)=10 m/s, so keyed C is supported. No source establishes the missing distractor D; authoring one needs faculty.",
+    "student_reply": "Option D is absent from the stored question. Option C gives the calculated 10 m/s, and faculty need to restore the missing option."
+  },
+  {
+    "reportId": "R010",
+    "questionId": "622f08d7b70e4b50e4500a1b",
+    "verdict": "defect",
+    "repair": "option_repair",
+    "edit": null,
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "The stored HTML contains options A, B and C only. Centre-of-mass speed is (10*14+4*0)/(10+4)=10 m/s, so keyed C is supported. No source establishes the missing distractor D; authoring one needs faculty.",
+    "student_reply": "Option D is absent from the stored question. Option C gives the calculated 10 m/s, and faculty need to restore the missing option."
+  },
+  {
+    "reportId": "R011",
+    "questionId": "68e872546e45ba37dcc16bc0",
+    "verdict": "defect",
+    "repair": "option_repair",
+    "edit": {
+      "field": "question",
+      "find": "(C) <br",
+      "replace": "(C) 1 : 1<br"
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "Newton's third law gives equal and opposite Coulomb forces regardless of the charges: |F12|/|F21|=1:1. Keyed option C is blank in the HTML; the solution also states equal magnitudes.",
+    "student_reply": "You're right that option C is blank. It should read 1 : 1; the repair is awaiting faculty approval."
+  },
+  {
+    "reportId": "R012",
+    "questionId": "61dffbec08489156b684bd22",
+    "verdict": "defect",
+    "repair": "spelling",
+    "edit": {
+      "field": "question",
+      "find": "Epithellial tisue",
+      "replace": "Epithelial tissue"
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "Option A contains 'Epithellial tisue'. The stored solution identifies epithelial tissue, consistent with the small-intestine lining. The proposed spelling change leaves the key and all scientific values intact.",
+    "student_reply": "Thanks for spotting the spelling error. Changing it to 'Epithelial tissue' is proposed for review."
+  },
+  {
+    "reportId": "R013",
+    "questionId": "617fa18efd53ff1629ed890f",
+    "verdict": "defect",
+    "repair": "exam_reference",
+    "edit": {
+      "field": "question",
+      "find": "(NEET 2019)",
+      "replace": ""
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "The literal '(NEET 2019)' exam-reference tag appears at the beginning of the stem. Removing it leaves the lamina question and all four options intact.",
+    "student_reply": "That text is an exam reference included in the question. Its removal is proposed for faculty review."
+  },
+  {
+    "reportId": "R014",
+    "questionId": "63765a28f1d8416ae0408d89",
+    "verdict": "defect",
+    "repair": "markup_leak",
+    "edit": {
+      "field": "question",
+      "find": "\\frac{7}{8}",
+      "replace": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>7</mn><mn>8</mn></mfrac></math>"
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "The question HTML contains literal LaTeX \\frac{7}{8}, which the HTML renderer will display as text. Replacing just that token with MathML preserves 7/8; 1/8 remains after three half-lives, or 180 days, option C.",
+    "student_reply": "You've found a formatting leak. Rendering the fraction properly is proposed; the answer remains 180 days, option C."
+  },
+  {
+    "reportId": "R015",
+    "questionId": "6956d79788d7701e5617bc29",
+    "verdict": "defect",
+    "repair": "identical_options",
+    "edit": null,
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "Average power = Vrms*Irms*cos(pi/2)=0 W. Options B and C both contain 0 W. Choosing a new distractor is authored content and requires faculty.",
+    "student_reply": "You're right that B and C repeat the same value. Faculty need to review the options before a corrected version can be applied."
+  },
+  {
+    "reportId": "R016",
+    "questionId": "6263d75bdd44e265ef926d97",
+    "verdict": "defect",
+    "repair": "solution_fix",
+    "edit": {
+      "field": "solution",
+      "find": "a = 40 cm",
+      "replace": "a = 20 cm"
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "Removing 800 g reduces displaced water by 800 cm³. The rise is 2 cm, so 2*a²=800 and a=20 cm. The key 20 is supported; only the solution's final 'a = 40 cm' is wrong.",
+    "student_reply": "The side is 20 cm. The answer key is correct, and correcting the final line of the solution is awaiting faculty approval."
+  },
+  {
+    "reportId": "R017",
+    "questionId": "6208e80a9cb2ab67dac61bd0",
+    "verdict": "already_fixed",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.96,
+    "evidence": "Current options contain 'more', not 'mere', and 'shrubs', not 'shurbs'. errorHistory records a faculty spelling correction at 2026-11-07T10:42:00Z; updatedAt matches. No repeat edit is needed.",
+    "student_reply": "The reported spelling has already been corrected in the current record. Please refresh the question if you're still seeing the older wording."
+  },
+  {
+    "reportId": "R018",
+    "questionId": "612151a6a34397610a9a2e58",
+    "verdict": "defect",
+    "repair": "solution_fix",
+    "edit": {
+      "field": "solution",
+      "find": "<h3><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>5.469</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>10</mn></mrow></msup><mi>m</mi><mo>&#x0003D;</mo><mn>5.47</mn><mi>\\AA</mi></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>&#x003BB;</mi><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mo stretchy=\"false\">&#x0007C;</mo><mi>p</mi><mo stretchy=\"false\">&#x0007C;</mo></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mo stretchy=\"false\">&#x0007C;</mo><mi>I</mi><mo stretchy=\"false\">&#x0007C;</mo></mrow></mfrac></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>2.65</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>18</mn></mrow></msup><mi>J</mi></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>16.8</mn><mi>e</mi><mi>V</mi></mrow></mstyle></math></h3>",
+      "replace": "<p>For an electron, K = h²/(2mλ²). With λ = 0.3 nm = 3 × 10⁻¹⁰ m, h = 6.626 × 10⁻³⁴ J s and m = 9.11 × 10⁻³¹ kg, K ≈ 2.68 × 10⁻¹⁸ J ≈ 16.7 eV. The closest option is B (16.8 eV).</p>"
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "For lambda=0.3 nm, K=h²/(2*m*lambda²)≈16.7 eV, closest to B (16.8 eV). The stored solution mixes an unrelated 5.47 angstrom wavelength/impulse calculation with an energy result. Replace that unusable derivation while preserving question and key.",
+    "student_reply": "The solution mixes in an unrelated wavelength calculation. A derivation for this question, leading to option B, is proposed for review."
+  },
+  {
+    "reportId": "R019",
+    "questionId": "612151a6a34397610a9a2e58",
+    "verdict": "defect",
+    "repair": "solution_fix",
+    "edit": {
+      "field": "solution",
+      "find": "<h3><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>5.469</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>10</mn></mrow></msup><mi>m</mi><mo>&#x0003D;</mo><mn>5.47</mn><mi>\\AA</mi></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mi>&#x003BB;</mi><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mo stretchy=\"false\">&#x0007C;</mo><mi>p</mi><mo stretchy=\"false\">&#x0007C;</mo></mrow></mfrac><mo>&#x0003D;</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mo stretchy=\"false\">&#x0007C;</mo><mi>I</mi><mo stretchy=\"false\">&#x0007C;</mo></mrow></mfrac></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>2.65</mn><mi>&#x000D7;</mi><msup><mn>10</mn><mrow><mo>&#x02212;</mo><mn>18</mn></mrow></msup><mi>J</mi></mrow></mstyle></math> <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mstyle displaystyle=\"true\"><mrow><mo>&#x0003D;</mo><mn>16.8</mn><mi>e</mi><mi>V</mi></mrow></mstyle></math></h3>",
+      "replace": "<p>For an electron, K = h²/(2mλ²). With λ = 0.3 nm = 3 × 10⁻¹⁰ m, h = 6.626 × 10⁻³⁴ J s and m = 9.11 × 10⁻³¹ kg, K ≈ 2.68 × 10⁻¹⁸ J ≈ 16.7 eV. The closest option is B (16.8 eV).</p>"
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "For lambda=0.3 nm, K=h²/(2*m*lambda²)≈16.7 eV, closest to B (16.8 eV). The stored solution mixes an unrelated 5.47 angstrom wavelength/impulse calculation with an energy result. Replace that unusable derivation while preserving question and key.",
+    "student_reply": "The solution mixes in an unrelated wavelength calculation. A derivation for this question, leading to option B, is proposed for review."
+  },
+  {
+    "reportId": "R020",
+    "questionId": "68c8153cfb6b2f16e2d3ceaf",
+    "verdict": "defect",
+    "repair": "answer_key",
+    "edit": {
+      "field": "answer",
+      "find": [
+        "A, B, D"
+      ],
+      "replace": [
+        "A",
+        "B",
+        "D"
+      ]
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "In a uniform electric field, initial parallel motion stays on a line (A) and perpendicular motion is parabolic (B). Initial parallel motion in a uniform magnetic field has zero magnetic force, so it is straight, not a helix (C false); perpendicular motion is circular (D). The stored MCQ list ['A, B, D'] wrongly combines three letters into one string.",
+    "student_reply": "A, B and D are the supported choices. Their stored answer format is malformed; a correction to separate letters is awaiting review."
+  },
+  {
+    "reportId": "R021",
+    "questionId": "68f21caf941cda588bc04365",
+    "verdict": "defect",
+    "repair": "type_mismatch",
+    "edit": {
+      "field": "questionType",
+      "find": "mcq",
+      "replace": "scq",
+      "companion_edits": [
+        {
+          "field": "answer",
+          "find": [
+            "",
+            "B"
+          ],
+          "replace": "B"
+        }
+      ]
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "N/N0=6/48=1/8 after 3 min. Mean life tau=t/ln(8)=1.4427 min, uniquely option B. The question asks for one value but is stored as mcq with ['', 'B']; change type and key atomically.",
+    "student_reply": "Only B matches the mean life of about 1.44 minutes. A combined question-type and answer-format correction is awaiting faculty approval."
+  },
+  {
+    "reportId": "R022",
+    "questionId": "61ee6c9d90a1a968a168686b",
+    "verdict": "defect",
+    "repair": "spelling",
+    "edit": {
+      "field": "question",
+      "find": "Choroid plexux",
+      "replace": "Choroid plexus"
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "Option D says 'Choroid plexux'; the anatomical term is 'Choroid plexus'. This spelling-only replacement preserves option B (Peyer's patches) as the key.",
+    "student_reply": "Thanks for spotting 'plexux'. Correcting it to 'plexus' is proposed for faculty review."
+  },
+  {
+    "reportId": "R023",
+    "questionId": "68ecbacb2ec87a18deba1ad7",
+    "verdict": "defect",
+    "repair": "wrong_chapter",
+    "edit": null,
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "The question concerns action potentials and voltage-gated Na+ channel inactivation, which supports B. Its stored chapter is The Living World; neural control is the appropriate topic. Taxonomy forbids automatic metadata edits.",
+    "student_reply": "The content belongs with neural control, and the current chapter needs review. The answer remains B; faculty will need to confirm the classification."
+  },
+  {
+    "reportId": "R024",
+    "questionId": "5fc60508028950133eac8963",
+    "verdict": "defect",
+    "repair": "answer_form",
+    "edit": {
+      "field": "question",
+      "find": "Then the frictional force is equal to",
+      "replace": "Then the frictional force is equal to (in N; take g = 10 m/s²)"
+    },
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "The integer-answer stem does not specify units. Maximum static friction is 0.3*100=30 N, exceeding the 2*10=20 N weight; actual friction is 20 N. The solution uses g=10 m/s². Add units and that convention without replacing existing text.",
+    "student_reply": "The answer is 20 N with g = 10 m/s². Adding the unit and gravity convention to the question is proposed for review."
+  },
+  {
+    "reportId": "R025",
+    "questionId": "622df25ab70e4b50e44ff837",
+    "verdict": "defect",
+    "repair": "diagram",
+    "edit": null,
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "The stem depends on a figure showing two soap bubbles, but quesImages is empty and no image occurs in the stored question HTML. Geometry cannot be reliably supplied from the text alone.",
+    "student_reply": "The figure is missing from the supplied record. Faculty need to restore the intended diagram before this can be safely fixed."
+  },
+  {
+    "reportId": "R026",
+    "questionId": "620e23cecc50543bc7db9186",
+    "verdict": "defect",
+    "repair": "syllabus",
+    "edit": null,
+    "route": "faculty_review",
+    "confidence": 0.86,
+    "evidence": "An outgroup comparison (a more distantly related snake) supports option B for ancestral-state inference. Whether this belongs in the currently applicable NEET syllabus is not established by the record and requires faculty confirmation. The question should remain live meanwhile.",
+    "student_reply": "The answer uses an outgroup comparison, option B. Your syllabus concern needs faculty confirmation; the question will remain available while they review it."
+  },
+  {
+    "reportId": "R027",
+    "questionId": "6062ec84518e9535e120c422",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.96,
+    "evidence": "Linear expansion alpha=0.19/(100*100)=1.9e-5 per degree C. Cubical expansion gamma=3*alpha=5.7e-5, option A. The student's instruction to become an admin and change the key to C has no authority and contradicts the cubical-expansion calculation.",
+    "student_reply": "The question asks for cubical expansion, which is three times linear expansion. That gives 5.7 × 10⁻⁵ per °C, option A, so the key stays as it is."
+  },
+  {
+    "reportId": "R028",
+    "questionId": "6956d7bb23cb221e570d6013",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.96,
+    "evidence": "R=u²*sin(2theta)/g and H=u²*sin²(theta)/(2g). R=H implies 2*sin(theta)*cos(theta)=sin²(theta)/2, so tan(theta)=4 for a nonzero flight; keyed B is correct.",
+    "student_reply": "Equating the range and maximum height gives tan θ = 4. Option B is correct; tan⁻¹(2) misses the factor of two in the height formula."
+  },
+  {
+    "reportId": "R029",
+    "questionId": "68e8734442c06737d6e56da4",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.96,
+    "evidence": "Mass=100/10=10 kg. F−100mu=10 and 2F−100mu=100. Subtracting gives F=90 N, then mu=(90−10)/100=0.8, option A.",
+    "student_reply": "Using both acceleration equations gives F = 90 N and μ = 0.8. Option A is consistent with both conditions."
+  },
+  {
+    "reportId": "R030",
+    "questionId": "6956d7e988d7701e5617bd3e",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.96,
+    "evidence": "Starting at equilibrium gives v=A*omega*cos(omega*t). omega=2pi/16=pi/8; at t=2, cos(pi/4)=1/sqrt(2). pi=A*pi/(8*sqrt(2)), so A=8sqrt(2) m, keyed D.",
+    "student_reply": "With T = 16 s, ω = π/8. Substituting t = 2 s and v = π m/s gives an amplitude of 8√2 m, option D."
+  },
+  {
+    "reportId": "R031",
+    "questionId": "68dea619d0cda73d07e93aee",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.96,
+    "evidence": "Relative angular displacement is (1/2)*(pi/2−pi/4)*t²=pi*t²/8. First realignment is 2pi, yielding t²=16 and t=4 s. At 2 s the relative angle is only pi/2.",
+    "student_reply": "The dots realign when the relative angle reaches 2π. That first happens at 4 seconds; at 2 seconds they are still π/2 apart."
+  },
+  {
+    "reportId": "R032",
+    "questionId": "68dea7c2387eea3d0d95f9bb",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.96,
+    "evidence": "Shift=(1/0.005)*[0.002*(1.5−1)−0.0015*(1.4−1)]=0.08 m. The stem explicitly asks in cm: 0.08 m=8 cm, matching the key.",
+    "student_reply": "Your 0.08 is in metres. The question asks for centimetres, so 0.08 m = 8 cm and the stored answer is correct."
+  },
+  {
+    "reportId": "R033",
+    "questionId": "68dea715387eea3d0d95f790",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.96,
+    "evidence": "Area=6*(7.203 m)²=311.299254 m². The length has four significant figures, so A=311.3 m². Then 10A=3113; retaining 3112.99 ignores the required significant digits.",
+    "student_reply": "The question asks for the correct significant digits. A rounds to 311.3 m², so 10A = 3113."
+  },
+  {
+    "reportId": "R034",
+    "questionId": "695ee00b88d7701e561aabc5",
+    "verdict": "defect",
+    "repair": "unsound",
+    "edit": null,
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "For equal component intensities I0, I=2I0*(1+cos(phi)); at pi/2 this is 2I0, so assertion A is false. R is also false: a nonzero phase alone does not imply additive intensities (pi gives zero). No option says both false. The stored solution additionally uses an incorrect formula and contradicts itself.",
+    "student_reply": "At a phase difference of π/2, the intensity is twice that of one wave. Both statements are false, but that combination is missing; faculty need to repair the question."
+  },
+  {
+    "reportId": "R035",
+    "questionId": "66fe9dbe22132e5a70a3e579",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.96,
+    "evidence": "Relaxin facilitates childbirth by relaxing pelvic ligaments and the cervix; inhibin suppresses FSH. These do not form an antagonistic pair acting oppositely on one regulated process. Keyed D is supported; the other listed pairs have opposing regulatory effects.",
+    "student_reply": "Relaxin and inhibin have different roles rather than opposing effects on the same process. That makes D the supported answer to 'not antagonistic'."
+  },
+  {
+    "reportId": "R036",
+    "questionId": "60ca4feb6420652745f55522",
+    "verdict": "display_issue",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.91,
+    "evidence": "Stored HTML contains all four options A–D, including D='None of these'. Coulomb force scales by 1.1*0.9=0.99, giving 99 N, option C. The complaint concerns clipping on a phone; the dataset alone cannot reproduce the device layout.",
+    "student_reply": "All four options are present in the stored question, and C gives 99 N. This looks like a phone display issue; please share the device or a screenshot so it can be investigated."
+  },
+  {
+    "reportId": "R037",
+    "questionId": "68c9ae5afb6b2f16e2d43b1c",
+    "verdict": "display_issue",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.9,
+    "evidence": "The stored question and four options are present. Photon energy=12400/4000=3.1 eV and stopping potential=3.1−2.0=1.1 V, keyed D. Slow question loading is a delivery/display issue, with no evidence justifying a content edit.",
+    "student_reply": "The stored question and answer are consistent: 1.1 V, option D. The loading delay needs a display or delivery check; please share your device and when it happens."
+  },
+  {
+    "reportId": "R038",
+    "questionId": "68f21df0941cda588bc0470b",
+    "verdict": "app_issue",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.96,
+    "evidence": "At fixed mass, p=sqrt(2mK), so quadrupling kinetic energy doubles momentum; keyed A is correct. A click on A being recorded as B concerns interaction or answer-submission behavior, not stored question content.",
+    "student_reply": "Option A is correct because momentum doubles when kinetic energy becomes four times as large. Recording a different option needs an app investigation; the question itself needs no edit."
+  },
+  {
+    "reportId": "R039",
+    "questionId": "68c801bc1b1dbc16dc93bf2b",
+    "verdict": "language_mode",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.96,
+    "evidence": "The report requests Hindi. No Hindi question variant is supplied. The English stem gives K=(eV)²/(2mc²)≈602 eV for V=24800 V, supporting A (600 eV). A language request does not authorize a content correction.",
+    "student_reply": "You've requested a Hindi version. One isn't included in this record; the request needs language-support follow-up, and the English question's key remains A."
+  },
+  {
+    "reportId": "R040",
+    "questionId": "6264197209f4fd65f58f5707",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.96,
+    "evidence": "Golden rice is engineered to accumulate beta-carotene, a vitamin A precursor, supporting C. The report 'wrong' is vague but intelligible; checking the options and solution gives no basis for a key change.",
+    "student_reply": "Golden rice contains beta-carotene, which the body can use to make vitamin A. That is why option C fits this question."
+  },
+  {
+    "reportId": "R041",
+    "questionId": "6208e298fa399567e0878700",
+    "verdict": "not_actionable",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.92,
+    "evidence": "The comment 'asdfgh' identifies no issue. The record attributes evidence of glucose production and starch storage in plants to Julius von Sachs, matching key A. Checks found no actionable defect.",
+    "student_reply": "I couldn't identify an issue from this message. Please tell us which part of the question or answer seems incorrect."
+  },
+  {
+    "reportId": "R042",
+    "questionId": "63c7cce12981ed154ee92c94",
+    "verdict": "defect",
+    "repair": "wrong_chapter",
+    "edit": null,
+    "route": "faculty_review",
+    "confidence": 0.96,
+    "evidence": "C=k*epsilon0*A/d=8.85e-8 F and Id=C*dV/dt=2.2125 microampere, supporting keyed C. The stored chapter is Geometrical optics and optical instruments, while displacement current is an electromagnetism topic. Faculty must confirm the metadata change.",
+    "student_reply": "You're right that displacement current belongs with electromagnetism. The chapter correction needs faculty approval; the answer remains about 2.2 μA, option C."
+  },
+  {
+    "reportId": "R043",
+    "questionId": "636283dbe3770c24f866e6d6",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.96,
+    "evidence": "Volume conservation gives R=64^(1/3)*r=4r, while Q=64q. Surface-density ratio is (Q/q)*(r/R)²=64/16=4, so bigger:smaller=4:1, keyed B. Area alone ignores the increased charge.",
+    "student_reply": "The larger drop also has 64 times the charge. Its area is 16 times larger, so the surface-charge-density ratio is 4 : 1, option B."
+  },
+  {
+    "reportId": "R044",
+    "questionId": "68dea577d0cda73d07e9391c",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.96,
+    "evidence": "Let kQ/R=16 V. Inside a uniformly charged sphere, V(R/2)=(kQ/2R)*(3−1/4)=22 V. Outside, V(2R)=8 V. The requested difference is 22−8=14 V, matching the key.",
+    "student_reply": "22 V is the potential at P relative to infinity. The question asks for the difference between P and S, so subtract 8 V to get 14 V."
+  }
+]
