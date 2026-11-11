@@ -209,6 +209,7 @@ class ReviewStore:
             "question": source.to_record(), "candidate": candidate.to_record(),
             "current": json.loads(row["current_source"]),
             "analysis_origin": ("Precomputed analysis" if analysis["origin"]["provider"].startswith("precomputed")
+                                else "Gemini analysis" if analysis["origin"]["provider"] == "gemini"
                                 else "Model analysis"),
             "result": primary, "results": [item["result"] for item in items],
             "edits": edits, "editable_edits": primary_item(items)["edits"],

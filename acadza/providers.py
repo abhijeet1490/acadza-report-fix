@@ -2,6 +2,7 @@
 
 import json
 import os
+import re
 from pathlib import Path
 import socket
 from urllib.error import HTTPError, URLError
@@ -63,6 +64,46 @@ class OpenAIProvider:
             raise ProviderError("Provider did not return a JSON object") from None
         if not isinstance(value, dict):
             raise ProviderError("Provider did not return an object")
+        return value
+
+
+class GeminiProvider:
+    def __init__(self, model=None, api_key=None):
+        model = model or os.environ.get("GEMINI_MODEL")
+        if not model or not re.fullmatch(r"[A-Za-z0-9._-]+", model):
+            raise ProviderError("Set GEMINI_MODEL or pass a Gemini model ID with --model")
+        self.api_key = api_key or os.environ.get("GEMINI_API_KEY")
+        if not self.api_key:
+            raise ProviderError("Gemini requires GEMINI_API_KEY")
+        self.model = model
+        self.fingerprint = {"provider": "gemini", "model": model}
+
+    def call(self, stage, payload):
+        request = Request(
+            f"https://generativelanguage.googleapis.com/v1beta/models/{self.model}:generateContent",
+            headers={"x-goog-api-key": self.api_key, "Content-Type": "application/json"},
+            data=json.dumps({
+                "systemInstruction": {"parts": [{"text": (PROMPTS / f"{stage}.txt").read_text()}]},
+                "contents": [{"role": "user", "parts": [{"text": json.dumps(payload, ensure_ascii=False)}]}],
+                "generationConfig": {"responseMimeType": "application/json", "maxOutputTokens": 8192},
+            }).encode(),
+        )
+        try:
+            with urlopen(request, timeout=55) as response:
+                raw = response.read(2_000_001)
+            if len(raw) > 2_000_000:
+                raise ProviderError("Gemini response exceeded size limit")
+            candidate = json.loads(raw)["candidates"][0]
+            if candidate.get("finishReason") != "STOP":
+                raise ProviderError("Gemini generation did not complete")
+            parts = candidate["content"]["parts"]
+            value = json.loads("".join(p["text"] for p in parts if not p.get("thought")))
+        except HTTPError as exc:
+            raise ProviderError(f"Gemini HTTP {exc.code}; check model access and quota") from None
+        except (URLError, TimeoutError, ValueError, KeyError, IndexError, TypeError, AttributeError):
+            raise ProviderError("Gemini request failed or returned invalid output") from None
+        if not isinstance(value, dict):
+            raise ProviderError("Gemini did not return a JSON object")
         return value
 
 

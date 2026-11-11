@@ -364,3 +364,9 @@ clean-copy checks, video metadata and qualification limits. The full suite has
 JSON preservation and case-note isolation. The video player was checked in
 WebKit with loaded metadata, 180-second duration, advancing playback, captions
 and no media error. Local decisions remained in ignored QA databases.
+
+## Gemini integration
+
+> read the statement correctly it states - AI system -> but as of now it is manual system. -> for ai use gemini api key.
+
+Gemini uses the existing solve and triage prompts verbatim. It generates the proposed fixes during batch processing. Faculty decisions still use the versioned review workflow. The checked-in reference results have separate provenance.

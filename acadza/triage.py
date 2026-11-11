@@ -15,7 +15,7 @@ import tempfile
 from .contracts import DataError, ProposedEdit, ReportResult
 from .dataset import DEFAULT_DATA, load_dataset
 from .policy import PolicyError, validate_result
-from .providers import OpenAIProvider, PROMPTS, ProviderError, ReferenceProvider
+from .providers import GeminiProvider, OpenAIProvider, PROMPTS, ProviderError, ReferenceProvider
 
 
 def digest(value):
@@ -240,7 +240,7 @@ def _run(dataset, provider, cache, output, manifest):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--mode", choices=("reference", "live"), default="reference")
+    parser.add_argument("--mode", choices=("reference", "live", "gemini"), default="reference")
     parser.add_argument("--model")
     parser.add_argument("--data", type=Path, default=DEFAULT_DATA)
     parser.add_argument("--cache", type=Path, default=Path(".local/triage.sqlite3"))
@@ -253,7 +253,12 @@ def main():
     if len(set(destinations)) != len(destinations) or set(destinations) & set(sources):
         parser.error("Output, manifest and cache must be distinct and preserve source files")
     try:
-        provider = ReferenceProvider() if args.mode == "reference" else OpenAIProvider(args.model)
+        if args.mode == "gemini":
+            provider = GeminiProvider(args.model)
+        elif args.mode == "live":
+            provider = OpenAIProvider(args.model)
+        else:
+            provider = ReferenceProvider()
         cache = Cache(args.cache)
         try:
             report = run(load_dataset(args.data), provider, cache, args.output, args.manifest)

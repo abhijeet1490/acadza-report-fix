@@ -2,7 +2,7 @@
 
 [Open the live faculty console](https://acadza-report-fix-acwx.onrender.com/)
 
-The submission uses precomputed analyses. All defect reports await faculty review.
+The bundled demo uses precomputed analyses. For Gemini-generated proposals, follow the Gemini deployment steps below. All defect reports await faculty review.
 The public Render demo shares review state, and its free-instance SQLite history
 can reset on restart or idle spin-down.
 
@@ -298,7 +298,32 @@ and 390 px width; the narrow page had no horizontal overflow.
 Browser actions used an isolated QA database. Source dataset files, scored
 results and the default workspace's decisions were preserved.
 
-## Render deployment
+## Generate review proposals with Gemini on Render
+
+Set `GEMINI_API_KEY` as a Render environment secret and `GEMINI_MODEL` to a
+generateContent model ID available to your Google AI Studio account. Use a fresh
+review workspace for the Gemini batch (`REVIEW_DB_PATH=.local/gemini-review.sqlite3`).
+Existing reviews belong to the analyses that faculty saw.
+
+Build command:
+
+```sh
+python -m unittest discover -s tests && python -m acadza.triage --mode gemini --output .local/gemini-results.json --manifest .local/gemini-run.json
+```
+
+Start command:
+
+```sh
+python -m acadza.server --host 0.0.0.0 --port $PORT --manifest .local/gemini-run.json
+```
+
+A cold batch requests two generations per reported question (78 for the supplied
+39 cases). Each build can incur usage. Gemini solves first, then investigates
+each report and proposes edits. Policy validation gates admission to the review
+queue. An incomplete batch exits with an error and records unresolved cases in
+the manifest. A successful deployment shows “Gemini analysis” on its cases.
+
+## Render deployment for the reference demo
 
 Deploy the `main` branch as a Python web service with the root directory left empty.
 
