@@ -80,6 +80,15 @@ class Cache:
         self.db.close()
 
 
+def solve_payload(question):
+    return {
+        "question_id": question.question_id, "source_version": question.version,
+        "question_type": question.question_type,
+        "question": question.payload["question"],
+        "quesImages": question.payload.get("quesImages", []),
+    }
+
+
 def validate_solve(value):
     if not isinstance(value, dict) or set(value) != {"answer", "reasoning", "limitations"}:
         raise PolicyError("Solver response has an invalid shape")
@@ -167,12 +176,7 @@ def _run(dataset, provider, cache, output, manifest):
     for case in dataset.cases:
         question = case.question
         # Strip key, stored solution, history and reports from independent solving.
-        solve_input = {
-            "question_id": question.question_id, "source_version": question.version,
-            "question_type": question.question_type,
-            "question": question.payload["question"],
-            "quesImages": question.payload.get("quesImages", []),
-        }
+        solve_input = solve_payload(question)
         stage_key = None
         try:
             stage_responses = {}

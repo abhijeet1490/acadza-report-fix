@@ -54,6 +54,19 @@ class ServerTests(unittest.TestCase):
                 self.assertEqual(response.status, 403)
                 response.read()
                 headers = {"X-Review-Token": data["token"], "Content-Type": "application/json"}
+                with patch("acadza.server.GeminiProvider") as factory:
+                    provider = factory.return_value
+                    provider.model = "test-model"
+                    provider.call.return_value = {"answer": "A", "reasoning": "Derived", "limitations": "None"}
+                    for _ in range(2):
+                        client.request("POST", "/api/check-answer", json.dumps({"id": other["id"]}), headers)
+                        response = client.getresponse()
+                        self.assertEqual(response.status, 200)
+                        self.assertEqual(json.loads(response.read())["answer"], "A")
+                    provider.call.assert_called_once()
+                    stage, payload = provider.call.call_args.args
+                    self.assertEqual(stage, "solve")
+                    self.assertEqual(set(payload), {"question_id", "source_version", "question_type", "question", "quesImages"})
                 client.request("POST", "/api/action", json.dumps(request), headers)
                 response = client.getresponse()
                 self.assertEqual(response.status, 200)

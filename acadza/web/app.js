@@ -24,6 +24,7 @@ let busy = false;
 let previewHash;
 let shownReplies = {};
 const drafts = new Map();
+const answerChecks = new Map();
 
 function node(tag, text, className) {
   const element = document.createElement(tag);
@@ -214,7 +215,36 @@ function saveDraft() {
     rejecting: !$("reject-editor").hidden, rejectNote: $("reject-note").value
   });
 }
+function renderAnswerCheck() {
+  const check = answerChecks.get(review.id);
+  $("check-answer").disabled = Boolean(check?.pending || check?.result);
+  const panel = $("gemini-answer");
+  panel.replaceChildren();
+  if (!check) return;
+  if (check.pending || check.error) {
+    panel.textContent = check.error || "Checking the original question with Gemini…";
+    return;
+  }
+  const {answer, reasoning, limitations, model} = check.result;
+  panel.append(node("h3", "Gemini answer: " + (Array.isArray(answer) ? answer.join(", ") : answer ?? "Undetermined")),
+    node("p", reasoning), node("p", "Limitations: " + limitations), node("small", model));
+}
+
+async function checkAnswer() {
+  const id = review.id;
+  answerChecks.set(id, {pending: true});
+  renderAnswerCheck();
+  try {
+    const result = await api("/api/check-answer", {id});
+    answerChecks.set(id, {result});
+  } catch (error) {
+    answerChecks.set(id, {error: error.message});
+  }
+  if (review.id === id) renderAnswerCheck();
+}
+
 function render() {
+  renderAnswerCheck();
   // Mount srcdoc frames in a visible container so WebKit lays out their content.
   // Rendering is synchronous, so the case is populated before the next paint.
   $("case-view").hidden = false;
@@ -409,6 +439,7 @@ async function act(action) {
   } finally { lock(false); }
 }
 $("approve").onclick = () => act($("editor").hidden ? "approve" : "edit");
+$("check-answer").onclick = checkAnswer;
 $("edit").onclick = () => {
   saveDraft();
   const saved = drafts.get(review.id);

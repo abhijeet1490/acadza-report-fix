@@ -144,6 +144,9 @@ Return one JSON object with exactly these keys:
  "limitations": "missing data, diagrams, ambiguity or uncertainty"}
 Do not invent missing values, diagrams or distractors. If no valid option exists,
 say so. Do not assume a reported question is defective.
+Both reasoning and limitations must be nonempty JSON strings. If you found no
+limitation, write "No specific limitation identified." Return numerical answers
+as strings so units and precision survive serialization.
 ```
 
 #### triage.txt
@@ -370,3 +373,7 @@ and no media error. Local decisions remained in ignored QA databases.
 > read the statement correctly it states - AI system -> but as of now it is manual system. -> for ai use gemini api key.
 
 Gemini uses the existing solve and triage prompts verbatim. It generates the proposed fixes during batch processing. Faculty decisions still use the versioned review workflow. The checked-in reference results have separate provenance.
+
+> also give one click option on each question ui to check the answer  via gemini api key.
+
+Faculty can request the same independent solve from the question card. The server supplies original question content, keeps the API key private, and caches successful answers per source version for its process lifetime.

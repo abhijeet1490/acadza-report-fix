@@ -7,9 +7,12 @@ import os
 import re
 import sqlite3
 from pathlib import Path
+from threading import Lock
 import secrets
 from urllib.parse import parse_qs, urlsplit
 
+from .providers import GeminiProvider, ProviderError
+from .triage import solve_payload, validate_solve
 from .contracts import DataError
 from .review import Conflict, MissingCase, ReviewStore
 
@@ -23,6 +26,10 @@ def make_server(store, port=8765, *, host="127.0.0.1", public_host=None):
             raise ValueError("Public host must be a hostname without a scheme, port or path")
         public_host = public_host.lower()
     token = secrets.token_urlsafe(32)
+
+    questions = {case.question.question_id: case.question for case in store.dataset.cases}
+    answer_checks = {}
+    check_lock = Lock()
 
     class Handler(BaseHTTPRequestHandler):
         def send(self, status, content, content_type="application/json"):
@@ -153,7 +160,23 @@ def make_server(store, port=8765, *, host="127.0.0.1", public_host=None):
                 request = json.loads(self.rfile.read(size))
                 if not isinstance(request, dict):
                     raise ValueError("Expected a request object")
-                if self.path == "/api/preview":
+                if self.path == "/api/check-answer":
+                    question = questions.get(request.get("id"))
+                    if question is None:
+                        raise MissingCase("Unknown question")
+                    if not check_lock.acquire(blocking=False):
+                        self.send(429, json.dumps({"error": "Another answer check is running. Try again shortly."}))
+                        return
+                    try:
+                        if question.version not in answer_checks:
+                            provider = GeminiProvider()
+                            result = provider.call("solve", solve_payload(question))
+                            validate_solve(result)
+                            answer_checks[question.version] = {**result, "model": provider.model}
+                        response = answer_checks[question.version]
+                    finally:
+                        check_lock.release()
+                elif self.path == "/api/preview":
                     response = (store.preview_edits(request) if "edits" in request else
                                 {"candidate": store.preview(request.get("replacement"))})
                 elif self.path == "/api/action":
@@ -164,6 +187,8 @@ def make_server(store, port=8765, *, host="127.0.0.1", public_host=None):
                 self.send(200, json.dumps(response))
             except MissingCase as exc:
                 self.send(404, json.dumps({"error": str(exc)}))
+            except ProviderError as exc:
+                self.send(503, json.dumps({"error": str(exc)}))
             except Conflict as exc:
                 self.send(409, json.dumps({"error": str(exc)}))
             except (DataError, ValueError, TypeError) as exc:

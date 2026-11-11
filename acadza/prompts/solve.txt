@@ -10,3 +10,6 @@ Return one JSON object with exactly these keys:
  "limitations": "missing data, diagrams, ambiguity or uncertainty"}
 Do not invent missing values, diagrams or distractors. If no valid option exists,
 say so. Do not assume a reported question is defective.
+Both reasoning and limitations must be nonempty JSON strings. If you found no
+limitation, write "No specific limitation identified." Return numerical answers
+as strings so units and precision survive serialization.
