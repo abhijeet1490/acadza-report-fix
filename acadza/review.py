@@ -65,7 +65,8 @@ def decision_replies(reports, status, candidate, edits):
 
 
 class ReviewStore:
-    def __init__(self, path, manifest=None):
+    def __init__(self, path, manifest=None, *, actor="Local faculty"):
+        self.actor = actor
         self.path = Path(path)
         self.dataset = load_dataset()
         self.case = next(c for c in self.dataset.cases if c.question.question_id == CASE_ID)
@@ -360,6 +361,6 @@ class ReviewStore:
                 "INSERT INTO audit(request_id,request_hash,case_id,created_at,actor,action,note,"
                 "before_json,after_json,response) VALUES (?,?,?,?,?,?,?,?,?,?)",
                 (request["request_id"], fingerprint, case_id, datetime.now(timezone.utc).isoformat(),
-                 "Local faculty", action, note, source.source_json, after.source_json, json.dumps(response)),
+                 self.actor, action, note, source.source_json, after.source_json, json.dumps(response)),
             )
             return response

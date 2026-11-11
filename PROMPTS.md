@@ -278,3 +278,26 @@ checks included a native MathML question, the 390 px layout, a review-only
 referral, a coupled type migration, preview-gated editing and a stale save with a
 retained draft. No production data, scored output or external student message
 was changed by these browser decisions.
+
+## Render preparation — 11 November 2026
+
+### AI coding assistant prompt, verbatim
+
+> so i am hosting my project on render via github -> give step by step guide to me till end.
+
+### Decisions
+
+- Inspection found the existing server bound to loopback and rejected public Host
+  headers. Added an explicit bind address and exact configured public hostname
+  while retaining the local defaults and host guard.
+- Read PORT and RENDER_EXTERNAL_HOSTNAME at startup. Support REVIEW_DB_PATH so
+  SQLite can live on a persistent disk mounted by the hosting service.
+- Add /healthz with a read-only database query and a 503 failure response.
+- Select Python 3.13 through .python-version and run the standard-library tests
+  as the Render build command.
+- Label public audit actions Demo reviewer. This is a shared anonymous demo,
+  without named faculty authentication.
+- Document that Render Free instances lose SQLite state on restart, redeploy or
+  idle spin-down. Durable SQLite requires a persistent disk on paid compute.
+- Prepare local code and instructions. The applicant will commit, push and deploy
+  through their GitHub and Render accounts.

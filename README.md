@@ -111,7 +111,7 @@ and invalidates an outstanding edit preview. A conflict asks faculty to reload.
 This stage uses loopback access and the actor label “Local faculty”. Identity
 and shared public hosting require deployment work. Host validation and a
 same-origin request token protect the local HTTP mutation endpoints.
-The server binds only 127.0.0.1. Deployment is scheduled for Phase 6.
+The local default binds to 127.0.0.1. Render deployment settings are in RENDER.md.
 
 ### Verification evidence
 
@@ -260,8 +260,8 @@ refresh within the same browser tab to support safe retries after lost responses
 
 The console is local and displays the explicitly precomputed analysis origin.
 It makes no LLM requests while reviewing. Replies are local previews/records,
-with delivery integration pending. Public hosting and shared faculty identity
-are release-phase work.
+with delivery integration pending. Render hosting is documented in RENDER.md. Named faculty authentication remains
+separate work.
 
 ### Phase 5 verification
 
@@ -287,3 +287,9 @@ and 390 px width; the narrow page had no horizontal overflow.
 
 Browser actions used an isolated QA database. Source dataset files, scored
 results and the default workspace's decisions were preserved.
+
+## Render deployment
+
+Follow [RENDER.md](RENDER.md) for GitHub-connected deployment, startup commands,
+health checks and the free-versus-persistent SQLite storage choice.
+The public deployment is a shared demo using precomputed analysis.
