@@ -1,6 +1,6 @@
 const $ = id => document.getElementById(id);
 const names = {
-  defect: "Defect", no_error: "No error found", display_issue: "Display issue",
+  defect: "Problem found", no_error: "No error found", display_issue: "Display issue",
   app_issue: "App issue", language_mode: "Language request", already_fixed: "Already fixed",
   not_actionable: "Needs a clearer report", answer_key: "Answer key", type_mismatch: "Question type",
   spelling: "Spelling", noise: "Stray text", exam_reference: "Exam reference",
@@ -8,7 +8,7 @@ const names = {
   stem_data: "Missing data", option_repair: "Missing option", solution_fix: "Solution correction",
   solution_missing: "Missing solution", identical_options: "Repeated options", diagram: "Missing diagram",
   wrong_question: "Mismatched content", unsound: "Unsound question", wrong_chapter: "Chapter",
-  syllabus: "Syllabus review", scq: "Single correct", mcq: "Multiple correct",
+  syllabus: "Syllabus review", scq: "One correct option", mcq: "Multiple correct options",
   integerQuestion: "Integer answer", question: "Question", solution: "Solution",
   answer: "Answer key", questionType: "Question type", pending: "Awaiting review",
   approved: "Correction applied", rejected: "Rejected", referred: "Further review",
@@ -80,8 +80,8 @@ function displayDiff(candidate, edits) {
   $("no-change").hidden = edits.length > 0;
   if (!edits.length) {
     $("no-change").textContent = review.result.verdict === "defect" ?
-      "No safe content edit is proposed. Record a referral for further investigation or authoring." :
-      "The analysis proposes no content change. Confirm the finding or reject it for further investigation.";
+      "This question needs a closer look before someone can fix it." :
+      "The analysis recommends keeping the question as it is.";
   }
   for (const edit of edits) {
     const section = node("section", undefined, "diff");
@@ -137,12 +137,12 @@ function renderQueue() {
     button.disabled = busy;
     const label = item.reportIds.join(", ") + " · " + (names[item.repair] || names[item.verdict]);
     button.append(node("span", label, "case-label"), node("strong", item.chapter),
-      node("span", item.subject + " · " + item.reporters + (item.reporters === 1 ? " reporter" : " reporters")),
-      node("span", item.stale ? "Source changed · reload required" : names[item.status]));
+      node("span", item.subject + " · " + item.reporters + (item.reporters === 1 ? " student" : " students")),
+      node("span", item.stale ? "Question updated · reload to review" : names[item.status]));
     button.onclick = () => loadCase(item.id);
     $("queue-list").append(button);
   }
-  if (!filtered.length) $("queue-list").textContent = "No cases match this view.";
+  if (!filtered.length) $("queue-list").textContent = "No questions match your search or filter.";
   const pending = queue.filter(item => item.status === "pending").length;
   const reports = queue.reduce((count, item) => count + item.reportIds.length, 0);
   $("batch-summary").textContent = queue.length + " questions · " + reports + " reports · " + pending + " awaiting review";
@@ -172,7 +172,7 @@ function showEditor(saved) {
     row.append(fieldLabel, select);
     for (const key of ["find", "replace"]) {
       const id = key + "-" + index;
-      const label = node("label", key === "find" ? "Existing fragment or value" : "Replacement");
+      const label = node("label", key === "find" ? "Original text or answer" : "Replacement");
       label.htmlFor = id;
       const input = document.createElement("textarea");
       input.id = id;
@@ -183,13 +183,13 @@ function showEditor(saved) {
     }
     row.oninput = () => {
       previewHash = null;
-      $("preview-state").textContent = "Preview required before applying.";
+      $("preview-state").textContent = "Preview your changes before saving.";
     };
     row.onchange = row.oninput;
     $("edit-fields").append(row);
   }
   $("preview-state").textContent = review.status === "pending" ?
-    "Preview required before applying." : "This case was decided. Your unsaved draft is retained here.";
+    "Preview your changes before saving." : "A decision has already been saved. Your draft is still here.";
 }
 function collectEdits() {
   return [...$("edit-fields").children].map(row => {
@@ -263,7 +263,7 @@ function render() {
   $("subject").textContent = review.question.subject + " / " + review.question.chapter;
   $("case-title").textContent = names[review.result.repair] || names[review.result.verdict];
   $("case-meta").textContent = review.reports.map(report => report.reportId).join(" · ") +
-    " · " + new Set(review.reports.map(report => report.studentId)).size + (new Set(review.reports.map(report => report.studentId)).size === 1 ? " distinct reporter" : " distinct reporters");
+    " · " + new Set(review.reports.map(report => report.studentId)).size + (new Set(review.reports.map(report => report.studentId)).size === 1 ? " student" : " students");
   $("status").textContent = names[review.status];
   $("status").classList.toggle("done", !pending);
   $("verdict").textContent = names[review.result.verdict];
@@ -274,21 +274,21 @@ function render() {
     if (result.evidence === review.result.evidence) continue;
     $("other-evidence").append(node("p", result.reportId + " · " + result.evidence));
   }
-  $("change-title").textContent = review.edits.length ? "Proposed content change" : "Content decision";
+  $("change-title").textContent = review.edits.length ? "Proposed change" : "Review recommendation";
   $("change-state").textContent = pending ? "Awaiting faculty decision" : names[review.status];
   displayDiff(review.candidate, review.edits);
   frame($("question"), payload(review.question).question);
   frame($("solution"), payload(review.question).solution);
   $("question-type").textContent = names[review.question.questionType];
-  $("stored-answer").textContent = "Stored answer as reported · " + valueText(payload(review.question).answer);
-  $("action-title").textContent = pending ? "Review the finding" : "Decision recorded";
-  $("action-help").textContent = review.stale ? "The live record changed. Reload and reconcile before applying." :
-    review.approval_status === "approved" ? "Applies the exact changes shown and records the decision." :
-    review.approval_status === "referred" ? "Records a referral. The content repair will remain pending." :
-    "Confirms the finding and keeps the stored content.";
+  $("stored-answer").textContent = "Original answer key · " + valueText(payload(review.question).answer);
+  $("action-title").textContent = pending ? "Your decision" : "Decision recorded";
+  $("action-help").textContent = review.stale ? "This question has changed. Reload it and check the latest version." :
+    review.approval_status === "approved" ? "Approving saves the changes shown here." :
+    review.approval_status === "referred" ? "A referral flags the question for follow-up." :
+    "Confirm to keep the question as it is.";
   $("approve").textContent = saved.editing ? "Save & approve correction" :
     {approved: "Approve change", referred: "Refer for further review", confirmed: "Confirm no change"}[review.approval_status];
-  $("edit").textContent = saved.editing ? "Cancel edit" : review.edits.length ? "Edit proposed change" : "Create a repair";
+  $("edit").textContent = saved.editing ? "Cancel edit" : review.edits.length ? "Edit proposed change" : "Suggest a correction";
   $("approve").hidden = !pending;
   $("edit").hidden = !pending || !review.editable_fields.length;
   $("reject").hidden = !pending;
@@ -327,7 +327,7 @@ function render() {
     row.append(node("p", changed), node("p", entry.note));
     if (entry.edits.length) {
       const details = document.createElement("details");
-      details.append(node("summary", "Exact recorded edits"),
+      details.append(node("summary", "See exactly what changed"),
         node("pre", JSON.stringify(entry.edits, null, 2)));
       row.append(details);
     }
@@ -432,10 +432,10 @@ async function act(action) {
     render();
     await refreshQueue();
     notice({
-      approved: "Correction applied. The exact edits, replies and decision are saved.",
-      referred: "Referral recorded. The content repair remains pending.",
-      confirmed: "Finding confirmed. The stored content is unchanged.",
-      rejected: "Proposal rejected. The decision and replies are saved."
+      approved: "Correction saved. See the changes in Decision history.",
+      referred: "Question referred for follow-up.",
+      confirmed: "Confirmed. The question stays as it is.",
+      rejected: "Proposal rejected. Your decision and the replies are saved."
     }[response.status]);
     $("audit-panel").open = true;
   } catch (error) {
@@ -468,7 +468,7 @@ $("preview").onclick = async () => {
     shownReplies = data.approval_replies;
     renderReply();
     previewHash = JSON.stringify(edits);
-    $("preview-state").textContent = "Preview ready. Review the changes and record your reason before applying.";
+    $("preview-state").textContent = "Preview ready. Check your changes and add a reason before saving.";
     $("reply-label").textContent = "After approval";
     notice("");
   } catch (error) { notice(error.message, true); }

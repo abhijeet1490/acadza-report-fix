@@ -23,12 +23,12 @@
         <option value="reviewed">Reviewed</option>
         <option value="all">All cases</option>
       </select>
-      <p class="sort-note">Grading impact, then distinct reporters and oldest report.</p>
+      <p class="sort-note">Questions that affect marks come first. Ties go to questions reported by more students, then to older reports.</p>
       <nav id="queue-list" aria-label="Cases"></nav>
     </aside>
     <main id="main">
       <div id="notice" role="status" aria-live="polite"></div>
-      <div id="loading" role="status" hidden>Loading case…</div>
+      <div id="loading" role="status" hidden>Loading question…</div>
       <div id="case-view" hidden>
         <div class="case-heading">
           <div>
@@ -56,9 +56,9 @@
             <div id="diffs"></div>
             <section id="editor" hidden aria-label="Faculty correction">
               <h3>Your correction</h3>
-              <p class="muted">Use an exact fragment. Preview the rendered result before applying.</p>
+              <p class="muted">Enter the exact text or answer you want to change, then preview your correction.</p>
               <div id="edit-fields"></div>
-              <label for="edit-note">Reason for your correction</label>
+              <label for="edit-note">Why are you making this change?</label>
               <textarea id="edit-note" rows="3"></textarea>
               <button id="preview" class="secondary">Preview correction</button>
               <p id="preview-state" class="muted" role="status"></p>
@@ -75,7 +75,7 @@
               <textarea id="reject-note" rows="3"></textarea>
               <button id="confirm-reject" class="secondary">Confirm rejection</button>
             </div>
-            <button id="reload" class="text-button">Reload latest case</button>
+            <button id="reload" class="text-button">Reload question</button>
           </article>
           <article class="card question-card">
             <div class="card-heading">
@@ -98,14 +98,14 @@
               <h2>Student reply preview</h2>
               <span id="reply-label"></span>
             </div>
-            <label class="sr-only" for="reply-report">Report reply</label>
+            <label class="sr-only" for="reply-report">Choose a student report</label>
             <select id="reply-report"></select>
             <blockquote id="reply"></blockquote>
-            <p class="muted">Saved locally with the decision. Student messaging awaits integration.</p>
+            <p class="muted">Your decision saves this reply. Students won’t receive a message in this demo.</p>
           </article>
           <details class="card solution-card">
-            <summary>Stored solution</summary>
-            <iframe id="solution" title="Stored solution with MathML" sandbox></iframe>
+            <summary>Original solution</summary>
+            <iframe id="solution" title="Original solution with MathML" sandbox></iframe>
             <div id="solution-preview" hidden>
               <h3>Solution after correction</h3>
               <iframe id="candidate-solution" title="Solution after correction" sandbox></iframe>
